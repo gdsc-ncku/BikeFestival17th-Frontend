@@ -1,0 +1,348 @@
+{
+  "college_of_liberal_arts": {
+    "name": "文學院",
+    "photoURL": "",
+    "description": "文學院為成功大學之首院，其設立宗旨在因應時代潮流與社會脈動，配合國家長期發展，整合理論與實務，從事人文、語言及藝術方面之教學與研究；以培育通達人才，豐富生活內涵，擴展國際視野，認識多元文化，提升生命境界為目標。",
+    "dep_chinese_literature": {
+      "name": "中國文學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_foreign_literature": {
+      "name": "外國語文學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_taiwanese_literature": {
+      "name": "台灣文學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_history": {
+      "name": "歷史學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    }
+  },
+  "college_science": {
+    "name": "理學院",
+    "photoURL": "",
+    "description": "",
+    "dep_mathematics": {
+      "name": "數學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_chemistry": {
+      "name": "化學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_physics": {
+      "name": "物理學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_earth_sciences": {
+      "name": "地球科學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_photonics": {
+      "name": "光電科學與工程學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    }
+  },
+  "college_management": {
+    "name": "管理學院",
+    "photoURL": "",
+    "description": "",
+    "dep_accountancy": {
+      "name": "會計學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_statistics": {
+      "name": "統計學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_business_administration": {
+      "name": "企業管理學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_transportation_management": {
+      "name": "交通管理科學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_industrial_and_information_management": {
+      "name": "工業與資訊管理學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    }
+  },
+  "college_engineering": {
+    "name": "工學院",
+    "photoURL": "",
+    "description": "",
+    "dep_mechanical_engineering": {
+      "name": "機械工程學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_chemical_engineering": {
+      "name": "化學工程學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_civil_engineering": {
+      "name": "土木工程學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_materials_engineering": {
+      "name": "材料科學與工程學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_hydraulic_and_ocean_engineering": {
+      "name": "水利及海洋工程學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_engineering_science": {
+      "name": "工程科學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_system_and_naval_mechatronic_engineering": {
+      "name": "系統及船舶機電工程學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_aeronautics_and_astronautics": {
+      "name": "航空太空工程學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_resources_engineering": {
+      "name": "資源工程學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_environmental_ngineering": {
+      "name": "環境工程學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_biomedical_engineering": {
+      "name": "生物醫學工程學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_geomatics": {
+      "name": "測量及空間資訊學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    }
+  },
+  "college_ee_cs": {
+    "name": "電機資訊學院",
+    "photoURL": "",
+    "description": "",
+    "dep_electrical_engineering": {
+      "name": "電機工程學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_computer_cience": {
+      "name": "資訊工程學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    }
+  },
+  "college_social": {
+    "name": "社會科學院",
+    "photoURL": "",
+    "description": "",
+    "dep_political_science": {
+      "name": "政治學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_economics": {
+      "name": "經濟學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_law": {
+      "name": "法律學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_psychology": {
+      "name": "心理學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    }
+  },
+  "college_design": {
+    "name": "規劃與設計學院",
+    "photoURL": "",
+    "description": "",
+    "dep_architecture": {
+      "name": "建築學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_urban_planning": {
+      "name": "都市計劃學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_industrial_design": {
+      "name": "工業設計學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    }
+  },
+  "college_bioscience": {
+    "name": "生物科學與科技學院",
+    "photoURL": "",
+    "description": "",
+    "dep_life_sciences": {
+      "name": "生命科學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_biotechnology_and_bioindustry_sciences": {
+      "name": "生物科技與產業科學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    }
+  },
+  "college_medicine": {
+    "name": "醫學院",
+    "photoURL": "",
+    "description": "",
+    "dep_medicine": {
+      "name": "醫學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_nursing": {
+      "name": "護理學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_dentistry": {
+      "name": "牙醫學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_physical_therapy": {
+      "name": "物理治療學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_occupational_therapy": {
+      "name": "職能治療學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    },
+    "dep_medical_laboratory_science": {
+      "name": "醫學檢驗暨生物技術學系",
+      "photoURL": "",
+      "description": "",
+      "pdfURL": "",
+      "related_schedule_id": []
+    }
+  }
+}
