@@ -78,5 +78,23 @@
                 "link": "/knowledgeForum/letterToHighSchoolStudents"
             }
         ]
+    },
+    {
+        "title" : "合作夥伴" , 
+        "linkList" : [
+            {
+                "name": "合作夥伴",
+                "link": "/partner"
+            }
+        ]
+    },
+    {
+        "title" : "紀念品預購" , 
+        "linkList" : [
+            {
+                "name": "紀念品預購",
+                "link": "/souvenir"
+            }
+        ]
     }
 ]
