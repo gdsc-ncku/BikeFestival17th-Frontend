@@ -1,0 +1,82 @@
+[
+    {
+        "title": "關於單車節",
+        "linkList" : [
+            {
+                "name": "關於單車節",
+                "link": "/about"
+            }
+        ]
+    },
+    {
+        "title": "參加資訊",
+        "linkList" : [
+            {
+                "name": "交通資訊",
+                "link": "/information/traffic"
+            },
+            {
+                "name": "攤位地圖",
+                "link": "/information/map"
+            },
+            {
+                "name": "行程表",
+                "link": "/information/schedule"
+            },
+            {
+                "name": "我的行程",
+                "link": "/information/mySchedule"
+            }
+        ]
+    },
+    {
+        "title": "主題活動",
+        "linkList" : [
+            {
+                "name": "舞台活動",
+                "link": "/themeActivities/stage"
+            },
+            {
+                "name": "科系博覽",
+                "link": "/themeActivities/departmentGuide"
+            },
+            {
+                "name": "大學藍圖",
+                "link": "/themeActivities/collegeBlueprint"
+            },
+            {
+                "name": "升學指南",
+                "link": "/themeActivities/collegeGuide"
+            },
+            {
+                "name": "解憂茶軒",
+                "link": "/themeActivities/unworriedTeaHouse"
+            },
+            {
+                "name": "沈浸式體驗",
+                "link": "/themeActivities/immersiveExperience"
+            },
+            {
+                "name": "人生的交叉路口",
+                "link": "/themeActivities/crossroadsOfLife"
+            }
+        ]
+    },
+    {
+        "title" : "知識論壇" , 
+        "linkList" : [
+            {
+                "name": "科系手冊",
+                "link": "/knowledgeForum/departmentHandbook"
+            },
+            {
+                "name": "專欄文章" , 
+                "link": "/knowledgeForum/columnArticle"
+            },
+            {
+                "name": "給高中生的一封信"  , 
+                "link": "/knowledgeForum/letterToHighSchoolStudents"
+            }
+        ]
+    }
+]
