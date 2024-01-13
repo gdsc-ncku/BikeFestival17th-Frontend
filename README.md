@@ -27,3 +27,12 @@ git checkout -b <branch-name> # 這邊 <branch-name> 就直接用自己的名字
 - 開一個 Pull Request，如果只是一些小小的改動可以自己直接 merge 到 main。如果是較大的改動要給其他成員 code review 的話就在 discord 通知一聲，沒問題的話就再 merge。
 
 
+## Reference
+
+- hover on change in tailwindcss:
+    - https://stackoverflow.com/questions/60917112/displaying-button-when-hovering-over-div-in-tailwindcss
+    ```html
+    <div class="group">
+        <button class="hidden group-hover:block">Child</button>
+    </div>
+    ```
