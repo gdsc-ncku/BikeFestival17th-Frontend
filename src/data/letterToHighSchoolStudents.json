@@ -1,0 +1,18 @@
+[
+  {
+    "id": "article1",
+    "title": "文章的標題1",
+    "author": "侯智薰（雷蒙）",
+    "tags": ["標籤1", "標籤2"],
+    "content": "lorem ipsum lorem ipsum lorem ipsum",
+    "related_department": "中國文學系"
+  },
+  {
+    "id": "article2",
+    "title": "文章的標題2",
+    "author": "張人杰",
+    "tags": ["標籤1", "標籤2"],
+    "content": "lorem ipsum lorem ipsum lorem ipsum",
+    "related_department": "政治學系"
+  }
+]
