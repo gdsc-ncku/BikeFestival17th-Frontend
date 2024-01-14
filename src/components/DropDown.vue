@@ -2,7 +2,7 @@
   <!-- only one link -->
   <div v-if="linkList.length == 1" class="flex flex-col justify-center">
     <a
-      class="block text-xl font-bold"
+      class="block font-bold text-sm lg:text-xl md:text-base"
       :class="{
         'text-white': theme === 'light',
         'dark-content': theme === 'dark',
@@ -17,11 +17,10 @@
     v-if="linkList.length > 1"
     class="group"
     type="button"
-    @click="toggleCollapse"
   >
-    <div class="flex justify-center gap-x-2">
+    <div class="flex justify-center lg:gap-x-2 md:gap-x-1">
       <span
-        class="text-xl font-bold"
+        class="font-bold text-sm lg:text-xl md:text-base"
         :class="{
           'text-white': theme === 'light',
           'dark-content': theme === 'dark',
@@ -55,7 +54,7 @@
         v-for="link in linkList"
         :key="link.name"
         :href="link.link"
-        class="block px-1 py-2 text-sm"
+        class="block px-1 py-2 text-xs lg:text-sm"
         :class="{
           'text-white bg-transparent hover:rounded-md hover:bg-slate-500 hover:bg-opacity-35':
             theme === 'light',
@@ -72,7 +71,7 @@
 
 <script setup>
 // reference: https://stackoverflow.com/questions/60917112/displaying-button-when-hovering-over-div-in-tailwindcss
-import { defineProps, toRefs, ref } from "vue";
+import { defineProps, toRefs } from "vue";
 
 const props = defineProps({
   theme: {
@@ -81,7 +80,7 @@ const props = defineProps({
   },
   title: {
     type: String,
-    default: "單車節", // 參加活動 , 關於單車節 , 知識論壇 , 合作夥伴 , 紀念品預購 ...
+    default: "單車節", // 參加活動 , 關於單車節 , 知識論壇 , 合作夥伴 , 紀念品小舖 ...
   },
   linkList: {
     type: Array,
