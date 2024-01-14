@@ -13,12 +13,11 @@
   </div>
 
   <!-- multi links -->
-  <button
-    v-if="linkList.length > 1"
-    class="group hover:mt-4"
-    type="button"
-  >
-    <div class="flex justify-center lg:gap-x-2 md:gap-x-1">
+  <button v-if="linkList.length > 1" class="group lg:hover:mt-4 md:hover:mt-[18px] hover:mt-[20px]" type="button">
+    <div
+      class="flex justify-center lg:gap-x-2 md:gap-x-1"
+      :class="{ 'lg:px-[9px] md:px-[6px] px-4': hasLongWord(linkList) }"
+    >
       <span
         class="font-bold text-sm lg:text-xl md:text-base"
         :class="{
@@ -54,10 +53,9 @@
         v-for="link in linkList"
         :key="link.name"
         :href="link.link"
-        class="block px-1 py-2 text-xs lg:text-sm text-white hover:bg-primary-50 hover:rounded-sm hover:text-primary-900"
+        class="block px-1 py-2 lg:text-sm text-[11px] text-white hover:bg-primary-50 hover:rounded-sm hover:text-primary-900"
         :class="{
-          'bg-transparent hover:rounded-m':
-            theme === 'light',
+          'bg-transparent hover:rounded-m': theme === 'light',
         }"
         @click="handleLinkClick(link)"
       >
@@ -92,6 +90,10 @@ const props = defineProps({
 });
 
 const { theme, title, linkList } = toRefs(props);
+
+const hasLongWord = (linkList) => {
+  return linkList.some((link) => link.name.length > 5);
+};
 </script>
 
 <style scoped>

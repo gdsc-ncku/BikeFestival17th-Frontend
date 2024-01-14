@@ -6,14 +6,14 @@
     }"
   >
     <nav class="flex justify-center xl:gap-28 lg:gap-8 gap-3">
-        <a class="flex flex-col justify-center" href="/">
-          <img
-            :src="theme == 'light' ? '/logo.svg' : '/logo-dark.svg'"
-            alt="logo"
-            class="block xl:w-44 lg:w-36 md:w-28 w-24 cursor-pointer"
-            @click=""
-          />
-        </a>
+      <a class="flex flex-col justify-center" href="/">
+        <img
+          :src="theme == 'light' ? '/logo.svg' : '/logo-dark.svg'"
+          alt="logo"
+          class="block xl:w-44 lg:w-36 md:w-28 w-24 cursor-pointer"
+          @click=""
+        />
+      </a>
 
       <div class="flex xl:gap-7 lg:gap-3 gap-2">
         <template v-for="item in navBarList">
@@ -25,17 +25,19 @@
         </template>
       </div>
 
-      <a
-        href="/signup"
-        class="block text-center font-bold bg-primary-900 rounded-full lg:h-14 lg:w-36 lg:text-xl md:h-10 md:w-24 h-8 w-20"
-      >
-        <div class="flex flex-col justify-center h-full">
-          <span
-            class="text-bold text-primary-50 text-sm lg:text-xl md:text-base"
-            >即刻報名</span
-          >
-        </div>
-      </a>
+      <div class="flex flex-col justify-center">
+        <a
+          href="/signup"
+          class="block text-center font-bold bg-primary-900 rounded-full lg:h-14 lg:w-36 lg:text-xl md:h-10 md:w-24 h-8 w-20"
+        >
+          <div class="flex flex-col justify-center h-full">
+            <span
+              class="text-bold text-primary-50 text-sm lg:text-xl md:text-base"
+              >即刻報名</span
+            >
+          </div>
+        </a>
+      </div>
     </nav>
   </div>
 </template>
