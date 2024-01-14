@@ -75,7 +75,7 @@ letterToHighSchoolStudentsData.map((letter) => {
 });
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/BikeFestival17th-Frontend/'),
   routes,
 });
 
