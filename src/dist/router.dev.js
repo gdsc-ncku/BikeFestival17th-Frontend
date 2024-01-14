@@ -160,7 +160,7 @@ _letterToHighSchoolStudents["default"].map(function (letter) {
 });
 
 var router = (0, _vueRouter.createRouter)({
-  history: (0, _vueRouter.createWebHistory)(),
+  history: (0, _vueRouter.createWebHistory)('/BikeFestival17th-Frontend/'),
   routes: routes
 });
 var _default = router;
