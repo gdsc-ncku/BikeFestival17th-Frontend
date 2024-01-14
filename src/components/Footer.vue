@@ -1,7 +1,3 @@
-<script setup>
-import { RouterLink } from 'vue-router';
-</script>
-
 <template>
     <div class="bg-primary lg:hidden border-b-2 border-white p-4 flex justify-end">
         <a href="#"><img src="../assets/top-arrow.svg" alt="go to top"></a>
@@ -52,3 +48,7 @@ import { RouterLink } from 'vue-router';
         </div>
     </div>
 </template>
+
+<script setup>
+import { RouterLink } from 'vue-router';
+</script>
