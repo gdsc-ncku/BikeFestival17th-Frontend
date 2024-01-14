@@ -1,23 +1,19 @@
 <template>
   <div
-    class="w-full fixed flex justify-center pt-2 pb-3 overflow-hidden"
+    class="navbar w-full fixed flex justify-center pt-2 pb-3 z-10 h-20"
     :class="{
-      'bg-primary-50': theme == 'dark',
+      'bg-primary-50 shadow-lg': theme == 'dark',
     }"
   >
     <nav class="flex justify-center xl:gap-28 lg:gap-8 gap-3">
-      <img
-        v-if="theme == 'light'"
-        src="/logo.svg"
-        alt="logo"
-        class="xl:w-44 lg:w-36 md:w-28 w-24"
-      />
-      <img
-        v-else
-        src="/logo-dark.svg"
-        alt="logo"
-        class="xl:w-44 lg:w-36 md:w-28 w-24"
-      />
+        <a class="flex flex-col justify-center" href="/">
+          <img
+            :src="theme == 'light' ? '/logo.svg' : '/logo-dark.svg'"
+            alt="logo"
+            class="block xl:w-44 lg:w-36 md:w-28 w-24 cursor-pointer"
+            @click=""
+          />
+        </a>
 
       <div class="flex xl:gap-7 lg:gap-3 gap-2">
         <template v-for="item in navBarList">
@@ -47,12 +43,56 @@
 <script setup>
 import navBarList from "../data/navBar.json";
 import DropDown from "./DropDown.vue";
-import { defineProps } from "vue";
+import { defineProps, onMounted, ref, computed, watch } from "vue";
+import { useRoute } from "vue-router";
 
+const theme = ref("dark");
 const props = defineProps({
   theme: {
     type: String,
-    default: "light", // dark
+    default: "dark", // dark
   },
 });
+
+const router = useRoute();
+const path = computed(() => {
+  return router.path;
+});
+
+// watch if path changed
+watch(path, (newVal, oldVal) => {
+  if (newVal === "/") {
+    theme.value = "light";
+  } else {
+    theme.value = "dark";
+  }
+});
+
+onMounted(() => {
+  if (path.value === "/") {
+    theme.value = "light";
+  }
+
+  window.addEventListener("scroll", (e) => {
+    // only for home page
+    if (path.value !== "/") return;
+
+    if (window.innerWidth >= 1024) {
+      // desktop
+      if (window.scrollY > 500) {
+        theme.value = "dark";
+      } else {
+        theme.value = "light";
+      }
+    } else {
+      // mobile
+    }
+  });
+});
 </script>
+
+<style scoped>
+.navbar {
+  transition: all 0.2s ease-in-out;
+}
+</style>

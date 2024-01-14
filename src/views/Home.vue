@@ -51,7 +51,7 @@
     <div>
       <img alt="psychological-test" src="https://fakeimg.pl/432x237" />
       <div class="mt-10 w-full flex justify-center">
-        <a class="flex w-40 h-16 justify-center bg-white rounded-lg">
+        <a class="flex w-40 h-16 justify-center bg-white rounded-lg" href="#">
           <div class="flex flex-col justify-center">
             <span class="block text-primary-900 font-bold"> 即刻遊玩 </span>
           </div>
@@ -64,15 +64,12 @@
         測驗 - 你是哪一種動物？
       </h2>
       <!-- ellipse on right container -->
-      <div class="absolute ellipse ellipse-container-1">
-      </div>
+      <div class="absolute ellipse ellipse-container-1"></div>
 
-      <div class="absolute ellipse ellipse-container-2">
-      </div>
+      <div class="absolute ellipse ellipse-container-2"></div>
 
-      <div class="absolute ellipse ellipse-container-3">
-      </div>
-      <div class="  opacity-95">
+      <div class="absolute ellipse ellipse-container-3"></div>
+      <div class="opacity-95">
         <!-- https://stackoverflow.com/questions/50530436/how-to-keep-a-transformed-element-behind-another-element -->
         <p>猶記得高三那年，一出學測考場，人生頓失方向。該</p>
         <p>讀哪間學校、報什麼學系？此起彼落的疑問，成了每</p>
@@ -85,7 +82,7 @@
   </div>
 
   <!-- 7 theme activities -->
-  <div class=" px-36 py-24">
+  <div class="px-36 py-24">
     <h2 class="mb-12 font-bold text-content text-4xl">七大主題活動</h2>
     <!-- carousel -->
     <div class="mx-12 pt-16 px-16 pb-10 rounded-lg border-2 border-content">
@@ -94,18 +91,70 @@
       </div>
     </div>
   </div>
-  
+
   <!-- column articles -->
-  <div class=" px-36 py-24">
-    <h2 class="mb-12 font-bold text-content text-4xl">專欄文章</h2>\
-    
+  <div class="px-36 py-24">
+    <h2 class="mb-12 font-bold text-content text-4xl">專欄文章</h2>
   </div>
 
   <!-- souvenir -->
+  <div class="px-36 py-24 bg-primary-900 flex justify-evenly">
+    <div>
+      <h2 class="mb-12 font-bold text-white text-4xl">紀念品小舖</h2>
+      <p class="text-white text-xl">
+        Horem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+      <p class="text-white text-xl">
+        Horem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+      <p class="text-white text-xl">
+        Horem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+      <p class="text-white text-xl">
+        Horem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+      <a class="flex w-24 h-10 justify-center bg-white rounded-lg mt-7" href="#">
+        <div class="flex flex-col justify-center">
+          <span class="block text-primary-900 font-medium"> 前往購買 </span>
+        </div>
+      </a>
+    </div>
+    <div class="grid gap-x-8 gap-y-4 grid-cols-3">
+      <img class="block w-48" src="https://fakeimg.pl/200x200" />
+      <img class="block w-48" src="https://fakeimg.pl/200x200" />
+      <img class="block w-48" src="https://fakeimg.pl/200x200" />
+      <img class="block w-48" src="https://fakeimg.pl/200x200" />
+      <img class="block w-48" src="https://fakeimg.pl/200x200" />
+      <img class="block w-48" src="https://fakeimg.pl/200x200" />
+    </div>
+  </div>
 
   <!-- key visual bottom -->
-
+  <div class="w-full">
+    <img alt="key-visual-bottom" src="/home/key-visual-bottom.png" />
+    <div class="absolute -translate-y-80 left-1/2 -translate-x-1/2">
+      <h2 class="text-white font-black text-4xl">邀請你踏上探索科系的旅程！</h2>
+    </div>
+  </div>
   <!-- partners -->
+  <div class="px-36 pt-20 pb-48">
+    <div class="w-full text-center">
+      <p class="text-black font-black text-4xl">贊助廠商</p>
+      <p class=" text-black mt-3 text-2xl font-medium">依照中英文筆畫順序排列</p>
+    </div>
+    <div class="grid gap-x-8 gap-y-10 grid-cols-5 mt-11">
+      <img class="block w-48" src="https://fakeimg.pl/200x200" />
+      <img class="block w-48" src="https://fakeimg.pl/200x200" />
+      <img class="block w-48" src="https://fakeimg.pl/200x200" />
+      <img class="block w-48" src="https://fakeimg.pl/200x200" />
+      <img class="block w-48" src="https://fakeimg.pl/200x200" />
+      <img class="block w-48" src="https://fakeimg.pl/200x200" />
+      <img class="block w-48" src="https://fakeimg.pl/200x200" />
+      <img class="block w-48" src="https://fakeimg.pl/200x200" />
+      <img class="block w-48" src="https://fakeimg.pl/200x200" />
+      <img class="block w-48" src="https://fakeimg.pl/200x200" />
+    </div>
+  </div>
 
   <!-- footer -->
 </template>
@@ -145,7 +194,7 @@
   letter-spacing: 0.96px;
 }
 
-.ellipse{
+.ellipse {
   background-image: url("/home/ellipse.svg");
   width: 103.172px;
   height: 96px;
