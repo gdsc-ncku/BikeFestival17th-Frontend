@@ -9,9 +9,8 @@ import { RouterLink } from 'vue-router';
     <div class="bg-primary text-white py-12 lg:text-xl text-sm">
         <div class="max-w-[1200px] mx-auto my-0 flex lg:justify-between justify-around">
             <div class="lg:block flex flex-col items-center">
-                <img src="../assets/footer-logo.png" alt="logo" class="lg:block hidden">
-                <img src="../assets/footer-logo-yellow.png" alt="logo" class="lg:hidden">
-                <p class="font-bold lg:text-white text-tertiary lg:text-xl text-base my-2">第17屆大學科系博覽會</p>
+                <img src="../assets/footer-logo.png" alt="logo">
+                <p class="font-bold lg:text-xl text-base my-2">第17屆大學科系博覽會</p>
                 <div class="flex">
                     <a href="https://www.facebook.com/NCKUbikefestival/?locale=zh_TW" target="_blank"><img src="../assets/facebook.png" alt="facebook" class="mr-3"></a>
                     <a href="https://www.instagram.com/nckubike_official/" target="_blank"><img src="../assets/instagram.png" alt="instagram" class="mr-3"></a>
