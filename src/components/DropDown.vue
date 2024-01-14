@@ -15,7 +15,7 @@
   <!-- multi links -->
   <button
     v-if="linkList.length > 1"
-    class="group"
+    class="group hover:mt-4"
     type="button"
   >
     <div class="flex justify-center lg:gap-x-2 md:gap-x-1">
@@ -48,18 +48,16 @@
 
     <div
       v-if="linkList.length > 1"
-      class="fixed hidden group-hover:block group-hover:z-50"
+      class="hidden z-50 bg-primary-700 py-2 rounded-md group-hover:block"
     >
       <a
         v-for="link in linkList"
         :key="link.name"
         :href="link.link"
-        class="block px-1 py-2 text-xs lg:text-sm"
+        class="block px-1 py-2 text-xs lg:text-sm text-white hover:bg-primary-50 hover:rounded-sm hover:text-primary-900"
         :class="{
-          'text-white bg-transparent hover:rounded-md hover:bg-slate-500 hover:bg-opacity-35':
+          'bg-transparent hover:rounded-m':
             theme === 'light',
-          'text-black bg-primary-50 bg-opacity-20 hover:bg-opacity-35 hover:rounded-md':
-            theme === 'dark',
         }"
         @click="handleLinkClick(link)"
       >
