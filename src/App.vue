@@ -1,3 +1,7 @@
+<script setup>
+import Footer from './components/Footer.vue';
+
+</script>
 <template>
   <nav>
     <ol>
@@ -11,5 +15,6 @@
     </ol>
   </nav>
   <router-view></router-view>
+  <Footer />
 </template>
 
