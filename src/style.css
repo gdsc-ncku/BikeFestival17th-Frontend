@@ -4,6 +4,10 @@
 
 @layer base {
     html {
-        font-family: "Noto Sans", sans-serif;
+        font-family: "Noto Sans TC", sans-serif;
+    }
+    body {
+        background-image: url(../public/bg_noise_texture.svg);
+        background-color: #FFF8F2;
     }
 }
