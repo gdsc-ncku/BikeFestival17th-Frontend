@@ -3,120 +3,154 @@
     "id": "selfLearnin_1",
     "title": "真假新聞分不清？不私藏網路新聞指南！",
     "category": "自學力",
-    "author": "王小明",
-    "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉"
+    "author": "林盈辰",
+    "uploadDate": "2023-12-28",
+    "content": "",
+    "imageURL": ["../assets/Forum_page/FeaturedArticles/selfLearnin_1/1.webp", "../assets/Forum_page/FeaturedArticles/selfLearnin_1/2.webp", "../assets/Forum_page/FeaturedArticles/selfLearnin_1/3.webp", "../assets/Forum_page/FeaturedArticles/selfLearnin_1/4.webp", "../assets/Forum_page/FeaturedArticles/selfLearnin_1/5.webp", "../assets/Forum_page/FeaturedArticles/selfLearnin_1/6.webp"]
   },
   {
     "id": "selfLearning_2",
     "title": "在路上學習：通勤時Podcast推薦！",
     "category": "自學力",
-    "author": "王小明",
-    "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉"
+    "author": "",
+    "uploadDate": "",
+    "content": "",
+    "imageURL": []
   },
   {
     "id": "selfLearning_3",
     "title": "知識輕鬆GET！值得訂閱的YouTube頻道",
     "category": "自學力",
-    "author": "王小明",
-    "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉"
+    "author": "",
+    "uploadDate": "",
+    "content": "",
+    "imageURL": []
   },
   {
     "id": "education_1",
     "title": "你不知道的學習歷程，原來還能這樣寫！",
     "category": "衝升學",
-    "author": "王小明",
-    "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉"
+    "author": "",
+    "uploadDate": "",
+    "content": "",
+    "imageURL": []
   },
   {
     "id": "education_2",
     "title": "繁殺不死我的，必使我成長，究竟在繁什麼？",
     "category": "衝升學",
-    "author": "王小明",
-    "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉"
+    "author": "",
+    "uploadDate": "",
+    "content": "",
+    "imageURL": []
   },
   {
     "id": "education_3",
     "title": "如果沒有東西可以參考，還可以這些網站",
     "category": "衝升學",
-    "author": "王小明",
-    "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉"
+    "author": "",
+    "uploadDate": "",
+    "content": "",
+    "imageURL": []
   },
   {
     "id": "education_4",
     "title": "我們所不知道的升學",
     "category": "衝升學",
-    "author": "王小明",
-    "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉"
+    "author": "",
+    "uploadDate": "",
+    "content": "",
+    "imageURL": []
   },
   {
     "id": "education_5",
     "title": "失敗了不要氣餒，還可以為自己創造一條路",
     "category": "衝升學",
-    "author": "王小明",
-    "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉"
+    "author": "",
+    "uploadDate": "",
+    "content": "",
+    "imageURL": []
   },
   {
     "id": "skill_1",
     "title": "商管學院才用得到分析工具？用SWOT分析來了解自己！",
     "category": "技能點",
-    "author": "王小明",
-    "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉"
+    "author": "",
+    "uploadDate": "",
+    "content": "",
+    "imageURL": []
   },
   {
     "id": "skill_2",
     "title": "簡報軟體該怎麼選？一起成為簡報master!",
     "category": "技能點",
-    "author": "王小明",
-    "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉"
+    "author": "",
+    "uploadDate": "",
+    "content": "",
+    "imageURL": []
   },
   {
     "id": "skill_3",
     "title": "成為工程師的第一步－認識程式語言",
     "category": "技能點",
-    "author": "王小明",
-    "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉"
+    "author": "",
+    "uploadDate": "",
+    "content": "",
+    "imageURL": []
   },
   {
     "id": "skill_4",
     "title": "Notion紅什麼？用Notion打造效率人生！",
     "category": "技能點",
-    "author": "王小明",
-    "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉"
+    "author": "",
+    "uploadDate": "",
+    "content": "",
+    "imageURL": []
   },
   {
     "id": "life_2",
     "title": "華語音樂",
     "category": "懂生活",
-    "author": "王小明",
-    "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉"
+    "author": "",
+    "uploadDate": "",
+    "content": "",
+    "imageURL": []
   },
   {
     "id": "life_3",
     "title": "電視電影",
     "category": "懂生活",
-    "author": "王小明",
-    "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉"
+    "author": "",
+    "uploadDate": "",
+    "content": "",
+    "imageURL": []
   },
   {
     "id": "exam_1",
     "title": "運氣快快來-找到適合自己的讀書方式",
     "category": "拼考試",
-    "author": "王小明",
-    "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉"
+    "author": "",
+    "uploadDate": "",
+    "content": "",
+    "imageURL": []
   },
   {
     "id": "exam_2",
     "title": "考運爆棚-天公伯保佑我！",
     "category": "拼考試",
-    "author": "王小明",
-    "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉"
+    "author": "",
+    "uploadDate": "",
+    "content": "",
+    "imageURL": []
   },
   {
     "id": "exam_3",
     "title": "能力開光加持-證照一把抓",
     "category": "拼考試",
-    "author": "王小明",
-    "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉"
+    "author": "",
+    "uploadDate": "",
+    "content": "",
+    "imageURL": []
   }
 ]
 

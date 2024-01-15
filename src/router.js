@@ -2,9 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from './views/Home.vue';
 import About from './views/About.vue';
 import Info from './views/Info.vue';
-import Souvenir from './views/Souvenir.vue';
-import Partners from './views/Partners.vue';
-
 import Activities from './views/activities/Activities.vue';
 import MainStage from './views/activities/MainStage.vue';
 import DepartmentExpo from './views/activities/DepartmentExpo.vue';
@@ -13,7 +10,6 @@ import UniversityBlueprint from './views/activities/UniversityBlueprint.vue';
 import LifeCrossroads from './views/activities/LifeCrossroads.vue';
 import ImmersiveExperience from './views/activities/ImmersiveExperience.vue';
 import UnworriedTeaHouse from './views/activities/UnworriedTeaHouse.vue';
-
 import Forum from './views/forum/Forum.vue';
 import DepartmentHandbook from './views/forum/DepartmentHandbook.vue';
 import FeaturedArticles from './views/forum/FeaturedArticles.vue';
@@ -21,6 +17,8 @@ import LetterToHighSchoolStudents from './views/forum/LetterToHighSchoolStudents
 import departmentHandbookData from "./data/departmentHandbook.json";
 import featuredArticlesData from "./data/featuredArticles.json";
 import letterToHighSchoolStudentsData from "./data/letterToHighSchoolStudents.json";
+import Souvenir from './views/Souvenir.vue';
+import Partners from './views/Partners.vue';
 
 const routes = [
   { path: '/', name: '首頁', component: Home },
@@ -39,40 +37,14 @@ const routes = [
   { path: '/activities/unworriedTeaHouse', name: '解憂茶軒', component: UnworriedTeaHouse },
   { path: '/forum', name: '知識論壇', component: Forum },
   { path: '/forum/departmentHandbook', name: '科系手冊', component: DepartmentHandbook },
+  { path: '/forum/departmentHandbook/:department', name: '科系手冊-科系', component: DepartmentHandbook },
   { path: '/forum/featuredArticles', name: '專欄文章', component: FeaturedArticles },
+  { path: '/forum/featuredArticles/:article', name: '專欄文章-貼文', component: FeaturedArticles },
   { path: '/forum/letterToHighSchoolStudents', name: '給高中生的一封信', component: LetterToHighSchoolStudents },
+  { path: '/forum/letterToHighSchoolStudents/:letter', name: '給高中生的一封信-貼文', component: LetterToHighSchoolStudents },
   { path: '/partners', name: '合作夥伴', component: Partners },
   { path: '/souvenir', name: '紀念品小舖', component: Souvenir },
 ];
-
-// add routes for each department under "departmentHandbook" page
-departmentHandbookData.map((college) => {
-  college.departments.map((department) => {
-    routes.push({
-      path: '/forum/departmentHandBook/' + department.id,
-      name: department.name,
-      component: DepartmentHandbook
-    });
-  });
-});
-
-// add routes for each article under "featuredArticles" page
-featuredArticlesData.map((article) => {
-  routes.push({
-    path: '/forum/featuredArticles/' + article.id,
-    name: article.title,
-    component: FeaturedArticles
-  });
-});
-
-// add routes for each letter under "letterToHighSchoolStudents" page
-letterToHighSchoolStudentsData.map((letter) => {
-  routes.push({
-    path: '/forum/letterToHighSchoolStudents/' + letter.id,
-    name: letter.title,
-    component: LetterToHighSchoolStudents
-  });
-});
 
 const router = createRouter({
   history: createWebHistory('/BikeFestival17th-Frontend/'),
