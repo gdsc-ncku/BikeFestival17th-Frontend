@@ -8,7 +8,7 @@
         scroll-behavior: smooth;
     }
     body {
-        background-image: url(/public/bg_noise_texture.svg);
+        background-image: url(/bg_noise_texture.svg);
         background-color: #FFF8F2;
     }
 }

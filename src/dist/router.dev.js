@@ -13,10 +13,6 @@ var _About = _interopRequireDefault(require("./views/About.vue"));
 
 var _Info = _interopRequireDefault(require("./views/Info.vue"));
 
-var _Souvenir = _interopRequireDefault(require("./views/Souvenir.vue"));
-
-var _Partners = _interopRequireDefault(require("./views/Partners.vue"));
-
 var _Activities = _interopRequireDefault(require("./views/activities/Activities.vue"));
 
 var _MainStage = _interopRequireDefault(require("./views/activities/MainStage.vue"));
@@ -47,6 +43,12 @@ var _featuredArticles = _interopRequireDefault(require("./data/featuredArticles.
 
 var _letterToHighSchoolStudents = _interopRequireDefault(require("./data/letterToHighSchoolStudents.json"));
 
+var _Souvenir = _interopRequireDefault(require("./views/Souvenir.vue"));
+
+var _Partners = _interopRequireDefault(require("./views/Partners.vue"));
+
+var _NotFound = _interopRequireDefault(require("./views/NotFound.vue"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var routes = [{
@@ -75,52 +77,98 @@ var routes = [{
   component: _Info["default"]
 }, {
   path: '/activities',
-  name: '主題活動',
-  component: _Activities["default"]
-}, {
-  path: '/activities/mainStage',
-  name: '主舞台〈曦瓣〉',
-  component: _MainStage["default"]
-}, {
-  path: '/activities/departmentExpo',
-  name: '科系博覽',
-  component: _DepartmentExpo["default"]
-}, {
-  path: '/activities/educationalGuide',
-  name: '升學指南',
-  component: _EducationalGuide["default"]
-}, {
-  path: '/activities/universityBlueprint',
-  name: '大學藍圖',
-  component: _UniversityBlueprint["default"]
-}, {
-  path: '/activities/lifeCrossroads',
-  name: '人生叉路口',
-  component: _LifeCrossroads["default"]
-}, {
-  path: '/activities/immersiveExperience',
-  name: '沈浸式體驗',
-  component: _ImmersiveExperience["default"]
-}, {
-  path: '/activities/unworriedTeaHouse',
-  name: '解憂茶軒',
-  component: _UnworriedTeaHouse["default"]
+  name: '主題活動 / ',
+  children: [{
+    path: '',
+    component: _Activities["default"]
+  }, {
+    path: 'mainStage',
+    name: '主舞台〈曦瓣〉 / ',
+    component: _MainStage["default"],
+    children: [{
+      path: ':activity',
+      component: _MainStage["default"]
+    }]
+  }, {
+    path: 'departmentExpo',
+    name: '科系博覽 / ',
+    component: _DepartmentExpo["default"],
+    children: [{
+      path: ':activity',
+      component: _DepartmentExpo["default"]
+    }]
+  }, {
+    path: 'educationalGuide',
+    name: '升學指南 / ',
+    component: _EducationalGuide["default"],
+    children: [{
+      path: ':activity',
+      component: _EducationalGuide["default"]
+    }]
+  }, {
+    path: 'universityBlueprint',
+    name: '大學藍圖 / ',
+    component: _UniversityBlueprint["default"],
+    children: [{
+      path: ':activity',
+      component: _UniversityBlueprint["default"]
+    }]
+  }, {
+    path: 'lifeCrossroads',
+    name: '人生叉路口 / ',
+    component: _LifeCrossroads["default"],
+    children: [{
+      path: ':activity',
+      component: _LifeCrossroads["default"]
+    }]
+  }, {
+    path: 'immersiveExperience',
+    name: '沈浸式體驗 / ',
+    component: _ImmersiveExperience["default"],
+    children: [{
+      path: ':activity',
+      component: _ImmersiveExperience["default"]
+    }]
+  }, {
+    path: 'unworriedTeaHouse',
+    name: '解憂茶軒 / ',
+    component: _UnworriedTeaHouse["default"],
+    children: [{
+      path: ':activity',
+      component: _UnworriedTeaHouse["default"]
+    }]
+  }]
 }, {
   path: '/forum',
-  name: '知識論壇',
-  component: _Forum["default"]
-}, {
-  path: '/forum/departmentHandbook',
-  name: '科系手冊',
-  component: _DepartmentHandbook["default"]
-}, {
-  path: '/forum/featuredArticles',
-  name: '專欄文章',
-  component: _FeaturedArticles["default"]
-}, {
-  path: '/forum/letterToHighSchoolStudents',
-  name: '給高中生的一封信',
-  component: _LetterToHighSchoolStudents["default"]
+  name: '知識論壇 / ',
+  children: [{
+    path: '',
+    component: _Forum["default"]
+  }, {
+    path: 'featuredArticles',
+    name: '專欄文章 / ',
+    component: _FeaturedArticles["default"],
+    children: [{
+      path: ':article',
+      component: _FeaturedArticles["default"]
+    }]
+  }, {
+    path: 'departmentHandbook',
+    name: '科系手冊 / ',
+    component: _DepartmentHandbook["default"],
+    children: [{
+      path: ':department',
+      component: _DepartmentHandbook["default"]
+    }]
+  }, {
+    path: 'letterToHighSchoolStudents',
+    name: '給高中生的一封信 / ',
+    component: _LetterToHighSchoolStudents["default"],
+    children: [{
+      path: ':letter',
+      component: _LetterToHighSchoolStudents["default"]
+    }]
+  }]
 }, {
   path: '/partners',
   name: '合作夥伴',
@@ -129,36 +177,11 @@ var routes = [{
   path: '/souvenir',
   name: '紀念品小舖',
   component: _Souvenir["default"]
-}]; // add routes for each department under "departmentHandbook" page
-
-_departmentHandbook["default"].map(function (college) {
-  college.departments.map(function (department) {
-    routes.push({
-      path: '/forum/departmentHandBook/' + department.id,
-      name: department.name,
-      component: _DepartmentHandbook["default"]
-    });
-  });
-}); // add routes for each article under "featuredArticles" page
-
-
-_featuredArticles["default"].map(function (article) {
-  routes.push({
-    path: '/forum/featuredArticles/' + article.id,
-    name: article.title,
-    component: _FeaturedArticles["default"]
-  });
-}); // add routes for each letter under "letterToHighSchoolStudents" page
-
-
-_letterToHighSchoolStudents["default"].map(function (letter) {
-  routes.push({
-    path: '/forum/letterToHighSchoolStudents/' + letter.id,
-    name: letter.title,
-    component: _LetterToHighSchoolStudents["default"]
-  });
-});
-
+}, {
+  path: '/:pathMatch(.*)*',
+  name: '404',
+  component: _NotFound["default"]
+}];
 var router = (0, _vueRouter.createRouter)({
   history: (0, _vueRouter.createWebHistory)('/BikeFestival17th-Frontend/'),
   routes: routes
