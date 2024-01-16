@@ -1,7 +1,9 @@
 <template>
-  <Breadcrumb />
+   <Breadcrumb />
+  <ActivityContent :list=activityDetails.immersiveExperience title="沉浸式體驗" />
 </template>
 
 <script setup>
-import Breadcrumb from '@/components/Breadcrumb.vue';
+import ActivityContent from '../../components/ActivityContent.vue';
+import activityDetails from '../../data/activityDetails.json';
 </script>
