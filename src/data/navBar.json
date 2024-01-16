@@ -33,7 +33,7 @@
         "title": "主題活動",
         "linkList" : [
             {
-                "name": "舞台活動",
+                "name": "主舞台〈曦瓣〉",
                 "link": "/activities/mainStage"
             },
             {
@@ -49,38 +49,38 @@
                 "link": "/activities/educationalGuide"
             },
             {
-                "name": "解憂茶軒",
-                "link": "/activities/unworriedTeaHouse"
+                "name": "人生叉路口",
+                "link": "/activities/lifeCrossroads"
             },
             {
                 "name": "沈浸式體驗",
                 "link": "/activities/immersiveExperience"
             },
             {
-                "name": "人生的交叉路口",
-                "link": "/activities/lifeCrossroads"
+                "name": "解憂茶軒",
+                "link": "/activities/unworriedTeaHouse"
             }
         ]
     },
     {
-        "title" : "知識論壇" , 
+        "title" : "知識論壇" ,
         "linkList" : [
             {
                 "name": "科系手冊",
                 "link": "/forum/departmentHandbook"
             },
             {
-                "name": "專欄文章" , 
+                "name": "專欄文章" ,
                 "link": "/forum/featuredArticles"
             },
             {
-                "name": "給高中生的一封信"  , 
+                "name": "給高中生的一封信"  ,
                 "link": "/forum/letterToHighSchoolStudents"
             }
         ]
     },
     {
-        "title" : "合作夥伴" , 
+        "title" : "合作夥伴" ,
         "linkList" : [
             {
                 "name": "合作夥伴",
@@ -89,7 +89,7 @@
         ]
     },
     {
-        "title" : "紀念品小舖" , 
+        "title" : "紀念品小舖" ,
         "linkList" : [
             {
                 "name": "紀念品小舖",

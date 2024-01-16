@@ -1,0 +1,26 @@
+{
+    "name": "NCKU Bike Festival 17th",
+    "short_name": "成大單車節",
+    "theme_color": "#ff7b1a",
+    "background_color": "#ff7b1a",
+    "display": "fullscreen",
+    "scope": "/",
+    "start_url": "index.html",
+    "icons": [
+        {
+          "src": "./ncku-bike-festival-logo.JPG",
+          "type": "image/jpg",
+          "sizes": "72x72"
+        },
+        {
+          "src": "./ncku-bike-festival-logo.JPG",
+          "type": "image/jpg",
+          "sizes": "96x96"
+        },
+        {
+          "src": "./ncku-bike-festival-logo.JPG",
+          "type": "image/jpg",
+          "sizes": "144x144"
+        }
+      ]
+}
