@@ -19,6 +19,7 @@ import featuredArticlesData from "./data/featuredArticles.json";
 import letterToHighSchoolStudentsData from "./data/letterToHighSchoolStudents.json";
 import Souvenir from './views/Souvenir.vue';
 import Partners from './views/Partners.vue';
+import NotFound from './views/NotFound.vue';
 
 const routes = [
   { path: '/', name: '首頁', component: Home },
@@ -27,23 +28,89 @@ const routes = [
   { path: '/info/map', name: '攤位地圖', component: Info },
   { path: '/info/schedule', name: '行程表', component: Info },
   { path: '/info/mySchedule', name: '我的行程', component: Info },
-  { path: '/activities', name: '主題活動', component: Activities },
-  { path: '/activities/mainStage', name: '主舞台〈曦瓣〉', component: MainStage },
-  { path: '/activities/departmentExpo', name: '科系博覽', component: DepartmentExpo },
-  { path: '/activities/educationalGuide', name: '升學指南', component: EducationalGuide },
-  { path: '/activities/universityBlueprint', name: '大學藍圖', component: UniversityBlueprint },
-  { path: '/activities/lifeCrossroads', name: '人生叉路口', component: LifeCrossroads },
-  { path: '/activities/immersiveExperience', name: '沈浸式體驗', component: ImmersiveExperience },
-  { path: '/activities/unworriedTeaHouse', name: '解憂茶軒', component: UnworriedTeaHouse },
-  { path: '/forum', name: '知識論壇', component: Forum },
-  { path: '/forum/departmentHandbook', name: '科系手冊', component: DepartmentHandbook },
-  { path: '/forum/departmentHandbook/:department', name: '科系手冊-科系', component: DepartmentHandbook },
-  { path: '/forum/featuredArticles', name: '專欄文章', component: FeaturedArticles },
-  { path: '/forum/featuredArticles/:article', name: '專欄文章-貼文', component: FeaturedArticles },
-  { path: '/forum/letterToHighSchoolStudents', name: '給高中生的一封信', component: LetterToHighSchoolStudents },
-  { path: '/forum/letterToHighSchoolStudents/:letter', name: '給高中生的一封信-貼文', component: LetterToHighSchoolStudents },
+  {
+    path: '/activities',
+    name: '主題活動 / ',
+    children: [
+      {
+        path: '',
+        component: Activities
+      },
+      {
+        path: 'mainStage',
+        name: '主舞台〈曦瓣〉 / ',
+        component: MainStage,
+        children: [{ path: ':activity', component: MainStage }],
+      },
+      {
+        path: 'departmentExpo',
+        name: '科系博覽 / ',
+        component: DepartmentExpo,
+        children: [{ path: ':activity', component: DepartmentExpo }],
+      },
+      {
+        path: 'educationalGuide',
+        name: '升學指南 / ',
+        component: EducationalGuide,
+        children: [{ path: ':activity', component: EducationalGuide }],
+      },
+      {
+        path: 'universityBlueprint',
+        name: '大學藍圖 / ',
+        component: UniversityBlueprint,
+        children: [{ path: ':activity', component: UniversityBlueprint }],
+      },
+      {
+        path: 'lifeCrossroads',
+        name: '人生叉路口 / ',
+        component: LifeCrossroads,
+        children: [{ path: ':activity', component: LifeCrossroads }],
+      },
+      {
+        path: 'immersiveExperience',
+        name: '沈浸式體驗 / ',
+        component: ImmersiveExperience,
+        children: [{ path: ':activity', component: ImmersiveExperience }],
+      },
+      {
+        path: 'unworriedTeaHouse',
+        name: '解憂茶軒 / ',
+        component: UnworriedTeaHouse,
+        children: [{ path: ':activity', component: UnworriedTeaHouse }],
+      },
+    ]
+  },
+  {
+    path: '/forum',
+    name: '知識論壇 / ',
+    children: [
+      {
+        path: '',
+        component: Forum
+      },
+      {
+        path: 'featuredArticles',
+        name: '專欄文章 / ',
+        component: FeaturedArticles,
+        children: [{ path: ':article', component: FeaturedArticles }],
+      },
+      {
+        path: 'departmentHandbook',
+        name: '科系手冊 / ',
+        component: DepartmentHandbook,
+        children: [{ path: ':department', component: DepartmentHandbook }],
+      },
+      {
+        path: 'letterToHighSchoolStudents',
+        name: '給高中生的一封信 / ',
+        component: LetterToHighSchoolStudents,
+        children: [{ path: ':letter', component: LetterToHighSchoolStudents }],
+      },
+    ]
+  },
   { path: '/partners', name: '合作夥伴', component: Partners },
   { path: '/souvenir', name: '紀念品小舖', component: Souvenir },
+  { path: '/:pathMatch(.*)*', name: '404', component: NotFound},
 ];
 
 const router = createRouter({
