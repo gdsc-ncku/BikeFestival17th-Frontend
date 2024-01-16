@@ -1,7 +1,8 @@
 <template>
-  <h1 class="text-3xl font-bold">人生叉路口</h1>
-  <h1 class="text-3xl font-bold">人生叉路口</h1>
-  <h1 class="text-3xl font-bold">人生叉路口</h1>
-  <h1 class="text-3xl font-bold">人生叉路口</h1>
+  <ActivityContent :list=activityDetails.lifeCrossroads title="人生叉路口"/>
 </template>
 
+<script setup>
+import ActivityContent from '../../components/ActivityContent.vue';
+import activityDetails from '../../data/activityDetails.json';
+</script>

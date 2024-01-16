@@ -1,7 +1,8 @@
 <template>
-  <h1 class="text-3xl font-bold">主舞台〈曦瓣〉</h1>
-  <h1 class="text-3xl font-bold">主舞台〈曦瓣〉</h1>
-  <h1 class="text-3xl font-bold">主舞台〈曦瓣〉</h1>
-  <h1 class="text-3xl font-bold">主舞台〈曦瓣〉</h1>
+  <ActivityContent :list=activityDetails.mainStage title="主舞台〈曦瓣〉"/>
 </template>
 
+<script setup>
+import ActivityContent from '../../components/ActivityContent.vue';
+import activityDetails from '../../data/activityDetails.json';
+</script>

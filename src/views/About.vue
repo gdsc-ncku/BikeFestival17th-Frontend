@@ -1,6 +1,6 @@
 <template>
   <div class="max-w-[1200px] mx-auto text-xl text-content px-10">
-    <h1 class="text-[40px] font-bold my-5">活動宗旨</h1>
+    <h1 class="text-[40px] font-bold mb-5">活動宗旨</h1>
     <div class="py-8 lg:px-12">
       <p>成功大學自立校以來，累積深厚學術與人文底蘊，孕育無數學子於專業殿堂及社會各處無私奉獻；
       歷來以社會參與為經營目標，形塑特殊使命與學生特質。冀透過本次活動，向大眾展示成功大學作為全臺綜合型大學所能提供的學習資源、師資設備、產學合作，

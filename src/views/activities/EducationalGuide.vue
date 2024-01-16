@@ -1,7 +1,8 @@
 <template>
-  <h1 class="text-3xl font-bold">升學指南</h1>
-  <h1 class="text-3xl font-bold">升學指南</h1>
-  <h1 class="text-3xl font-bold">升學指南</h1>
-  <h1 class="text-3xl font-bold">升學指南</h1>
+  <ActivityContent :list=activityDetails.educationalGuide title="升學指南" />
 </template>
 
+<script setup>
+import ActivityContent from '../../components/ActivityContent.vue';
+import activityDetails from '../../data/activityDetails.json';
+</script>

@@ -5,6 +5,7 @@
 @layer base {
     html {
         font-family: "Noto Sans TC", sans-serif;
+        scroll-behavior: smooth;
     }
     body {
         background-image: url(/public/bg_noise_texture.svg);
