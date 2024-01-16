@@ -8,7 +8,7 @@
     <nav class="flex justify-center xl:gap-26 lg:gap-8 gap-3 max-w-[1200px]">
       <RouterLink class="flex flex-col justify-center" to="/">
         <img
-          :src="theme == 'light' ? '/logo.svg' : '/logo-dark.svg'"
+          :src="theme == 'light' ? '/BikeFestival17th-Frontend/logo.svg' : '/BikeFestival17th-Frontend/logo-dark.svg'"
           alt="logo"
           class="block xl:w-44 lg:w-36 md:w-28 w-24 cursor-pointer"
           @click=""

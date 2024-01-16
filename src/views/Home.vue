@@ -1,7 +1,7 @@
 <template>
   <div
     class="w-full h-[900px] bg-cover bg-center relative"
-    style="background-image: url('/home/key-visual.png')"
+    style="background-image: url('/BikeFestival17th-Frontend/home/key-visual.png')"
   ></div>
 
   <!-- Key Visual Design -->
@@ -121,7 +121,7 @@
 
   <!-- 7 theme activities -->
   <div
-    class="sm:flex sm:justify-evenly xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pt-10"
+    class="xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pt-10"
   >
     <h2 class="mb-12 font-bold text-content xl:text-4xl lg:text-3xl text-2xl">
       七大主題活動
@@ -188,7 +188,7 @@
   <div class="w-full sm:visible hidden">
     <div
       class="w-full h-[900px] bg-cover bg-center relative"
-      style="background-image: url('/home/key-visual-bottom.png')"
+      style="background-image: url('/BikeFestival17th-Frontend/home/key-visual-bottom.png')"
     ></div>
     <div class="absolute -translate-y-80 left-1/2 -translate-x-1/2">
       <h2 class="text-white font-black lg:text-4xl text-2xl">
@@ -231,7 +231,7 @@ import { RouterLink } from 'vue-router';
 
 <style scoped>
 .ellipse {
-  background-image: url("/home/ellipse.svg");
+  background-image: url("/BikeFestival17th-Frontend/home/ellipse.svg");
   width: 103.172px;
   height: 96px;
   flex-shrink: 0;

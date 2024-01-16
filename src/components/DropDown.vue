@@ -1,14 +1,14 @@
 <template>
   <!-- only one link -->
   <div v-if="linkList.length == 1" class="flex flex-col justify-center">
-    <a
+    <RouterLink
       class="block font-bold text-sm lg:text-xl md:text-base"
       :class="{
         'text-white': theme === 'light',
         'dark-content': theme === 'dark',
       }"
-      :href="linkList[0].link"
-      >{{ title }}</a
+      :to="linkList[0].link"
+      >{{ title }}</RouterLink
     >
   </div>
 
