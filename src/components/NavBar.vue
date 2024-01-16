@@ -5,15 +5,15 @@
       'bg-primary-50 shadow-lg': theme == 'dark',
     }"
   >
-    <nav class="flex justify-center xl:gap-28 lg:gap-8 gap-3">
-      <a class="flex flex-col justify-center" href="/">
+    <nav class="flex justify-center xl:gap-26 lg:gap-8 gap-3 max-w-[1200px]">
+      <RouterLink class="flex flex-col justify-center" to="/">
         <img
           :src="theme == 'light' ? '/logo.svg' : '/logo-dark.svg'"
           alt="logo"
           class="block xl:w-44 lg:w-36 md:w-28 w-24 cursor-pointer"
           @click=""
         />
-      </a>
+      </RouterLink>
 
       <div class="flex xl:gap-7 lg:gap-3 gap-2">
         <template v-for="item in navBarList">
@@ -26,8 +26,8 @@
       </div>
 
       <div class="flex flex-col justify-center">
-        <a
-          href="/signup"
+        <RouterLink
+          href="#"
           class="block text-center font-bold bg-primary-900 rounded-full lg:h-14 lg:w-36 lg:text-xl md:h-10 md:w-24 h-8 w-20"
         >
           <div class="flex flex-col justify-center h-full">
@@ -36,7 +36,7 @@
               >即刻報名</span
             >
           </div>
-        </a>
+        </RouterLink>
       </div>
     </nav>
   </div>
@@ -46,7 +46,7 @@
 import navBarList from "../data/navBar.json";
 import DropDown from "./DropDown.vue";
 import { defineProps, onMounted, ref, computed, watch } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute , RouterLink } from "vue-router";
 
 const theme = ref("dark");
 const props = defineProps({

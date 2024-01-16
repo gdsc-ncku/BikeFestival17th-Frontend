@@ -49,10 +49,10 @@
       v-if="linkList.length > 1"
       class="hidden z-50 bg-primary-700 py-2 rounded-md group-hover:block"
     >
-      <a
+      <RouterLink
         v-for="link in linkList"
         :key="link.name"
-        :href="link.link"
+        :to="link.link"
         class="block px-1 py-2 lg:text-sm text-[11px] text-white hover:bg-primary-50 hover:rounded-sm hover:text-primary-900"
         :class="{
           'bg-transparent hover:rounded-m': theme === 'light',
@@ -60,7 +60,7 @@
         @click="handleLinkClick(link)"
       >
         {{ link.name }}
-      </a>
+      </RouterLink>
     </div>
   </button>
 </template>
@@ -68,6 +68,7 @@
 <script setup>
 // reference: https://stackoverflow.com/questions/60917112/displaying-button-when-hovering-over-div-in-tailwindcss
 import { defineProps, toRefs } from "vue";
+import { RouterLink } from "vue-router";
 
 const props = defineProps({
   theme: {
