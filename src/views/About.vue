@@ -1,4 +1,5 @@
 <template>
+  <Breadcrumb/>
   <div class="max-w-[1200px] mx-auto text-xl text-content px-10">
     <h1 class="text-[40px] font-bold mb-5">活動宗旨</h1>
     <div class="py-8 lg:px-12">
@@ -43,4 +44,5 @@
 
 <script setup>
 import MemberCard from '../components/MemberCard.vue';
+import Breadcrumb from '../components/Breadcrumb.vue';
 </script>
