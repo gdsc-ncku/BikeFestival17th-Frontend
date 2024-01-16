@@ -13,10 +13,6 @@ var _About = _interopRequireDefault(require("./views/About.vue"));
 
 var _Info = _interopRequireDefault(require("./views/Info.vue"));
 
-var _Souvenir = _interopRequireDefault(require("./views/Souvenir.vue"));
-
-var _Partners = _interopRequireDefault(require("./views/Partners.vue"));
-
 var _Activities = _interopRequireDefault(require("./views/activities/Activities.vue"));
 
 var _MainStage = _interopRequireDefault(require("./views/activities/MainStage.vue"));
@@ -46,6 +42,10 @@ var _departmentHandbook = _interopRequireDefault(require("./data/departmentHandb
 var _featuredArticles = _interopRequireDefault(require("./data/featuredArticles.json"));
 
 var _letterToHighSchoolStudents = _interopRequireDefault(require("./data/letterToHighSchoolStudents.json"));
+
+var _Souvenir = _interopRequireDefault(require("./views/Souvenir.vue"));
+
+var _Partners = _interopRequireDefault(require("./views/Partners.vue"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -114,12 +114,24 @@ var routes = [{
   name: '科系手冊',
   component: _DepartmentHandbook["default"]
 }, {
+  path: '/forum/departmentHandbook/:department',
+  name: '科系手冊-科系',
+  component: _DepartmentHandbook["default"]
+}, {
   path: '/forum/featuredArticles',
   name: '專欄文章',
   component: _FeaturedArticles["default"]
 }, {
+  path: '/forum/featuredArticles/:article',
+  name: '專欄文章-貼文',
+  component: _FeaturedArticles["default"]
+}, {
   path: '/forum/letterToHighSchoolStudents',
   name: '給高中生的一封信',
+  component: _LetterToHighSchoolStudents["default"]
+}, {
+  path: '/forum/letterToHighSchoolStudents/:letter',
+  name: '給高中生的一封信-貼文',
   component: _LetterToHighSchoolStudents["default"]
 }, {
   path: '/partners',
@@ -129,36 +141,7 @@ var routes = [{
   path: '/souvenir',
   name: '紀念品小舖',
   component: _Souvenir["default"]
-}]; // add routes for each department under "departmentHandbook" page
-
-_departmentHandbook["default"].map(function (college) {
-  college.departments.map(function (department) {
-    routes.push({
-      path: '/forum/departmentHandBook/' + department.id,
-      name: department.name,
-      component: _DepartmentHandbook["default"]
-    });
-  });
-}); // add routes for each article under "featuredArticles" page
-
-
-_featuredArticles["default"].map(function (article) {
-  routes.push({
-    path: '/forum/featuredArticles/' + article.id,
-    name: article.title,
-    component: _FeaturedArticles["default"]
-  });
-}); // add routes for each letter under "letterToHighSchoolStudents" page
-
-
-_letterToHighSchoolStudents["default"].map(function (letter) {
-  routes.push({
-    path: '/forum/letterToHighSchoolStudents/' + letter.id,
-    name: letter.title,
-    component: _LetterToHighSchoolStudents["default"]
-  });
-});
-
+}];
 var router = (0, _vueRouter.createRouter)({
   history: (0, _vueRouter.createWebHistory)('/BikeFestival17th-Frontend/'),
   routes: routes
