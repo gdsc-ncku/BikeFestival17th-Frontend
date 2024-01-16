@@ -1,6 +1,6 @@
 <template>
   <div
-    class="navbar w-full fixed flex justify-center pt-2 pb-3 z-10 h-20"
+    class="navbar w-full fixed flex justify-center pt-2 pb-3 h-20 z-[100]"
     :class="{
       'bg-primary-50 shadow-lg': theme == 'dark',
     }"
