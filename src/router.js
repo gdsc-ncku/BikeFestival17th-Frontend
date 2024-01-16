@@ -19,6 +19,7 @@ import featuredArticlesData from "./data/featuredArticles.json";
 import letterToHighSchoolStudentsData from "./data/letterToHighSchoolStudents.json";
 import Souvenir from './views/Souvenir.vue';
 import Partners from './views/Partners.vue';
+import NotFound from './views/NotFound.vue';
 
 const routes = [
   { path: '/', name: '首頁', component: Home },
@@ -109,6 +110,7 @@ const routes = [
   },
   { path: '/partners', name: '合作夥伴', component: Partners },
   { path: '/souvenir', name: '紀念品小舖', component: Souvenir },
+  { path: '/:pathMatch(.*)*', name: '404', component: NotFound},
 ];
 
 const router = createRouter({
