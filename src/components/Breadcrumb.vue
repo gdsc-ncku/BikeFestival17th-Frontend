@@ -1,7 +1,7 @@
 <template>
   <div class="h-20"></div>
   <div class="h-20 max-w-[1200px] mx-auto my-0 flex items-center">
-    <div class="text-base">
+    <div class="fixed text-base">
       <router-link to="/">首頁 / </router-link>
       <template v-for="crumb in breadcrumbs">
           <router-link v-if="crumb.to === $route.path" :to="crumb.to"><b>{{ crumb.label }}</b></router-link>

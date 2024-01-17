@@ -1,5 +1,5 @@
 <template>
-   <Breadcrumb />
+  <Breadcrumb />
   <ActivityContent :list=activityDetails.immersiveExperience title="沉浸式體驗" />
 </template>
 

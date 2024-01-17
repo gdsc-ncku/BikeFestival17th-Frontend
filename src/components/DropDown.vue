@@ -1,27 +1,25 @@
 <template>
   <!-- only one link -->
   <div v-if="linkList.length == 1" class="flex flex-col justify-center">
-    <a
-      class="block text-xl font-bold"
+    <RouterLink
+      class="block font-bold text-sm lg:text-xl md:text-base"
       :class="{
         'text-white': theme === 'light',
         'dark-content': theme === 'dark',
       }"
-      :href="linkList[0].link"
-      >{{ title }}</a
+      :to="linkList[0].link"
+      >{{ title }}</RouterLink
     >
   </div>
 
   <!-- multi links -->
-  <button
-    v-if="linkList.length > 1"
-    class="group"
-    type="button"
-    @click="toggleCollapse"
-  >
-    <div class="flex justify-center gap-x-2">
+  <button v-if="linkList.length > 1" class="group lg:hover:mt-4 md:hover:mt-[18px] hover:mt-[20px]" type="button">
+    <div
+      class="flex justify-center lg:gap-x-2 md:gap-x-1"
+      :class="{ 'lg:px-[9px] md:px-[6px] px-4': hasLongWord(linkList) }"
+    >
       <span
-        class="text-xl font-bold"
+        class="font-bold text-sm lg:text-xl md:text-base"
         :class="{
           'text-white': theme === 'light',
           'dark-content': theme === 'dark',
@@ -49,30 +47,28 @@
 
     <div
       v-if="linkList.length > 1"
-      class="fixed hidden group-hover:block group-hover:z-50"
+      class="hidden z-50 bg-primary-700 py-2 rounded-md group-hover:block"
     >
-      <a
+      <RouterLink
         v-for="link in linkList"
         :key="link.name"
-        :href="link.link"
-        class="block px-1 py-2 text-sm"
+        :to="link.link"
+        class="block px-1 py-2 lg:text-sm text-[11px] text-white hover:bg-primary-50 hover:rounded-sm hover:text-primary-900"
         :class="{
-          'text-white bg-transparent hover:rounded-md hover:bg-slate-500 hover:bg-opacity-35':
-            theme === 'light',
-          'text-black bg-primary-50 bg-opacity-20 hover:bg-opacity-35 hover:rounded-md':
-            theme === 'dark',
+          'bg-transparent hover:rounded-m': theme === 'light',
         }"
         @click="handleLinkClick(link)"
       >
         {{ link.name }}
-      </a>
+      </RouterLink>
     </div>
   </button>
 </template>
 
 <script setup>
 // reference: https://stackoverflow.com/questions/60917112/displaying-button-when-hovering-over-div-in-tailwindcss
-import { defineProps, toRefs, ref } from "vue";
+import { defineProps, toRefs } from "vue";
+import { RouterLink } from "vue-router";
 
 const props = defineProps({
   theme: {
@@ -81,7 +77,7 @@ const props = defineProps({
   },
   title: {
     type: String,
-    default: "單車節", // 參加活動 , 關於單車節 , 知識論壇 , 合作夥伴 , 紀念品預購 ...
+    default: "單車節", // 參加活動 , 關於單車節 , 知識論壇 , 合作夥伴 , 紀念品小舖 ...
   },
   linkList: {
     type: Array,
@@ -95,6 +91,10 @@ const props = defineProps({
 });
 
 const { theme, title, linkList } = toRefs(props);
+
+const hasLongWord = (linkList) => {
+  return linkList.some((link) => link.name.length > 5);
+};
 </script>
 
 <style scoped>
