@@ -5,8 +5,17 @@
     <link rel="icon" type="image/svg+xml" href="/BikeFestival17th-Frontend/bike.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap">
+    <link rel="manifest" href="/BikeFestival17th-Frontend/assets/manifest-Nr_mw7rV.json" />
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/serviceWorker.js")
+          .then(res => console.log("service worker registered"))
+          .catch(err => console.log("service worker not registered", err));
+      }
+    </script>
     <title>成大單車節 2024</title>
-    <script type="module" crossorigin src="/BikeFestival17th-Frontend/assets/index-dORYuxi1.js"></script>
+    <script type="module" crossorigin src="/BikeFestival17th-Frontend/assets/index-8yr0BUOh.js"></script>
     <link rel="stylesheet" crossorigin href="/BikeFestival17th-Frontend/assets/index-BfgEbNsY.css">
   </head>
   <body>
