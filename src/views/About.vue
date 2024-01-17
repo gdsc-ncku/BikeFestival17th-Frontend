@@ -44,4 +44,5 @@
 
 <script setup>
 import MemberCard from '../components/MemberCard.vue';
+import Breadcrumb from '../components/Breadcrumb.vue';
 </script>
