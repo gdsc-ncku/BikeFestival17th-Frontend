@@ -26,7 +26,7 @@
       </div>
 
       <div class="flex flex-col justify-center">
-        <RouterLink
+        <a
           href="#"
           class="block text-center font-bold bg-primary-900 rounded-full lg:h-14 lg:w-36 lg:text-xl md:h-10 md:w-24 h-8 w-20"
         >
@@ -36,7 +36,7 @@
               >即刻報名</span
             >
           </div>
-        </RouterLink>
+        </a>
       </div>
     </nav>
   </div>
