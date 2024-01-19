@@ -27,7 +27,7 @@
 
       <div class="flex flex-col justify-center">
         <a
-          href="#"
+          :href="fullPath"
           class="block text-center font-bold bg-primary-900 rounded-full lg:h-14 lg:w-36 lg:text-xl md:h-10 md:w-24 h-8 w-20"
         >
           <div class="flex flex-col justify-center h-full">
@@ -46,7 +46,7 @@
 import navBarList from "../data/navBar.json";
 import DropDown from "./DropDown.vue";
 import { defineProps, onMounted, ref, computed, watch } from "vue";
-import { useRoute , RouterLink } from "vue-router";
+import { useRoute , RouterLink, useRouter } from "vue-router";
 
 const theme = ref("dark");
 const props = defineProps({
@@ -56,9 +56,21 @@ const props = defineProps({
   },
 });
 
-const router = useRoute();
+const route = useRoute();
+const router = useRouter();
+// Compute the full path including query parameters
+const fullPath = computed(() => {
+  // TODO: read from env
+  const loginUrl = "http://localhost:8000/line-login/auth";
+  const basePath = router.options.history.base;
+  // let query = Object.keys(route.query)
+  //   .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(route.query[key])}`)
+  //   .join('&');
+  return `${loginUrl}?redirect_path=${basePath}${route.fullPath}`;
+});
+
 const path = computed(() => {
-  return router.path;
+  return route.path;
 });
 
 // watch if path changed
