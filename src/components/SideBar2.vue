@@ -10,9 +10,9 @@
         </svg>
         <input type="checkbox" class="hidden" />
       </label>
-      <a v-for="content in subtitleData.content" :href="content.link" class="text-base p-2 rounded" :data-selected="content.selected">{{
+      <RouterLink v-for="content in subtitleData.content" :to="content.link" class="text-base p-2 rounded" :data-selected="content.selected">{{
         content.name
-      }}</a>
+      }}</RouterLink>
     </div>
   </div>
 </template>
