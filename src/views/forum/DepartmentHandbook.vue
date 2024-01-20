@@ -28,13 +28,13 @@
     <div class="text-2xl text-content font-bold max-sm:text-center">相關活動行程</div>
     <RouterLink class="text-primary-900 text-right sm:text-2xl text-base font-bold underline" to="/forum/departmentHandbook/" >回到系院列表</RouterLink>
   </div>
-  <SideBar title="科系手冊" :list="sideBarData"
+  <SideBar2 title="科系手冊" :list="sideBarData"
     class="sm:fixed left-[9.75rem] top-[160px] max-sm:mx-11 max-sm:w-auto max-sm:mb-[2.37rem]" />
 </template>
 
 <script setup>
 import Breadcrumb from '@/components/Breadcrumb.vue';
-import SideBar from "@/components/SideBar.vue";
+import SideBar2 from "@/components/SideBar2.vue";
 import departmentHandbook from "../../data/departmentHandbook.json";
 import event from "../../data/event.json";
 import { computed, ref } from "vue";
