@@ -39,7 +39,7 @@
     </div>
   </div>
 
-  <!-- <div class="flex flex-col space-y-4">
+  <div class="flex flex-col space-y-4">
     <ScheduleCardSingle
       v-for="item in event"
       :key="item.id"
@@ -53,7 +53,7 @@
       :host="item.host"
       :location="item.location"
     />
-  </div> -->
+  </div>
 </template>
 
 <script setup>
