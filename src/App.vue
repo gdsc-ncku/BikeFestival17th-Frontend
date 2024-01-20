@@ -16,8 +16,13 @@ onMounted(() => {
 
 const auth = async () => {
   const data = await profile();
-  console.log(data.data);
-  console.log(data.msg);
+  if (data.success) {
+    // set user info in pinia store
+  } else {
+    // try to refresh token
+    // if success, call profile again and set user info in pinia store if the call is success
+    // if failed, do nothing
+  }
 };
 
 const props = defineProps({
