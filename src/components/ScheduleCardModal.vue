@@ -12,7 +12,7 @@
           <!-- right container -->
           <div class="flex flex-col justify-center">
             <span class="block text-primary-900 font-bold text-xl underline">{{
-              project
+              activity
             }}</span>
             <div class="flex justify-center gap-8">
               <span
@@ -80,7 +80,7 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  project: {
+  activity: {
     type: String,
     required: true,
   },
@@ -102,8 +102,8 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  speaker: {
-    //backend: event_speaker
+  host: {
+    //backend: event_host
     type: String,
     default: "暫無講者",
   },
@@ -122,5 +122,5 @@ const props = defineProps({
   },
 });
 
-const { id, link, speaker, location, date, startTime, endTime, saved } = props;
+const { id, link, host, location, date, startTime, endTime, saved } = props;
 </script>
