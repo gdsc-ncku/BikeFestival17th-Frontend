@@ -35,7 +35,7 @@
       <p class="block text-black text-base font-bold truncate">{{ name }}</p>
       <div class="flex justify-start gap-[5px]">
         <img
-          src="/BikeFestival17th-Frontend/schedule/time.svg"
+          :src="'/BikeFestival17th-Frontend/schedule/time.svg'"
           alt=""
           class="flex w-4 h-4"
         />
@@ -45,7 +45,7 @@
       </div>
       <div class="flex justify-start gap-[5px]">
         <img
-          src="/BikeFestival17th-Frontend/schedule/host.svg"
+          :src="'/BikeFestival17th-Frontend/schedule/host.svg'"
           alt=""
           class="flex w-4 h-4"
         />
@@ -53,7 +53,7 @@
       </div>
       <div class="flex justify-start gap-[5px]">
         <img
-          src="/BikeFestival17th-Frontend/schedule/location.svg"
+          :src="'/BikeFestival17th-Frontend/schedule/location.svg'"
           alt=""
           class="flex w-4 h-4"
         />
@@ -69,7 +69,7 @@
             >報名中</span
           >
           <img
-            src="/BikeFestival17th-Frontend/schedule/gesture-tap.svg"
+            :src="'/BikeFestival17th-Frontend/schedule/gesture-tap.svg'"
             alt=""
             class="flex w-4"
           />
