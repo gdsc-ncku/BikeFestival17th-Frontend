@@ -1,6 +1,8 @@
 <template>
   <div
     class="w-[155px] h-[190px] p-3 rounded-lg bg-[#FFF3EA] hover:bg-[#FFD7AF]"
+    @click="showModal = true"
+    @close="showModal = false"
   >
     <!-- top -->
     <div class="flex justify-between">
@@ -75,10 +77,32 @@
       </button>
     </div>
   </div>
+
+  <!-- modal -->
+  <Teleport to="body">
+    <!-- use the modal component, pass in the prop -->
+    <ScheduleCardModal
+      :show="showModal"
+      @close="showModal = false"
+      :id="id"
+      :project="project"
+      :description="description"
+      :name="name"
+      :date="date"
+      :startTime="startTime"
+      :endTime="endTime"
+      :speaker="speaker"
+      :location="location"
+      :link="link"
+      :saved="saved"
+    >
+    </ScheduleCardModal>
+  </Teleport>
 </template>
 
 <script setup>
-import { defineProps, onMounted } from "vue";
+import { defineProps, ref} from "vue";
+import ScheduleCardModal from "./ScheduleCardModal.vue";
 
 const props = defineProps({
   id: {
@@ -90,7 +114,7 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  description:{
+  description: {
     type: String,
     default: "暫無描述",
   },
@@ -144,21 +168,8 @@ const {
 } = props;
 
 const handleSave = () => {
-  props.saved = !props.saved;
+  console.log("saved");
 };
 
-onMounted(() => {
-  console.log({
-    id,
-    project,
-    name,
-    date,
-    startTime,
-    endTime,
-    speaker,
-    location,
-    link,
-    saved,
-  });
-});
+const showModal = ref(false);
 </script>
