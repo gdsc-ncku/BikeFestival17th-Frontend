@@ -8,7 +8,7 @@
     <div class="flex justify-between">
       <div class="flex flex-col justify-center">
         <span class="block text-primary-900 underline text-xs font-[350]">{{
-          project
+          activity
         }}</span>
       </div>
 
@@ -45,11 +45,11 @@
       </div>
       <div class="flex justify-start gap-[5px]">
         <img
-          src="/BikeFestival17th-Frontend/schedule/speaker.svg"
+          src="/BikeFestival17th-Frontend/schedule/host.svg"
           alt=""
           class="flex w-4 h-4"
         />
-        <p class="text-black text-xs font-[350] truncate">{{ speaker }}</p>
+        <p class="text-black text-xs font-[350] truncate">{{ host }}</p>
       </div>
       <div class="flex justify-start gap-[5px]">
         <img
@@ -85,13 +85,13 @@
       :show="showModal"
       @close="showModal = false"
       :id="id"
-      :project="project"
+      :activity="activity"
       :description="description"
       :name="name"
       :date="date"
       :startTime="startTime"
       :endTime="endTime"
-      :speaker="speaker"
+      :host="host"
       :location="location"
       :link="link"
       :saved="saved"
@@ -110,7 +110,7 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  project: {
+  activity: {
     type: String,
     required: true,
   },
@@ -136,7 +136,7 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  speaker: {
+  host: {
     type: String,
     required: true,
   },
@@ -156,12 +156,12 @@ const props = defineProps({
 
 const {
   id,
-  project,
+  activity,
   name,
   date,
   startTime,
   endTime,
-  speaker,
+  host,
   location,
   link,
   saved,
