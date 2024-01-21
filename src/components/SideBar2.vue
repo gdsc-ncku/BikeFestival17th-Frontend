@@ -1,5 +1,5 @@
 <template>
-  <div class="shadow-[6px_7px_2px_0px_rgba(0,0,0,0.25)] w-60 py-1 px-2 rounded-lg border-t-2 border-t-primary-900">
+  <div class="shadow-[6px_7px_2px_0px_rgba(0,0,0,0.25)] w-60 py-1 px-2 rounded-lg border-t-2 border-t-primary-900 bg-white">
     <div class="text-2xl p-2 text-primary-900 font-bold">{{ title }}</div>
     <div class="subtitle mx-2 select-none" v-for="subtitleData in list">
       <label class="text-xl font-bold py-2 flex items-center justify-between">
