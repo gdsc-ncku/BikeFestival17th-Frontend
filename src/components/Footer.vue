@@ -16,7 +16,7 @@
             <div class="lg:flex hidden">
                 <RouterLink to="/about">關於單車節</RouterLink>
                 <p>　｜　</p>
-                <RouterLink to="/info">參加資訊</RouterLink>
+                <RouterLink to="/info/traffic">參加資訊</RouterLink>
             </div>
             <div class="lg:flex hidden">
                 <RouterLink to="/activities">主題活動</RouterLink>
