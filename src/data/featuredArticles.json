@@ -6,7 +6,14 @@
     "author": "林盈辰",
     "uploadDate": "2023-12-28",
     "content": "",
-    "imageURL": ["../assets/Forum_page/FeaturedArticles/selfLearnin_1/1.webp", "../assets/Forum_page/FeaturedArticles/selfLearnin_1/2.webp", "../assets/Forum_page/FeaturedArticles/selfLearnin_1/3.webp", "../assets/Forum_page/FeaturedArticles/selfLearnin_1/4.webp", "../assets/Forum_page/FeaturedArticles/selfLearnin_1/5.webp", "../assets/Forum_page/FeaturedArticles/selfLearnin_1/6.webp"]
+    "imageURL": [
+      "/BikeFestival17th-Frontend/forum_page/FeaturedArticles/selfLearning_1/1.webp",
+      "/BikeFestival17th-Frontend/forum_page/FeaturedArticles/selfLearning_1/2.webp",
+      "/BikeFestival17th-Frontend/forum_page/FeaturedArticles/selfLearning_1/3.webp",
+      "/BikeFestival17th-Frontend/forum_page/FeaturedArticles/selfLearning_1/4.webp",
+      "/BikeFestival17th-Frontend/forum_page/FeaturedArticles/selfLearning_1/5.webp",
+      "/BikeFestival17th-Frontend/forum_page/FeaturedArticles/selfLearning_1/6.webp"
+    ]
   },
   {
     "id": "selfLearning_2",
@@ -153,4 +160,3 @@
     "imageURL": []
   }
 ]
-
