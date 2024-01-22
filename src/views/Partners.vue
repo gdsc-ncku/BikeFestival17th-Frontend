@@ -19,13 +19,13 @@
 <script setup>
   // Data
   const sponsors = [
-    "/logo-dark.svg",
-    "/logo-dark.svg",
-    "/logo-dark.svg",
-    "/logo-dark.svg",
-    "/logo-dark.svg",
-    "/logo-dark.svg",
-    "/logo-dark.svg",
-    "/logo-dark.svg",
-  ]
+    "public/logo-dark.svg",
+    "public/logo-dark.svg",
+    "public/logo-dark.svg",
+    "public/logo-dark.svg",
+    "public/logo-dark.svg",
+    "public/logo-dark.svg",
+    "public/logo-dark.svg",
+    "public/logo-dark.svg",
+  ];
 </script>
