@@ -3,27 +3,27 @@
     <!-- z-index + mask -->
     <div
       v-if="show"
-      class="z-[9999] fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+      class="z-[9999] fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 max-sm:flex-col max-sm:justify-end"
     >
-      <div class="w-[720px] h-[600px] bg-white px-9 py-10 rounded">
+      <div class="sm:w-[720px] w-[100vw] h-[600px] bg-white px-9 py-10 sm:rounded sm:rounded max-sm:rounded-tl-[1.25rem] max-sm:rounded-tr-[1.25rem]">
         <!-- top -->
 
         <div class="flex justify-between">
           <!-- right container -->
-          <div class="flex flex-col justify-center">
+          <div class="flex flex-col justify-center max-sm:max-w-[calc(100%_-_51px)]">
             <span class="block text-primary-900 font-bold text-xl underline">{{
               activity
             }}</span>
-            <div class="flex justify-center gap-8">
+            <div class="flex sm:justify-center gap-8 max-sm:flex-wrap max-sm:gap-y-2">
               <span
-                class="text-black font-bold text-[40px] max-w-[350px] truncate"
+                class="text-black font-bold sm:text-[40px] text-xl sm:max-w-[350px] truncate"
               >
                 {{ name }}
               </span>
               <a
                 :href="link"
                 target="_blank"
-                class="font-bold text-xl text-white bg-primary-900 h-[50px] rounded-md px-3 flex flex-col justify-center"
+                class="font-bold text-xl max-sm:text-base text-white bg-primary-900 h-[50px] rounded-md px-3 flex flex-col justify-center"
               >
                 即刻報名
               </a>
@@ -62,7 +62,7 @@
         </div>
         <!-- description -->
         <div class="mt-3">
-          <p class="text-black text-xl font-[400]">{{ description }}</p>
+          <p class="text-black sm:text-xl text-base font-[400]">{{ description }}</p>
         </div>
       </div>
     </div>
