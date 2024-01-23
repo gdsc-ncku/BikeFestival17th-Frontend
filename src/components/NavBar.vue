@@ -81,13 +81,18 @@ onMounted(() => {
 
     if (window.innerWidth >= 1024) {
       // desktop
-      if (window.scrollY > 500) {
+      if (window.scrollY > 80) {
         theme.value = "dark";
       } else {
         theme.value = "light";
       }
     } else {
       // mobile
+      if (window.scrollY > 80) {
+        theme.value = "dark";
+      } else {
+        theme.value = "light";
+      }
     }
   });
 });
