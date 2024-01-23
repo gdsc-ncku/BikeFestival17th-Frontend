@@ -1,6 +1,11 @@
 <template>
   <div
-    class="w-[155px] h-[190px] p-3 rounded-lg bg-[#FFF3EA] hover:bg-[#FFD7AF]"
+    class="p-3 rounded-lg bg-[#FFF3EA] hover:bg-[#FFD7AF]"
+    :style="`
+      height: ${height ?? '190px'};
+      width: ${width ?? '155px'};
+      ${height ? 'display: flex; flex-direction: column; justify-content: center' : ''}
+    `"
     @click="showModal = true"
     @close="showModal = false"
   >
@@ -151,6 +156,14 @@ const props = defineProps({
   saved: {
     type: Boolean,
     default: false,
+  },
+  height: {
+    type: String,
+    required: false,
+  },
+  width: {
+    type: String,
+    required: false,
   },
 });
 
