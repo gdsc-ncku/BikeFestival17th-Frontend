@@ -1,18 +1,19 @@
 <template>
   <div
-    class="w-full h-[900px] bg-cover bg-center relative"
+    class="w-full lg:h-[40rem] h-[30rem] bg-cover bg-center relative"
     style="background-image: url('/BikeFestival17th-Frontend/home/key-visual.png')"
   ></div>
 
   <!-- Key Visual Design -->
-  <div
-    class="absolute lg:top-80 lg:left-36 top-56 left-20 text-white font-black lg:text-5xl text-4xl"
-  >
+  <div class="slide-left-in w-full absolute lg:top-70 lg:pl-36 top-40 pl-10 text-white font-black lg:text-5xl text-4xl">
     <h1 class="">成大單車節，</h1>
-    <h1 class="mt-3">牽起你與科系的橋樑</h1>
-    <h1 class="mt-5 font-normal lg:text-4xl text-3xl">
+    <h1 class="mt-3 ">牽起你與科系的橋樑</h1>
+    <h1 class="mt-5 font-normal lg:text-4xl text-2xl">
       2024年3月2~3日 ＠成大光復校區
     </h1>
+  </div>
+  <div class="arrow-bounce absolute w-full flex justify-center top-[24rem] opacity-0">
+    <img class="lg:h-20 h-10" src="/BikeFestival17th-Frontend/home/down-chevron.svg">
   </div>
 
   <!-- Story -->
@@ -205,7 +206,7 @@
     <div class="w-full flex justify-center">
       <div
         class="max-w-[1200px] mt-11 grid justify-center gap-x-8 gap-y-10 sm:grid-cols-5 grid-cols-2 *:mx-auto *:block sm:*:w-48 *:w-40"
-        grid gap-x-8 gap-y-4 sm:grid-cols-3 grid-cols-2 
+        grid gap-x-8 gap-y-4 sm:grid-cols-3 grid-cols-2
       >
         <img  src="https://fakeimg.pl/200x200" />
         <img  src="https://fakeimg.pl/200x200" />
@@ -236,5 +237,39 @@ import { RouterLink } from 'vue-router';
   height: 96px;
   flex-shrink: 0;
   overflow: hidden;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+.arrow-bounce {
+  animation:
+    fadeIn 1s ease-out forwards 1s,
+    bounce 2s infinite 1s;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-left-in {
+  animation: slideInFromLeft 1s ease-out forwards;
 }
 </style>
