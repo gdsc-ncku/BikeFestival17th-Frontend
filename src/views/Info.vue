@@ -2,22 +2,45 @@
   <Breadcrumb />
   <div class="lg:max-w-[1200px] max-w-[370px] mx-auto">
     <h1 class="lg:text-5xl text-4xl font-bold text-content">參加資訊</h1>
-    <TabBar :tabs="tabs" @tab-index="ChangeContent"/>
-    <Traffic v-if="target === 0"/>
-    <Map v-if="target === 1"/>
-    <Schedule v-if="target === 2"/>
-    <MySchedule v-if="target === 3"/>
+    <TabBar :tabs="tabs" @tab-index="ChangeContent" :currTarget="target"/>
+    <Traffic v-if="target === 0 && path === '/info/traffic'" />
+    <Map v-if="target === 1 && path === '/info/map'" />
+    <Schedule v-if="target === 2 && path === '/info/schedule'" />
+    <MySchedule v-if="target === 3 && path === '/info/mySchedule'" />
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, getCurrentInstance, onUpdated, onMounted } from 'vue';
 import Breadcrumb from '@/components/Breadcrumb.vue';
 import Traffic from './info/Traffic.vue';
 import Map from './info/Map.vue';
 import Schedule from './info/Schedule.vue';
 import MySchedule from './info/MySchedule.vue';
 import TabBar from '../components/TabBar.vue';
+
+let instance;
+const path = ref("");
+const target = ref(0);
+
+const ChangeTarget = () => {
+  if(path.value == '/info/traffic') target.value = 0;
+  if(path.value == '/info/map') target.value = 1;
+  if(path.value == '/info/schedule') target.value = 2;
+  if(path.value == '/info/mySchedule') target.value = 3;
+}
+
+onMounted(() => {
+  instance = getCurrentInstance();
+  path.value = instance.proxy.$route.path;
+  ChangeTarget();
+});
+
+onUpdated(() => {
+  instance = getCurrentInstance();
+  path.value = instance.proxy.$route.path;
+  ChangeTarget();
+});
 
 const tabs = ref([ //TabBar tabs
   {
@@ -46,7 +69,6 @@ const tabs = ref([ //TabBar tabs
   }
 ]);
 
-const target = ref(0);
 
 const ChangeContent = (i) => {
   target.value = i;

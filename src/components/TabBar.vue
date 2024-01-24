@@ -8,9 +8,11 @@
 
 <script setup>
 import { ref } from 'vue';
+
 const props = defineProps({
-  tabs: Array
+  tabs: Array,
+  currTarget: Number
 });
 
-const target = ref(0);
+const target = ref(props.currTarget);
 </script>

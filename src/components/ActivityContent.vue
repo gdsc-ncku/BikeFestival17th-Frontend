@@ -13,7 +13,11 @@ background: linear-gradient(0deg, #404040 0%, rgba(217, 217, 217, 0.00) 100%);" 
       </div>
       
       <div v-for="(item, index) in props.list" :key=index class="text-content text-xl mb-72">
-        <h2 :id="'item_' + index" class="text-3xl font-bold mb-5 bg-[#FF5C0045] w-auto inline-block">{{ item.subtitle }}</h2>
+        <div class="w-fit">
+          <h2 :id="'item_' + index" class="text-3xl font-bold block -mb-3">{{ item.subtitle }}</h2>
+        <div class="bg-[#FF5C0045] h-6 -mt-10 ml-4 w-full inline-block"></div>
+        </div>
+        
         <h3 class="text-2xl font-bold mb-5">活動介紹</h3>
         <div v-html=item.intro class="mb-5"></div>
         <h3 class="text-2xl font-bold mb-5">活動地點</h3>
