@@ -1,7 +1,7 @@
 <template>
   <!-- Key Visual Design -->
   <div
-    class="relative w-full lg:h-screen h-[30rem] bg-cover bg-center"
+    class="relative w-full h-screen bg-cover bg-center"
     style="background-image: url('/BikeFestival17th-Frontend/home/key-visual.png')"
   >
     <div class="slide-left-in max-w-[1200px] mx-auto opacity-0 text-white font-black lg:text-5xl text-4xl">
