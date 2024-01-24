@@ -10,5 +10,6 @@
     body {
         background-image: url(/bg_noise_texture.svg);
         background-color: #FFF8F2;
+        letter-spacing: 0.2rem;
     }
 }
