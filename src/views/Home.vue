@@ -13,7 +13,7 @@
     </h1>
   </div>
   <div class="arrow-bounce absolute w-full flex justify-center top-[24rem] opacity-0">
-    <img class="lg:h-20 h-10" src="/BikeFestival17th-Frontend/home/down-chevron.svg">
+    <img class="lg:h-20 h-10" :src="downChevron">
   </div>
 
   <!-- Story -->
@@ -22,7 +22,7 @@
       <h2 class="font-bold text-content xl:text-4xl lg:text-3xl text-2xl md:mb-6 mb-7 sm:p-0 px-7">
         單車故事
       </h2>
-      <div class="typewriter text-content xl:text-2xl lg:text-base text-sm">
+      <div id="typewriter" class="pr-6 text-content xl:text-2xl lg:text-base text-sm">
         <p>成大單車節，致力於弭平高中與大學端之資訊落差。</p>
         <p>我們創造對話的平台，讓身處第一線戰場的大學生，</p>
         <p>分享屬於我們的故事，激盪出的火花與羈絆，將是你</p>
@@ -210,7 +210,18 @@
 
 <script setup>
 import { RouterLink } from 'vue-router';
+import downChevron from '@/assets/down-chevron.svg';
 
+document.addEventListener('scroll', function() {
+  const element = document.querySelector('#typewriter');
+  console.log(element);
+  const position = element.getBoundingClientRect();
+  console.log(position);
+
+  if (position.top < window.innerHeight && position.bottom >= 0) {
+    element.classList.add('typewriter');
+  }
+});
 </script>
 
 <style scoped>
