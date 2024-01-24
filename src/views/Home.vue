@@ -1,45 +1,34 @@
 <template>
   <div
-    class="w-full h-[900px] bg-cover bg-center relative"
+    class="w-full lg:h-[40rem] h-[30rem] bg-cover bg-center relative"
     style="background-image: url('/BikeFestival17th-Frontend/home/key-visual.png')"
   ></div>
 
   <!-- Key Visual Design -->
-  <div
-    class="absolute lg:top-80 lg:left-36 top-56 left-20 text-white font-black lg:text-5xl text-4xl"
-  >
+  <div class="slide-left-in opacity-0 w-full absolute lg:top-70 lg:pl-36 top-40 pl-10 text-white font-black lg:text-5xl text-4xl">
     <h1 class="">成大單車節，</h1>
-    <h1 class="mt-3">牽起你與科系的橋樑</h1>
-    <h1 class="mt-5 font-normal lg:text-4xl text-3xl">
+    <h1 class="mt-3 ">構築屬於你的大學藍圖</h1>
+    <h1 class="mt-5 font-normal lg:text-4xl text-2xl">
       2024年3月2~3日 ＠成大光復校區
     </h1>
   </div>
+  <div class="arrow-bounce absolute w-full flex justify-center top-[24rem] opacity-0">
+    <img class="lg:h-20 h-10" :src="downChevron">
+  </div>
 
   <!-- Story -->
-  <div
-    class="sm:flex sm:justify-evenly xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pt-10 bg-primary-50"
-  >
+  <div class="sm:flex sm:justify-evenly xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pt-10 bg-primary-50">
     <div class="">
-      <h2
-        class="font-bold text-content xl:text-4xl lg:text-3xl text-2xl md:mb-6 mb-7 sm:p-0 px-7"
-      >
+      <h2 class="font-bold text-content xl:text-4xl lg:text-3xl text-2xl md:mb-6 mb-7 sm:p-0 px-7">
         單車故事
       </h2>
-      <div class="text-content xl:text-2xl lg:text-base text-sm">
-        <!-- https://stackoverflow.com/questions/67119992/how-to-access-all-the-direct-children-of-a-div-in-tailwindcss -->
-        <div class="*:w-max w-max sm:m-0 mx-auto">
-          <p>／ 單車十七 夢想前行／</p>
-          <p>你的人生，應被勇敢照亮。</p>
-          <p>美好時光，指引夢想前行。</p>
-          <p>​獻給──</p>
-          <p>在升學道路上迷惘的你；</p>
-          <p>在追夢旅程中躊躇的你。</p>
-          <br />
-          <p>成大單車節期待為你提供更多可能性，</p>
-          <p>​突破困境，聆聽內心，尋覓所愛。</p>
-          <br />
-          <p>／ 2 0 2 4 春天， 一起在單車節找到心之所向。／​​</p>
-        </div>
+      <div id="typewriter" class="pr-6 text-content xl:text-2xl lg:text-base text-sm">
+        <p>成大單車節，致力於弭平高中與大學端之資訊落差。</p>
+        <p>我們創造對話的平台，讓身處第一線戰場的大學生，</p>
+        <p>分享屬於我們的故事，激盪出的火花與羈絆，將是你</p>
+        <p>們勇敢前行的最佳後盾。</p>
+        <p>今年三月二號、三號，一起來到成大單車節，讓我們</p>
+        <p>攜手前行，帶你一步步構築屬於自己的大學藍圖。</p>
       </div>
     </div>
     <div class="lg:mt-[64px] mt-12">
@@ -55,9 +44,7 @@
   </div>
 
   <!-- psychological test -->
-  <div
-    class="sm:flex sm:justify-evenly xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pb-10 bg-primary-900"
-  >
+  <div class="sm:flex sm:justify-evenly xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pb-10 bg-primary-900">
     <!-- left image container -->
     <div>
       <img
@@ -67,10 +54,7 @@
       />
       <!-- desktop button link -->
       <div class="sm:mt-10 w-full sm:flex sm:justify-center hidden">
-        <RouterLink
-          class="flex lg:w-40 lg:h-16 lg:p-0 px-6 py-3 justify-center bg-white rounded-lg"
-          to="#"
-        >
+        <RouterLink to="#" class="flex lg:w-40 lg:h-16 lg:p-0 px-6 py-3 justify-center bg-white rounded-lg">
           <div class="flex flex-col justify-center">
             <span class="block text-primary-900 font-bold"> 即刻遊玩 </span>
           </div>
@@ -205,7 +189,7 @@
     <div class="w-full flex justify-center">
       <div
         class="max-w-[1200px] mt-11 grid justify-center gap-x-8 gap-y-10 sm:grid-cols-5 grid-cols-2 *:mx-auto *:block sm:*:w-48 *:w-40"
-        grid gap-x-8 gap-y-4 sm:grid-cols-3 grid-cols-2 
+        grid gap-x-8 gap-y-4 sm:grid-cols-3 grid-cols-2
       >
         <img  src="https://fakeimg.pl/200x200" />
         <img  src="https://fakeimg.pl/200x200" />
@@ -226,7 +210,18 @@
 
 <script setup>
 import { RouterLink } from 'vue-router';
+import downChevron from '@/assets/down-chevron.svg';
 
+document.addEventListener('scroll', function() {
+  const element = document.querySelector('#typewriter');
+  console.log(element);
+  const position = element.getBoundingClientRect();
+  console.log(position);
+
+  if (position.top < window.innerHeight && position.bottom >= 0) {
+    element.classList.add('typewriter');
+  }
+});
 </script>
 
 <style scoped>
@@ -237,4 +232,75 @@ import { RouterLink } from 'vue-router';
   flex-shrink: 0;
   overflow: hidden;
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+.arrow-bounce {
+  animation:
+    fadeIn 1s ease-out forwards 1.5s,
+    bounce 2s infinite 1.5s;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-left-in {
+  animation: slideInFromLeft 1.5s ease-out forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+    opacity: 1;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+@keyframes fadeOutCursor {
+  to { border-color: transparent; }
+}
+
+.typewriter p{
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0;
+  border-right: .15em solid orange;
+  animation:
+    typing 2s steps(30, end) forwards,
+    blink-caret .75s step-end infinite,
+    fadeOutCursor 1s forwards 2s;
+}
+
+.typewriter p:nth-child(1) { animation-delay: 0s, 0s, 2s; }
+.typewriter p:nth-child(2) { animation-delay: 2s, 2s, 4s; }
+.typewriter p:nth-child(3) { animation-delay: 4s, 4s, 6s; }
+.typewriter p:nth-child(4) { animation-delay: 6s, 6s, 8s; }
+.typewriter p:nth-child(5) { animation-delay: 8s, 8s, 10s; }
+.typewriter p:nth-child(6) { animation-delay: 10s, 10s, 12s; }
+
 </style>

@@ -12,6 +12,9 @@
 </template>
 
 <script>
+import departmentHandbookData from '../data/departmentHandbook.json';
+import featuredArticlesData from '../data/featuredArticles.json';
+
 export default {
   data() {
     return {
@@ -34,12 +37,33 @@ export default {
 
       if (this.$route.params) {
         const dynamicParam = Object.values(this.$route.params)[0];
-        // console.log(dynamicParam);
+        console.log(dynamicParam);
         if (dynamicParam) {
-          this.breadcrumbs.push({
-            to: this.$route.path,
-            label: dynamicParam,
-          });
+          const targetDepartment = departmentHandbookData.map((college) => {
+            return college.departments.find((department) => {
+              return department.id === dynamicParam;
+            });
+          }).filter(Boolean)[0]
+          // console.log(targetDepartment);
+
+          const targetArticle = featuredArticlesData.find((article) => {
+            return article.id === dynamicParam;
+          })
+          // console.log(targetArticle);
+
+          if (targetDepartment) {
+            this.breadcrumbs.push({
+              to: this.$route.path,
+              label: targetDepartment.name,
+            });
+          } else if (targetArticle) {
+            this.breadcrumbs.push({
+              to: this.$route.path,
+              label: targetArticle.title,
+            });
+          } else {
+            // error handling
+          }
         }
         // console.log(this.breadcrumbs);
       }
