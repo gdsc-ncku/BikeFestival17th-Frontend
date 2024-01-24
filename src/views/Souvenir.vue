@@ -1,7 +1,7 @@
 <template>
   <div class="h-20"></div>
   <div class="pt-20 pb-10 sm:px-[8.26rem] px-10 flex flex-col gap-5">
-    <h1 class="text-[#3A3A3A] font-bold text-center sm:text-5xl text-[2rem]">單車結限定紀念品</h1>
+    <h1 class="text-[#3A3A3A] font-bold text-center sm:text-5xl text-[2rem]">單車節限定紀念品</h1>
     <div class="w-full flex flex-wrap justify-between gap-[3.12rem]">
       <div v-for="(d, di) in data" class="sm:w-[calc(33%_-_2.08rem)] w-[21.375rem] h-[17.625rem]">
         <div class="text-center text-xl text-bold mb-3">{{ d.name }}</div>
