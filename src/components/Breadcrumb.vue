@@ -1,12 +1,13 @@
 <template>
   <div class="h-20"></div>
-  <div class="h-20 max-w-[1200px] mx-auto my-0 flex items-center">
-    <div class="fixed text-base">
-      <router-link to="/">首頁 / </router-link>
+  <div class="h-20 max-w-[1200px] mx-auto my-0 flex justify-end items-center relative">
+    <div class="fixed text-base bg-gray-300 rounded-md leading-8 z-50">
+      <router-link to="/">　首頁 / </router-link>
       <template v-for="crumb in breadcrumbs">
           <router-link v-if="crumb.to === $route.path" :to="crumb.to"><b>{{ crumb.label }}</b></router-link>
           <router-link v-else :to="crumb.to">{{ crumb.label }}</router-link>
       </template>
+      　
     </div>
   </div>
 </template>

@@ -48,7 +48,7 @@
   </div>
   <div v-else class="max-w-[1200px] sm:mx-auto sm:w-[72.815rem] mx-[1.81rem]">
     <div class="flex flex-col gap-4 mb-9">
-      <img v-if="selectedData.imageURL.length > 0" :src="selectedData.imageURL[0]" class="w-full rounded-[2.625rem] max-sm:hidden">
+      <img v-if="selectedData.imageURL.length > 0" :src="selectedData.imageURL[0]" class="w-1/2 rounded-[2.625rem] max-sm:hidden">
       <div class="font-bold text-[2.5rem]">{{ selectedData.title }}</div>
       <div class="text-primary-900 text-lg">{{ selectedData.author }}</div>
       <div class="text-primary-900 text-base">{{ `發布於 ${selectedData.uploadDate}` }}</div>
