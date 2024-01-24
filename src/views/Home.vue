@@ -1,34 +1,36 @@
 <template>
-  <div
-    class="w-full lg:h-[40rem] h-[30rem] bg-cover bg-center relative"
-    style="background-image: url('/BikeFestival17th-Frontend/home/key-visual.png')"
-  ></div>
-
   <!-- Key Visual Design -->
-  <div class="slide-left-in opacity-0 w-full absolute lg:top-70 lg:pl-36 top-40 pl-10 text-white font-black lg:text-5xl text-4xl">
-    <h1 class="">成大單車節，</h1>
-    <h1 class="mt-3 ">構築屬於你的大學藍圖</h1>
-    <h1 class="mt-5 font-normal lg:text-4xl text-2xl">
-      2024年3月2~3日 ＠成大光復校區
-    </h1>
-  </div>
-  <div class="arrow-bounce absolute w-full flex justify-center top-[24rem] opacity-0">
-    <img class="lg:h-20 h-10" :src="downChevron">
+  <div
+    class="relative w-full lg:h-screen h-[30rem] bg-cover bg-center"
+    style="background-image: url('/BikeFestival17th-Frontend/home/key-visual.png')"
+  >
+    <div class="slide-left-in max-w-[1200px] mx-auto opacity-0 text-white font-black lg:text-5xl text-4xl">
+      <div class="absolute top-[40vh]">
+        <h1 class="">成大單車節，</h1>
+        <h1 class="mt-3 ">構築屬於你的大學藍圖</h1>
+        <h1 class="mt-5 font-normal lg:text-4xl text-2xl">
+          2024年3月2~3日 ＠成大光復校區
+        </h1>
+      </div>
+    </div>
+    <div class="arrow-bounce absolute w-full flex justify-center top-[85vh] opacity-0">
+      <img class="lg:h-20 h-10" :src="downChevron">
+    </div>
   </div>
 
   <!-- Story -->
   <div class="sm:flex sm:justify-evenly xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pt-10 bg-primary-50">
     <div class="">
-      <h2 class="font-bold text-content xl:text-4xl lg:text-3xl text-2xl md:mb-6 mb-7 sm:p-0 px-7">
+      <h2 id="typewriter" class="font-bold text-content xl:text-4xl lg:text-3xl text-2xl md:mb-6 mb-7 sm:p-0 px-7">
         單車故事
       </h2>
-      <div id="typewriter" class="pr-6 text-content xl:text-2xl lg:text-base text-sm">
-        <p>成大單車節，致力於弭平高中與大學端之資訊落差。</p>
-        <p>我們創造對話的平台，讓身處第一線戰場的大學生，</p>
-        <p>分享屬於我們的故事，激盪出的火花與羈絆，將是你</p>
-        <p>們勇敢前行的最佳後盾。</p>
-        <p>今年三月二號、三號，一起來到成大單車節，讓我們</p>
-        <p>攜手前行，帶你一步步構築屬於自己的大學藍圖。</p>
+      <div class="pr-6 text-content xl:text-2xl lg:text-base text-sm">
+        <p>成大單車節，致力於弭平高中與大學端之資訊落差。<br>
+          我們創造對話的平台，讓身處第一線戰場的大學生，<br>
+          分享屬於我們的故事，激盪出的火花與羈絆，將是你<br>
+          們勇敢前行的最佳後盾。<br><br>
+          今年三月二號、三號，一起來到成大單車節，讓我們<br>
+          攜手前行，帶你一步步構築屬於自己的大學藍圖。</p>
       </div>
     </div>
     <div class="lg:mt-[64px] mt-12">
@@ -214,9 +216,7 @@ import downChevron from '@/assets/down-chevron.svg';
 
 document.addEventListener('scroll', function() {
   const element = document.querySelector('#typewriter');
-  console.log(element);
   const position = element.getBoundingClientRect();
-  console.log(position);
 
   if (position.top < window.innerHeight && position.bottom >= 0) {
     element.classList.add('typewriter');
@@ -285,7 +285,7 @@ document.addEventListener('scroll', function() {
   to { border-color: transparent; }
 }
 
-.typewriter p{
+.typewriter {
   overflow: hidden;
   white-space: nowrap;
   opacity: 0;
@@ -296,11 +296,11 @@ document.addEventListener('scroll', function() {
     fadeOutCursor 1s forwards 2s;
 }
 
-.typewriter p:nth-child(1) { animation-delay: 0s, 0s, 2s; }
+/* .typewriter p:nth-child(1) { animation-delay: 0s, 0s, 2s; }
 .typewriter p:nth-child(2) { animation-delay: 2s, 2s, 4s; }
 .typewriter p:nth-child(3) { animation-delay: 4s, 4s, 6s; }
 .typewriter p:nth-child(4) { animation-delay: 6s, 6s, 8s; }
 .typewriter p:nth-child(5) { animation-delay: 8s, 8s, 10s; }
-.typewriter p:nth-child(6) { animation-delay: 10s, 10s, 12s; }
+.typewriter p:nth-child(6) { animation-delay: 10s, 10s, 12s; } */
 
 </style>
