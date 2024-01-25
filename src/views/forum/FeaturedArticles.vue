@@ -62,7 +62,6 @@
     <div class="flex mb-40 gap-10 justify-center">
       <DiscCard
         class="max-sm:hidden max-sm:first:block"
-        v-for="d in relative"
         :title="d.title"
         :class_="d.category"
         :timestamp="d.uploadDate"

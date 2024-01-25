@@ -4,7 +4,7 @@
     class="relative w-full h-screen bg-cover bg-center"
     style="background-image: url('/BikeFestival17th-Frontend/home/key-visual.png')"
   >
-    <div class="slide-left-in max-w-[1200px] mx-auto opacity-0 text-white font-black lg:text-5xl text-4xl">
+    <div class="slide-left-in layout_content opacity-0 text-white font-black lg:text-5xl text-4xl">
       <div class="absolute top-[40vh]">
         <h1 class="">成大單車節，</h1>
         <h1 class="mt-3 ">構築屬於你的大學藍圖</h1>
@@ -19,17 +19,17 @@
   </div>
 
   <!-- Story -->
-  <div class="sm:flex sm:justify-evenly xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pt-10 bg-primary-50">
-    <div class="">
+  <div class="layout_content sm:flex sm:justify-evenly xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pt-10 bg-primary-50">
+    <div>
       <h2 id="typewriter" class="font-bold text-content xl:text-4xl lg:text-3xl text-2xl md:mb-6 mb-7 sm:p-0 px-7">
         單車故事
       </h2>
       <div class="pr-6 text-content xl:text-2xl lg:text-base text-sm">
-        <p>成大單車節，致力於弭平高中與大學端之資訊落差。<br>
-          我們創造對話的平台，讓身處第一線戰場的大學生，<br>
-          分享屬於我們的故事，激盪出的火花與羈絆，將是你<br>
+        <p>成大單車節，致力於弭平高中與大學端之資訊落差。
+          我們創造對話的平台，讓身處第一線戰場的大學生，
+          分享屬於我們的故事，激盪出的火花與羈絆，將是你
           們勇敢前行的最佳後盾。<br><br>
-          今年三月二號、三號，一起來到成大單車節，讓我們<br>
+          今年三月二號、三號，一起來到成大單車節，讓我們
           攜手前行，帶你一步步構築屬於自己的大學藍圖。</p>
       </div>
     </div>
@@ -65,26 +65,16 @@
     </div>
     <!-- right content container -->
     <div class="relative sm:p-0 py-10 sm:overflow-visible overflow-hidden">
-      <h2
-        class="mb-10 font-bold text-white xl:text-4xl lg:text-3xl text-2xl sm:p-0 px-7"
-      >
+      <h2 class="mb-10 font-bold text-white xl:text-4xl lg:text-3xl text-2xl sm:p-0 px-7">
         測驗 - 你是哪一種動物？
       </h2>
       <!-- ellipse on right container -->
-      <div
-        class="absolute ellipse xl:-translate-x-[50px] xl:translate-y-[60px] -translate-x-[20px] translate-y-[-20px] xl:left-0 left-[1/5]"
-      ></div>
-
-      <div
-        class="absolute ellipse xl:translate-x-[510px] xl:-translate-y-[30px] translate-x-[300px] -translate-y-[0px]"
-      ></div>
-
-      <div
-        class="absolute ellipse xl:translate-x-[280px] xl:translate-y-[170px] translate-x-[80px] translate-y-[90px] xl:left-0 left-[1/5]"
-      ></div>
+      <div class="absolute ellipse xl:-translate-x-[50px] xl:translate-y-[60px] -translate-x-[20px] translate-y-[-20px] xl:left-0 left-[1/5]"></div>
+      <div class="absolute ellipse xl:translate-x-[510px] xl:-translate-y-[30px] translate-x-[300px] -translate-y-[0px]"></div>
+      <div class="absolute ellipse xl:translate-x-[280px] xl:translate-y-[170px] translate-x-[80px] translate-y-[90px] xl:left-0 left-[1/5]"></div>
       <div class="opacity-95 text-white xl:text-2xl lg:text-base text-sm">
         <!-- https://stackoverflow.com/questions/50530436/how-to-keep-a-transformed-element-behind-another-element -->
-        <div class="*:w-max w-max sm:m-0 mx-auto">
+        <div class="*:w-max w-max sm:m-0 mx-auto"> <!-- 這邊要改自動換行，不然會跑版 -->
           <p>猶記得高三那年，一出學測考場，人生頓失方向。該</p>
           <p>讀哪間學校、報什麼學系？此起彼落的疑問，成了每</p>
           <p>個考生心中的困擾，也迴盪在每次與父母、導師的談</p>
@@ -106,16 +96,10 @@
   </div>
 
   <!-- 7 theme activities -->
-  <div
-    class="xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pt-10"
-  >
-    <h2 class="mb-12 font-bold text-content xl:text-4xl lg:text-3xl text-2xl">
-      七大主題活動
-    </h2>
+  <div class="xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pt-10">
+    <h2 class="mb-12 font-bold text-content xl:text-4xl lg:text-3xl text-2xl">七大主題活動</h2>
     <!-- carousel -->
-    <div
-      class="mx-auto sm:pt-16 sm:px-16 px-10 pb-10 rounded-lg border-2 border-content max-w-[1110px]"
-    >
+    <div class="mx-auto sm:pt-16 sm:px-16 px-10 pb-10 rounded-lg border-2 border-content max-w-[1110px]">
       <div class="w-full text-center mb-6">
         <h2 class="font-bold text-black xl:text-4xl lg:text-3xl text-2xl">
           活動標題
@@ -125,29 +109,45 @@
   </div>
 
   <!-- column articles -->
-  <div
-    class="sm:flex sm:justify-evenly xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pt-10"
-  >
-    <h2 class="mb-12 font-bold text-content xl:text-4xl lg:text-3xl text-2xl">
-      專欄文章
-    </h2>
+  <div class="flex flex-col items-center xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pt-10">
+    <h2 class="mb-12 font-bold text-content xl:text-4xl lg:text-3xl text-2xl">專欄文章</h2>
+    <div class="flex gap-5 md:flex-row flex-col">
+      <DiscCard
+        class="max-sm:hidden max-sm:first:block"
+        title="真假新聞分不清？不私藏網路新聞指南！"
+        class_="自學力"
+        timestamp="2023-12-28"
+        context="在這個資訊量龐大、訊息流通快速的世界，你是否曾經懷疑網路新聞的真實性？，是否曾被假新聞騙得團團轉？，這篇貼文直接報給你最實用的網路新聞指南！"
+        title-size="text-base"
+        link="/forum/featuredArticles/selfLearning_1"
+      />
+      <DiscCard
+        class="max-sm:hidden max-sm:first:block"
+        title="真假新聞分不清？不私藏網路新聞指南！"
+        class_="自學力"
+        timestamp="2023-12-28"
+        context="在這個資訊量龐大、訊息流通快速的世界，你是否曾經懷疑網路新聞的真實性？，是否曾被假新聞騙得團團轉？，這篇貼文直接報給你最實用的網路新聞指南！"
+        title-size="text-base"
+        link="/forum/featuredArticles/selfLearning_1"
+      />
+      <DiscCard
+        class="max-sm:hidden max-sm:first:block"
+        title="真假新聞分不清？不私藏網路新聞指南！"
+        class_="自學力"
+        timestamp="2023-12-28"
+        context="在這個資訊量龐大、訊息流通快速的世界，你是否曾經懷疑網路新聞的真實性？，是否曾被假新聞騙得團團轉？，這篇貼文直接報給你最實用的網路新聞指南！"
+        title-size="text-base"
+        link="/forum/featuredArticles/selfLearning_1"
+      />
+    </div>
   </div>
 
   <!-- souvenir -->
-  <div
-    class="sm:flex sm:justify-evenly xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pt-10 pb-12 px-8 bg-primary-900"
-  >
+  <div class="sm:flex sm:justify-evenly xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pt-10 pb-12 px-8 bg-primary-900">
     <div class="text-white xl:text-2xl lg:text-base text-sm">
-      <h2
-        class="font-bold text-white xl:text-4xl lg:text-3xl text-2xl lg:mb-12 sm:mb-10 mb-7"
-      >
-        紀念品小舖
-      </h2>
-      <div class="*:w-max w-max sm:m-0 mx-auto sm:m-0 mb-6">
-        <p>Horem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <p>Horem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <p>Horem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <p>Horem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h2 class="font-bold text-white xl:text-4xl lg:text-3xl text-2xl lg:mb-12 sm:mb-10 mb-7">紀念品小舖</h2>
+      <div class="*:w-max w-max sm:m-0 mx-auto mb-6">
+        <p>Horem ipsum dolor sit </p><!-- 這邊要改自動換行，不然會跑版 -->
       </div>
       <RouterLink
         class="flex w-24 h-10 justify-center bg-white rounded-lg mt-7 sm:visible hidden"
@@ -182,6 +182,7 @@
       </h2>
     </div>
   </div>
+
   <!-- partners -->
   <div class="sm:px-36 sm:pt-20 sm:pb-48 pt-10 pb-12 px-8">
     <div class="w-full text-center">
@@ -213,6 +214,7 @@
 <script setup>
 import { RouterLink } from 'vue-router';
 import downChevron from '@/assets/down-chevron.svg';
+import DiscCard from '@/components/DiscCard.vue';
 
 document.addEventListener('scroll', function() {
   const element = document.querySelector('#typewriter');
@@ -295,12 +297,4 @@ document.addEventListener('scroll', function() {
     blink-caret .75s step-end infinite,
     fadeOutCursor 1s forwards 2s;
 }
-
-/* .typewriter p:nth-child(1) { animation-delay: 0s, 0s, 2s; }
-.typewriter p:nth-child(2) { animation-delay: 2s, 2s, 4s; }
-.typewriter p:nth-child(3) { animation-delay: 4s, 4s, 6s; }
-.typewriter p:nth-child(4) { animation-delay: 6s, 6s, 8s; }
-.typewriter p:nth-child(5) { animation-delay: 8s, 8s, 10s; }
-.typewriter p:nth-child(6) { animation-delay: 10s, 10s, 12s; } */
-
 </style>
