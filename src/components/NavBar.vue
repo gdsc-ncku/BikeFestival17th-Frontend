@@ -1,13 +1,13 @@
 <template>
   <div
-    class="navbar w-full fixed flex justify-center pt-2 pb-3 h-20 z-[100]"
+    class="navbar w-full fixed flex justify-between pt-2 pb-3 h-20 z-[100]"
     :class="{
       'bg-primary-50 shadow-lg': theme == 'dark',
     }"
   >
-    <nav class="flex justify-center xl:gap-26 lg:gap-8 gap-3 max-w-[1200px]">
+    <nav class="layout_content w-full flex justify-between items-center xl:gap-26 lg:gap-8 gap-3 max-w-[1200px]">
       <!-- logo -->
-      <RouterLink class="flex flex-col justify-center" to="/">
+      <RouterLink class="lg:flex hidden flex-col justify-center" to="/">
         <img
           :src="theme == 'light' ? '/BikeFestival17th-Frontend/logo.svg' : '/BikeFestival17th-Frontend/logo-dark.svg'"
           alt="logo"
@@ -31,6 +31,21 @@
           </div>
         </a>
       </div>
+
+      <!-- hamburger menu -->
+      <div
+        class="lg:hidden block cursor-pointer"
+        @click="navbarToggle"
+      >
+        <div v-if="isOpen" class="w-12 h-12 flex flex-col justify-center items-center">
+          <span class="w-full h-full text-primary text-5xl">&times;</span>
+        </div>
+        <div v-else class="w-12 h-12 flex flex-col justify-evenly items-center">
+          <span class="block w-8 h-1 bg-primary"></span>
+          <span class="block w-8 h-1 bg-primary"></span>
+          <span class="block w-8 h-1 bg-primary"></span>
+        </div>
+      </div>
     </nav>
   </div>
 </template>
@@ -41,6 +56,12 @@ import { defineProps, onMounted, ref, computed, watch } from "vue";
 import { useRoute, RouterLink } from "vue-router";
 
 const theme = ref("dark");
+
+const isOpen = ref(false);
+const navbarToggle = () => {
+  isOpen.value = !isOpen.value;
+}
+
 const props = defineProps({
   theme: {
     type: String,
