@@ -184,7 +184,13 @@ var routes = [{
 }];
 var router = (0, _vueRouter.createRouter)({
   history: (0, _vueRouter.createWebHistory)('/BikeFestival17th-Frontend/'),
-  routes: routes
+  routes: routes,
+  scrollBehavior: function scrollBehavior() {
+    return {
+      top: 0,
+      behavior: 'instant'
+    };
+  }
 });
 var _default = router;
 exports["default"] = _default;
