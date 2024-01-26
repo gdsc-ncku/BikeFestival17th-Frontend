@@ -5,7 +5,7 @@
       'bg-primary-50 shadow-lg': theme == 'dark',
     }"
   >
-    <nav class="layout_content w-full flex justify-between items-center xl:gap-26 lg:gap-8 gap-3 max-w-[1200px]">
+    <nav class="layout_content w-full flex justify-between xl:gap-26 lg:gap-8 gap-3 max-w-[1200px]">
       <!-- logo -->
       <RouterLink class="lg:flex hidden flex-col justify-center" to="/">
         <img
@@ -34,7 +34,7 @@
 
       <!-- hamburger menu -->
       <div
-        class="lg:hidden block cursor-pointer"
+        class="lg:hidden flex justify-center items-center cursor-pointer"
         @click="navbarToggle"
       >
         <div v-if="isOpen" class="w-12 h-12 flex flex-col justify-center items-center">
