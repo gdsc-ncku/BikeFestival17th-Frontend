@@ -19,7 +19,7 @@
   </div>
 
   <!-- Story -->
-  <div class="layout_content sm:flex sm:justify-evenly xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pt-10 bg-primary-50">
+  <div class="layout_content sm:flex sm:justify-evenly xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pt-10">
     <div>
       <h2 id="typewriter" class="font-bold text-content xl:text-4xl lg:text-3xl text-2xl md:mb-6 mb-7 sm:p-0 px-7">
         單車故事
@@ -150,7 +150,7 @@
         <p>Horem ipsum dolor sit </p><!-- 這邊要改自動換行，不然會跑版 -->
       </div>
       <RouterLink
-        class="flex w-24 h-10 justify-center bg-white rounded-lg mt-7 sm:visible hidden"
+        class="lg:flex w-24 h-10 justify-center bg-white rounded-lg mt-7 sm:visible hidden"
         to="#"
       >
         <div class="flex flex-col justify-center">
