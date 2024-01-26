@@ -116,6 +116,11 @@ const routes = [
 const router = createRouter({
   history: createWebHistory('/BikeFestival17th-Frontend/'),
   routes,
+  scrollBehavior() {
+    return {
+      top: 0,
+      behavior: 'instant'}
+  },
 });
 
 export default router;
