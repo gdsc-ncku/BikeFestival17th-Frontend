@@ -4,7 +4,7 @@
       <h1 class="font-bold text-primary text-2xl mb-5">{{ props.title }}</h1>
       <a @click="setNum(index)" :href="'#item_' + index" v-for="(item, index) in list" :key="index"><h2 class="text-content text-xl mb-5 hover:bg-[#FFE0CA] rounded-lg p-1" :class="num === index ? 'bg-[#FFE0CA]' : ''">{{ item.subtitle }}</h2></a>
     </div>
-    <div class="lg:w-3/4 lg:ml-[300px]">
+    <div class="lg:w-3/4 lg:ml-[400px]">
       <div class="relative w-full lg:h-[400px] h-[200px] mb-5">
         <img :src="img" class="rounded-2xl object-cover w-full mb-[400px] absolute h-full" />
         <div style="border-radius: 16px;
