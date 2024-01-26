@@ -32,10 +32,8 @@
     </div>
 
     <!-- 手冊內容 -->
-    <div v-else class="flex flex-col gap-5 sm:ml-[27.37rem] sm:mr-[8.94rem] mx-9 mb-24">
+    <div v-else class="w-full flex flex-col gap-5 mb-24">
       <div class="sm:text-[2.5rem] text-2xl text-content font-bold max-sm:text-center">{{ selectedData.name }}</div>
-      <!-- <img class="sm:hidden object-cover object-center w-full h-[5.5rem] bg-[#D9D9D9]" :src="selectedData.photoURL" > -->
-      <!-- <div class="text-xs">{{ selectedData.description }}</div> -->
       <div>
         <a class="text-content text-xl w-auto cursor-pointer underline" target="_blank" :href="selectedData.pdfEmbeddedURL.replace('preview', 'view')">下載PDF</a>
       </div>
@@ -43,6 +41,8 @@
       <div class="text-2xl text-content font-bold max-sm:text-center">相關活動行程</div>
       <RouterLink class="text-primary-900 text-right sm:text-2xl text-base font-bold underline" to="/forum/departmentHandbook/" >回到系院列表</RouterLink>
     </div>
+
+    <!-- 側邊欄 -->
     <div>
       <SideBar
         title="科系手冊"
