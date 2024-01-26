@@ -1,10 +1,10 @@
 <template>
   <Breadcrumb />
-  <div class="layout_content">
+  <div class="layout_content flex flex-col lg:flex-row-reverse gap-10">
     <!-- college list -->
-    <div v-if="$route.params.department === undefined" class="md:ml-80">
+    <div v-if="$route.params.department === undefined">
       <div class="text-5xl font-bold text-center mb-[2.62rem] max-sm:hidden">科系手冊</div>
-      <div v-for="d in departmentHandbook" class="flex mb-12 gap-6 ">
+      <div v-for="d in departmentHandbook" class="flex mb-6 gap-6 ">
         <!-- 電腦版封面圖 -->
         <img
           :src="d.photoURL"
@@ -43,11 +43,13 @@
       <div class="text-2xl text-content font-bold max-sm:text-center">相關活動行程</div>
       <RouterLink class="text-primary-900 text-right sm:text-2xl text-base font-bold underline" to="/forum/departmentHandbook/" >回到系院列表</RouterLink>
     </div>
-    <SideBar
-      title="科系手冊"
-      :list="sideBarData"
-      class="sm:fixed top-[160px] max-sm:mx-11 max-sm:w-auto max-sm:mb-[2.37rem]"
-    />
+    <div>
+      <SideBar
+        title="科系手冊"
+        :list="sideBarData"
+        class=" max-sm:mx-11 max-sm:w-auto max-sm:mb-[2.37rem]"
+      />
+    </div>
   </div>
 </template>
 
