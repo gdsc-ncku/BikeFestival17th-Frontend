@@ -99,7 +99,7 @@ const activityOrderList = [
   "升學指南",
   "解憂茶軒",
   "沈浸式體驗",
-  "人生岔路口",
+  "人生叉路口",
 ];
 
 const activityList = ref([
@@ -109,7 +109,7 @@ const activityList = ref([
   "升學指南",
   "解憂茶軒",
   "沈浸式體驗",
-  "人生岔路口",
+  "人生叉路口",
 ]);
 
 // activityList ref list
@@ -118,7 +118,7 @@ const activityListRef = ref([]);
 const eventDict = ref({});
 // process event data before mount
 /*
-  schema : 
+  schema :
   {
     "2024/3/2" : {
       "舞台活動" : [event1, event2, ...],
