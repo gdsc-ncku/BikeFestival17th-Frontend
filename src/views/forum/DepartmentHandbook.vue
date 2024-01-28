@@ -37,7 +37,10 @@
       <div>
         <a class="text-content text-xl w-auto cursor-pointer underline" target="_blank" :href="selectedData.pdfEmbeddedURL.replace('preview', 'view')">下載PDF</a>
       </div>
-      <iframe class="h-[37.0625rem]" :src="selectedData.pdfEmbeddedURL"></iframe>
+      <div class="h-[38rem] relative border border-black">
+        <div class="w-full h-full flex justify-center items-center">PDF 文件載入中…</div>
+        <iframe class="absolute w-full h-full top-0 left-0" :src="selectedData.pdfEmbeddedURL"></iframe>
+      </div>
       <div class="text-2xl text-content font-bold max-sm:text-center">相關活動行程</div>
       <RouterLink class="text-primary-900 text-right sm:text-2xl text-base font-bold underline" to="/forum/departmentHandbook/" >回到系院列表</RouterLink>
     </div>
