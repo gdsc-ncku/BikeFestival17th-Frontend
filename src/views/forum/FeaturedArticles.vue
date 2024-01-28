@@ -46,15 +46,17 @@
       />
     </div>
   </div>
+
+  <!-- 文章內容 -->
   <div v-else class="max-w-[1200px] sm:mx-auto sm:w-[72.815rem] mx-[1.81rem]">
     <div class="flex flex-col gap-4 mb-9">
       <img v-if="selectedData.imageURL.length > 0" :src="selectedData.imageURL[0]" class="w-1/2 rounded-[2.625rem] max-sm:hidden">
-      <div class="font-bold text-[2.5rem]">{{ selectedData.title }}</div>
+      <div class="font-bold text-3xl">{{ selectedData.title }}</div>
       <div class="text-primary-900 text-lg">{{ selectedData.author }}</div>
       <div class="text-primary-900 text-base">{{ `發布於 ${selectedData.uploadDate}` }}</div>
-      <div class="text-lg whitespace-pre-line text-[#3A3A3A]">123123</div>
-      <div class="flex flex-wrap gap-8">
-        <img class="block w-[calc(25%_-_1.5rem)]" v-for="src in selectedData.imageURL.slice(1)" :src="src">
+      <div class="text-base whitespace-pre-line text-[#3A3A3A]">{{ selectedData.content }}</div>
+      <div class="flex flex-wrap gap-8 lg:flex-row flex-col">
+        <img class="block lg:w-[calc(25%_-_1.5rem)] w-full" v-for="src in selectedData.imageURL.slice(1)" :src="src">
       </div>
     </div>
     <RouterLink class="text-2xl font-bold underline text-primary-900 text-right block ml-auto mt-[2.37rem] mb-[3.44rem]" to="./">回到上一頁</RouterLink>
@@ -62,6 +64,7 @@
     <div class="flex mb-40 gap-10 justify-center">
       <DiscCard
         class="max-sm:hidden max-sm:first:block"
+        v-for="d in relative"
         :title="d.title"
         :class_="d.category"
         :timestamp="d.uploadDate"
