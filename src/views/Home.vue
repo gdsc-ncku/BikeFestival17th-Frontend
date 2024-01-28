@@ -2,7 +2,7 @@
   <!-- Key Visual Design -->
   <div
     class="relative w-full h-screen bg-cover bg-center"
-    style="background-image: url('/BikeFestival17th-Frontend/home/key-visual.png')"
+    style="background-image: url('/BikeFestival17th-Frontend/home/key-visual.webp')"
   >
     <div class="slide-left-in layout_content opacity-0 text-white font-black lg:text-5xl text-4xl">
       <div class="absolute top-[40vh]">
