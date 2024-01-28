@@ -2,10 +2,10 @@
   <Breadcrumb />
   <div class="lg:max-w-[1200px] max-w-[370px] mx-auto">
     <h1 class="lg:text-5xl text-4xl font-bold text-content">參加資訊</h1>
-    <TabBar :tabs="tabs" @tab-index="ChangeContent" :currTarget="target"/>
+    <TabBar :tabs="tabs" @tab-index="ChangeContent" :currTarget="target" :inTutorial="inTutorial"/>
     <Traffic v-if="target === 0 && path === '/info/traffic'" />
     <Map v-if="target === 1 && path === '/info/map'" />
-    <Schedule v-if="target === 2 && path === '/info/schedule'" />
+    <Schedule v-if="target === 2 && path === '/info/schedule'" @tutorial-active="TriggerTutorial"/>
     <MySchedule v-if="target === 3 && path === '/info/mySchedule'" />
   </div>
 </template>
@@ -22,6 +22,7 @@ import TabBar from '../components/TabBar.vue';
 let instance;
 const path = ref("");
 const target = ref(0);
+const inTutorial = ref(false);
 
 const ChangeTarget = () => {
   if(path.value == '/info/traffic') target.value = 0;
@@ -72,5 +73,9 @@ const tabs = ref([ //TabBar tabs
 
 const ChangeContent = (i) => {
   target.value = i;
+}
+
+function TriggerTutorial(e){
+  inTutorial.value = e;
 }
 </script>
