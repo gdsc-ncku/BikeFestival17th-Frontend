@@ -45,9 +45,10 @@
       </div>
     </div>
 
+    <!-- 下拉式選單 -->
     <div
       v-if="linkList.length > 1"
-      class="hidden z-50 bg-primary-700 py-2 rounded-md group-hover:block"
+      class="hidden z-50 bg-primary-700 mt-1 py-2 rounded-md group-hover:block"
     >
       <RouterLink
         v-for="link in linkList"
