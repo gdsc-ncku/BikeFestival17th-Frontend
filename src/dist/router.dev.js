@@ -29,6 +29,8 @@ var _ImmersiveExperience = _interopRequireDefault(require("./views/activities/Im
 
 var _UnworriedTeaHouse = _interopRequireDefault(require("./views/activities/UnworriedTeaHouse.vue"));
 
+var _SustainableMarket = _interopRequireDefault(require("./views/activities/SustainableMarket.vue"));
+
 var _Forum = _interopRequireDefault(require("./views/forum/Forum.vue"));
 
 var _DepartmentHandbook = _interopRequireDefault(require("./views/forum/DepartmentHandbook.vue"));
@@ -36,12 +38,6 @@ var _DepartmentHandbook = _interopRequireDefault(require("./views/forum/Departme
 var _FeaturedArticles = _interopRequireDefault(require("./views/forum/FeaturedArticles.vue"));
 
 var _LetterToHighSchoolStudents = _interopRequireDefault(require("./views/forum/LetterToHighSchoolStudents.vue"));
-
-var _departmentHandbook = _interopRequireDefault(require("./data/departmentHandbook.json"));
-
-var _featuredArticles = _interopRequireDefault(require("./data/featuredArticles.json"));
-
-var _letterToHighSchoolStudents = _interopRequireDefault(require("./data/letterToHighSchoolStudents.json"));
 
 var _Souvenir = _interopRequireDefault(require("./views/Souvenir.vue"));
 
@@ -136,6 +132,14 @@ var routes = [{
     children: [{
       path: ':activity',
       component: _UnworriedTeaHouse["default"]
+    }]
+  }, {
+    path: 'sustainableMarket',
+    name: '告別前任永續市集 / ',
+    component: _SustainableMarket["default"],
+    children: [{
+      path: ':activity',
+      component: _SustainableMarket["default"]
     }]
   }]
 }, {
