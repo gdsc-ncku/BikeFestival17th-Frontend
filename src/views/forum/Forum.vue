@@ -24,21 +24,21 @@ const data = [
     name: "科系手冊",
     context: "收錄成功大學所有院系之概覽、課程、特色介紹、迷思破解，以及 108 課綱相關解說。",
     link: "/forum/departmentHandbook",
-    imgLink: "",
+    imgLink: "/forum_page/DepartmentHandbook.webp",
   },
   {
     class_: "分類",
     name: "專欄文章",
     context: "從自學小撇步、大學攻略、超實用技能、考試備戰到生活小知識（懂生活），收攬著我們的多元主題的專欄文章。",
     link: "/forum/featuredArticles",
-    imgLink: "",
+    imgLink: "/forum_page/FeturedArticles.webp",
   },
   {
     class_: "分類",
     name: "給高中生的一封信",
     context: "透過在職人士及畢業校友分享現職工作情況、所需技能，以及十年間心路歷程，讓對產業、未來職涯感到迷茫的高中生有所啟發。",
     link: "/forum/letterToHighSchoolStudents",
-    imgLink: "",
+    imgLink: "/forum_page/LetterToHighSchoolStudents.webp",
   },
 ]
 </script>
