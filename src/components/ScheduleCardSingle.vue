@@ -16,9 +16,27 @@
           activity
         }}</span>
       </div>
-
       <button
-        class="w-[24px] h-[24px] flex justify-center items-center"
+        class="w-[24px] h-[24px] lg:flex justify-center items-center hidden"
+        :class="id === '49' && props.step === 1 ? 'z-50 bg-primary-50 pointer-events-none' : ''"
+        @click="handleSave"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="18"
+          viewBox="0 0 14 18"
+          fill="none"
+        >
+          <path
+            d="M12 15L7 12.82L2 15V2H12M12 0H2C1.46957 0 0.960859 0.210714 0.585786 0.585786C0.210714 0.960859 0 1.46957 0 2V18L7 15L14 18V2C14 0.89 13.1 0 12 0Z"
+            fill="#FF7B1A"
+          />
+        </svg>
+      </button>
+      <button
+        class="w-[24px] h-[24px] flex justify-center items-center lg:hidden"
+        :class="id === '1' && props.step === 1 ? 'z-50 bg-primary-50 pointer-events-none' : ''"
         @click="handleSave"
       >
         <svg
@@ -106,10 +124,10 @@
 </template>
 
 <script setup>
-import { defineProps, ref} from "vue";
+import { defineProps, ref, watch} from "vue";
 import ScheduleCardModal from "./ScheduleCardModal.vue";
 
-const props = defineProps({
+let props = defineProps({
   id: {
     // backend: event_id
     type: String,
@@ -157,6 +175,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  step: {
+    type: Number,
+    default: 0,
+  },
   height: {
     type: String,
     required: false,
@@ -164,10 +186,10 @@ const props = defineProps({
   width: {
     type: String,
     required: false,
-  },
+  }
 });
 
-const {
+let {
   id,
   activity,
   name,
@@ -178,6 +200,7 @@ const {
   location,
   link,
   saved,
+  step
 } = props;
 
 const handleSave = () => {
