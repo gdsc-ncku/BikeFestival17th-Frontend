@@ -19,7 +19,7 @@
       <!-- nav bar list -->
       <div class="lg:flex hidden justify-between xl:gap-7 lg:gap-3 gap-2">
         <template v-for="item in navBarList">
-          <DropDown :theme="theme" :title="item.title" :linkList="item.linkList" />
+          <DropDown :theme="theme" :title="item.title" :title_link="item.title_link" :linkList="item.linkList" />
         </template>
       </div>
 
@@ -32,13 +32,13 @@
         </a>
       </div>
 
-      <!-- hamburger menu -->
+      <!-- hamburger menu button -->
       <div
         class="lg:hidden flex justify-center items-center cursor-pointer"
         @click="navbarToggle"
       >
         <div v-if="isOpen" class="w-12 h-12 flex flex-col justify-center items-center">
-          <span class="w-full h-full text-primary text-5xl">&times;</span>
+          <span class="w-full h-full text-white text-5xl z-50">&times;</span>
         </div>
         <div v-else class="w-12 h-12 flex flex-col justify-evenly items-center">
           <span class="block w-8 h-1 bg-primary"></span>
@@ -46,6 +46,27 @@
           <span class="block w-8 h-1 bg-primary"></span>
         </div>
       </div>
+
+      <!-- mobile nav bar -->
+      <div
+        v-if="isOpen"
+        @click="navbarToggle"
+        class="fixed inset-0 bg-black opacity-50 z-10"
+      ></div>
+      <transition
+        v-show="isOpen"
+        name="slide"
+        class="absolute h-screen top-0 right-0 w-1/2 bg-primary shadow-lg z-20"
+      >
+        <div class="flex flex-col justify-center items-start px-2">
+          <span>關於單車節</span>
+          <span>參加資訊</span>
+          <span>主題活動</span>
+          <span>知識論壇</span>
+          <span>合作夥伴</span>
+          <span>紀念品小舖</span>
+        </div>
+      </transition>
     </nav>
   </div>
 </template>
@@ -113,6 +134,7 @@ onMounted(() => {
 const navBarList = [
   {
     title: "關於單車節",
+    title_link: "/about",
     linkList: [
       {
         name: "關於單車節",
@@ -122,6 +144,7 @@ const navBarList = [
   },
   {
     title: "參加資訊",
+    title_link: "/info/traffic",
     linkList: [
       {
         name: "交通資訊",
@@ -143,6 +166,7 @@ const navBarList = [
   },
   {
     title: "主題活動",
+    title_link: "/activities",
     linkList: [
       {
         name: "主舞台〈曦瓣〉",
@@ -180,6 +204,7 @@ const navBarList = [
   },
   {
     title: "知識論壇",
+    title_link: "/forum",
     linkList: [
       {
         name: "科系手冊",
@@ -197,6 +222,7 @@ const navBarList = [
   },
   {
     title: "合作夥伴",
+    title_link: "/partners",
     linkList: [
       {
         name: "合作夥伴",
@@ -206,6 +232,7 @@ const navBarList = [
   },
   {
     title: "紀念品小舖",
+    title_link: "/souvenir",
     linkList: [
       {
         name: "紀念品小舖",
@@ -219,5 +246,19 @@ const navBarList = [
 <style scoped>
 .navbar {
   transition: all 0.2s ease-in-out;
+}
+
+.slide-enter-active, .slide-leave-active {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.slide-enter-from, .slide-leave-to {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.slide-enter-to, .slide-leave-from {
+  transform: translateX(0);
+  opacity: 0.5; /* 透明度設為 50% */
 }
 </style>
