@@ -38,7 +38,7 @@
         @click="navbarToggle"
       >
         <div v-if="isOpen" class="w-12 h-12 flex flex-col justify-center items-center">
-          <span class="w-full h-full text-white text-5xl z-50">&times;</span>
+          <span class="w-full h-full text-5xl z-50 text-white">&times;</span>
         </div>
         <div v-else class="w-12 h-12 flex flex-col justify-evenly items-center">
           <span class="block w-8 h-1 bg-primary"></span>
@@ -58,13 +58,42 @@
         name="slide"
         class="absolute h-screen top-0 right-0 w-1/2 bg-primary shadow-lg z-20"
       >
-        <div class="flex flex-col justify-center items-start px-2">
-          <span>關於單車節</span>
-          <span>參加資訊</span>
-          <span>主題活動</span>
-          <span>知識論壇</span>
-          <span>合作夥伴</span>
-          <span>紀念品小舖</span>
+        <div class="flex flex-col gap-5 pt-20 px-6 text-base text-white">
+          <RouterLink to="/about" @click="navbarToggle">關於單車節</RouterLink>
+          <div class="w-full flex justify-between items-center">
+            <RouterLink to="/info/traffic" @click="navbarToggle">參加資訊</RouterLink>
+            <svg
+              @click="mobileSidebarDropdown"
+              xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none"><path d="M13 1.5L7 7.5L1 1.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+            <!-- 按下svg後，hidden會變成flex，出現下拉選單 -->
+            <div id="sidebar-dropdown" class="hidden flex-col ml-5  gap-5 text-sm">
+              <RouterLink to="/info/traffic" @click="navbarToggle">交通資訊</RouterLink>
+              <RouterLink to="/info/map" @click="navbarToggle">攤位地圖</RouterLink>
+              <RouterLink to="/info/schedule" @click="navbarToggle">行程表</RouterLink>
+              <RouterLink to="/info/mySchedule" @click="navbarToggle">我的行程</RouterLink>
+            </div>
+          <div class="w-full flex justify-between items-center">
+            <RouterLink to="/activities" @click="navbarToggle">主題活動</RouterLink>
+            <svg class="sidebar-dropdown" xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none"><path d="M13 1.5L7 7.5L1 1.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+            <RouterLink class="ml-5 text-sm" to="/forum/mainStage" @click="navbarToggle">主舞台〈曦瓣〉</RouterLink>
+            <RouterLink class="ml-5 text-sm" to="/forum/departmentExpo" @click="navbarToggle">科系博覽</RouterLink>
+            <RouterLink class="ml-5 text-sm" to="/forum/universityBlueprint" @click="navbarToggle">大學藍圖</RouterLink>
+            <RouterLink class="ml-5 text-sm" to="/forum/educationalGuide" @click="navbarToggle">升學指南</RouterLink>
+            <RouterLink class="ml-5 text-sm" to="/forum/lifeCrossroads" @click="navbarToggle">人生叉路口</RouterLink>
+            <RouterLink class="ml-5 text-sm" to="/forum/immersiveExperience" @click="navbarToggle">沈浸式體驗</RouterLink>
+            <RouterLink class="ml-5 text-sm" to="/forum/unworriedTeaHouse" @click="navbarToggle">解憂茶軒</RouterLink>
+            <RouterLink class="ml-5 text-sm" to="/forum/sustainableMarket" @click="navbarToggle">告別前任永續市集</RouterLink>
+          <div class="w-full flex justify-between items-center">
+            <RouterLink to="/forum" @click="navbarToggle">知識論壇</RouterLink>
+            <svg class="sidebar-dropdown" xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none"><path d="M13 1.5L7 7.5L1 1.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+            <RouterLink class="ml-5 text-sm" to="/forum/departmentHandbook" @click="navbarToggle">科系手冊</RouterLink>
+            <RouterLink class="ml-5 text-sm" to="/forum/featuredArticles" @click="navbarToggle">專欄文章</RouterLink>
+            <RouterLink class="ml-5 text-sm" to="/forum/letterToHighSchoolStudents" @click="navbarToggle">給高中生的一封信</RouterLink>
+          <RouterLink to="/partners" @click="navbarToggle">合作夥伴</RouterLink>
+          <RouterLink to="/souvenir" @click="navbarToggle">紀念品小舖</RouterLink>
         </div>
       </transition>
     </nav>
@@ -81,6 +110,15 @@ const theme = ref("dark");
 const isOpen = ref(false);
 const navbarToggle = () => {
   isOpen.value = !isOpen.value;
+}
+
+const mobileSidebarDropdown = () => {
+  const element = document.querySelector("#sidebar-dropdown");
+  if (element.style.display === 'none') {
+    element.style.display = 'flex';
+  } else {
+    element.style.display = 'none';
+  }
 }
 
 const props = defineProps({
@@ -259,6 +297,11 @@ const navBarList = [
 
 .slide-enter-to, .slide-leave-from {
   transform: translateX(0);
-  opacity: 0.5; /* 透明度設為 50% */
+  opacity: 0.5;
+}
+
+.sidebar-dropdown + #sidebar-dropdown{
+  display: flex;
+  /* transition: all 0.2s ease-in-out; */
 }
 </style>
