@@ -10,14 +10,11 @@ import UniversityBlueprint from './views/activities/UniversityBlueprint.vue';
 import LifeCrossroads from './views/activities/LifeCrossroads.vue';
 import ImmersiveExperience from './views/activities/ImmersiveExperience.vue';
 import UnworriedTeaHouse from './views/activities/UnworriedTeaHouse.vue';
-import GoodbyeEx from './views/activities/GoodbyeEx.vue';
+import SustainableMarket from './views/activities/SustainableMarket.vue';
 import Forum from './views/forum/Forum.vue';
 import DepartmentHandbook from './views/forum/DepartmentHandbook.vue';
 import FeaturedArticles from './views/forum/FeaturedArticles.vue';
 import LetterToHighSchoolStudents from './views/forum/LetterToHighSchoolStudents.vue';
-import departmentHandbookData from "./data/departmentHandbook.json";
-import featuredArticlesData from "./data/featuredArticles.json";
-import letterToHighSchoolStudentsData from "./data/letterToHighSchoolStudents.json";
 import Souvenir from './views/Souvenir.vue';
 import Partners from './views/Partners.vue';
 import NotFound from './views/NotFound.vue';
@@ -80,10 +77,10 @@ const routes = [
         children: [{ path: ':activity', component: UnworriedTeaHouse }],
       },
       {
-        path: 'goodbyeEx',
+        path: 'sustainableMarket',
         name: '告別前任永續市集 / ',
-        component: GoodbyeEx,
-        children: [{ path: ':activity', component: GoodbyeEx }],
+        component: SustainableMarket,
+        children: [{ path: ':activity', component: SustainableMarket }],
       },
     ]
   },

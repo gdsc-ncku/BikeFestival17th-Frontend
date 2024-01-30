@@ -174,7 +174,7 @@ const navBarList = [
       },
       {
         name: "告別前任永續市集",
-        link: "/activities/goodbyeEx",
+        link: "/activities/sustainableMarket",
       },
     ],
   },
