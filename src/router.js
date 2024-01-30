@@ -10,6 +10,7 @@ import UniversityBlueprint from './views/activities/UniversityBlueprint.vue';
 import LifeCrossroads from './views/activities/LifeCrossroads.vue';
 import ImmersiveExperience from './views/activities/ImmersiveExperience.vue';
 import UnworriedTeaHouse from './views/activities/UnworriedTeaHouse.vue';
+import GoodbyeEx from './views/activities/GoodbyeEx.vue';
 import Forum from './views/forum/Forum.vue';
 import DepartmentHandbook from './views/forum/DepartmentHandbook.vue';
 import FeaturedArticles from './views/forum/FeaturedArticles.vue';
@@ -77,6 +78,12 @@ const routes = [
         name: '解憂茶軒 / ',
         component: UnworriedTeaHouse,
         children: [{ path: ':activity', component: UnworriedTeaHouse }],
+      },
+      {
+        path: 'goodbyeEx',
+        name: '告別前任永續市集 / ',
+        component: GoodbyeEx,
+        children: [{ path: ':activity', component: GoodbyeEx }],
       },
     ]
   },
