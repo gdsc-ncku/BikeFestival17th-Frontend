@@ -198,7 +198,9 @@
         "id": "dep_computer_cience",
         "name": "資訊工程學系",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1hx2dVMhHwVpjhE2r0c801XBt5F2gYr2a/preview",
-        "related_event_id": []
+        "related_event_id": [
+          "2"
+        ]
       }
     ]
   },
