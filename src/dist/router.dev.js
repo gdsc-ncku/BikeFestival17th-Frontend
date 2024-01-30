@@ -29,6 +29,8 @@ var _ImmersiveExperience = _interopRequireDefault(require("./views/activities/Im
 
 var _UnworriedTeaHouse = _interopRequireDefault(require("./views/activities/UnworriedTeaHouse.vue"));
 
+var _GoodbyeEx = _interopRequireDefault(require("./views/activities/GoodbyeEx.vue"));
+
 var _Forum = _interopRequireDefault(require("./views/forum/Forum.vue"));
 
 var _DepartmentHandbook = _interopRequireDefault(require("./views/forum/DepartmentHandbook.vue"));
@@ -136,6 +138,14 @@ var routes = [{
     children: [{
       path: ':activity',
       component: _UnworriedTeaHouse["default"]
+    }]
+  }, {
+    path: 'goodbyeEx',
+    name: '告別前任永續市集 / ',
+    component: _GoodbyeEx["default"],
+    children: [{
+      path: ':activity',
+      component: _GoodbyeEx["default"]
     }]
   }]
 }, {

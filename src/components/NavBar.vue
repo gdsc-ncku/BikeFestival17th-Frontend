@@ -172,6 +172,10 @@ const navBarList = [
         name: "解憂茶軒",
         link: "/activities/unworriedTeaHouse",
       },
+      {
+        name: "告別前任永續市集",
+        link: "/activities/goodbyeEx",
+      },
     ],
   },
   {
