@@ -19,7 +19,7 @@
       <!-- nav bar list -->
       <div class="lg:flex hidden justify-between xl:gap-7 lg:gap-3 gap-2">
         <template v-for="item in navBarList">
-          <DropDown :theme="theme" :title="item.title" :linkList="item.linkList" />
+          <DropDown :theme="theme" :title="item.title" :title_link="item.title_link" :linkList="item.linkList" />
         </template>
       </div>
 
@@ -32,13 +32,13 @@
         </a>
       </div>
 
-      <!-- hamburger menu -->
+      <!-- hamburger menu button -->
       <div
         class="lg:hidden flex justify-center items-center cursor-pointer"
-        @click="navbarToggle"
+        @click="sidebarToggle"
       >
-        <div v-if="isOpen" class="w-12 h-12 flex flex-col justify-center items-center">
-          <span class="w-full h-full text-primary text-5xl">&times;</span>
+        <div v-if="isSidebarOpen" class="w-12 h-12 flex flex-col justify-center items-center">
+          <span class="w-full h-full text-5xl z-50 text-white">&times;</span>
         </div>
         <div v-else class="w-12 h-12 flex flex-col justify-evenly items-center">
           <span class="block w-8 h-1 bg-primary"></span>
@@ -46,6 +46,67 @@
           <span class="block w-8 h-1 bg-primary"></span>
         </div>
       </div>
+
+      <!-- mobile nav bar mask -->
+      <div
+        v-if="isSidebarOpen"
+        @click="sidebarToggle"
+        class="fixed inset-0 bg-black opacity-50 z-10 pointer-events-none overflow-hidden"
+      ></div>
+      <!-- mobile nav bar -->
+      <transition
+        v-show="isSidebarOpen"
+        name="slide"
+        class="absolute h-screen top-0 right-0 w-1/2 overflow-y-auto bg-primary shadow-lg z-20"
+      >
+        <div class="flex flex-col gap-5 pt-20 px-6 text-base text-white">
+          <RouterLink to="/about" @click="sidebarToggle">關於單車節</RouterLink>
+          <div class="w-full flex justify-between items-center">
+            <RouterLink to="/info/traffic" @click="sidebarToggle">參加資訊</RouterLink>
+            <svg v-if="isInfoOpen" @click="infoToggle"
+              xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none"><path d="M13 1.5L7 7.5L1 1.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            <svg v-else @click="infoToggle" class="-rotate-90"
+              xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none"><path d="M13 1.5L7 7.5L1 1.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+          <div v-if = "isInfoOpen" class="flex flex-col ml-5 gap-5 text-sm">
+            <RouterLink to="/info/traffic" @click="sidebarToggle">交通資訊</RouterLink>
+            <RouterLink to="/info/map" @click="sidebarToggle">攤位地圖</RouterLink>
+            <RouterLink to="/info/schedule" @click="sidebarToggle">行程表</RouterLink>
+            <RouterLink to="/info/mySchedule" @click="sidebarToggle">我的行程</RouterLink>
+          </div>
+          <div class="w-full flex justify-between items-center">
+            <RouterLink to="/activities" @click="sidebarToggle">主題活動</RouterLink>
+            <svg v-if="isActivitiesOpen" @click="activitiesToggle"
+              xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none"><path d="M13 1.5L7 7.5L1 1.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            <svg v-else @click="activitiesToggle" class="-rotate-90"
+              xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none"><path d="M13 1.5L7 7.5L1 1.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+          <div v-if = "isActivitiesOpen" class="flex flex-col ml-5 gap-5 text-sm">
+            <RouterLink to="/activities/mainStage" @click="sidebarToggle">主舞台〈曦瓣〉</RouterLink>
+            <RouterLink to="/activities/departmentExpo" @click="sidebarToggle">科系博覽</RouterLink>
+            <RouterLink to="/activities/universityBlueprint" @click="sidebarToggle">大學藍圖</RouterLink>
+            <RouterLink to="/activities/educationalGuide" @click="sidebarToggle">升學指南</RouterLink>
+            <RouterLink to="/activities/lifeCrossroads" @click="sidebarToggle">人生叉路口</RouterLink>
+            <RouterLink to="/activities/immersiveExperience" @click="sidebarToggle">沈浸式體驗</RouterLink>
+            <RouterLink to="/activities/unworriedTeaHouse" @click="sidebarToggle">解憂茶軒</RouterLink>
+            <RouterLink to="/activities/sustainableMarket" @click="sidebarToggle">告別前任永續市集</RouterLink>
+          </div>
+          <div class="w-full flex justify-between items-center">
+            <RouterLink to="/forum" @click="sidebarToggle">知識論壇</RouterLink>
+            <svg v-if="isForumOpen" @click="forumToggle"
+              xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none"><path d="M13 1.5L7 7.5L1 1.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            <svg v-else @click="forumToggle" class="-rotate-90"
+              xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none"><path d="M13 1.5L7 7.5L1 1.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </div>
+          <div v-if = "isForumOpen" class="flex flex-col ml-5 gap-5 text-sm">
+            <RouterLink to="/forum/departmentHandbook" @click="sidebarToggle">科系手冊</RouterLink>
+            <RouterLink to="/forum/featuredArticles" @click="sidebarToggle">專欄文章</RouterLink>
+            <RouterLink to="/forum/letterToHighSchoolStudents" @click="sidebarToggle">給高中生的一封信</RouterLink>
+          </div>
+          <RouterLink to="/partners" @click="sidebarToggle">合作夥伴</RouterLink>
+          <RouterLink to="/souvenir" @click="sidebarToggle">紀念品小舖</RouterLink>
+        </div>
+      </transition>
     </nav>
   </div>
 </template>
@@ -57,9 +118,21 @@ import { useRoute, RouterLink } from "vue-router";
 
 const theme = ref("dark");
 
-const isOpen = ref(false);
-const navbarToggle = () => {
-  isOpen.value = !isOpen.value;
+const isSidebarOpen = ref(false);
+const sidebarToggle = () => {
+  isSidebarOpen.value = !isSidebarOpen.value;
+}
+const isInfoOpen = ref(false);
+const infoToggle = () => {
+  isInfoOpen.value = !isInfoOpen.value;
+}
+const isActivitiesOpen = ref(false);
+const activitiesToggle = () => {
+  isActivitiesOpen.value = !isActivitiesOpen.value;
+}
+const isForumOpen = ref(false);
+const forumToggle = () => {
+  isForumOpen.value = !isForumOpen.value;
 }
 
 const props = defineProps({
@@ -113,6 +186,7 @@ onMounted(() => {
 const navBarList = [
   {
     title: "關於單車節",
+    title_link: "/about",
     linkList: [
       {
         name: "關於單車節",
@@ -122,6 +196,7 @@ const navBarList = [
   },
   {
     title: "參加資訊",
+    title_link: "/info/traffic",
     linkList: [
       {
         name: "交通資訊",
@@ -143,6 +218,7 @@ const navBarList = [
   },
   {
     title: "主題活動",
+    title_link: "/activities",
     linkList: [
       {
         name: "主舞台〈曦瓣〉",
@@ -180,6 +256,7 @@ const navBarList = [
   },
   {
     title: "知識論壇",
+    title_link: "/forum",
     linkList: [
       {
         name: "科系手冊",
@@ -197,6 +274,7 @@ const navBarList = [
   },
   {
     title: "合作夥伴",
+    title_link: "/partners",
     linkList: [
       {
         name: "合作夥伴",
@@ -206,6 +284,7 @@ const navBarList = [
   },
   {
     title: "紀念品小舖",
+    title_link: "/souvenir",
     linkList: [
       {
         name: "紀念品小舖",
@@ -220,4 +299,17 @@ const navBarList = [
 .navbar {
   transition: all 0.2s ease-in-out;
 }
+
+.slide-enter-active, .slide-leave-active {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.slide-enter-from, .slide-leave-to {
+  transform: translateX(100%);
+  opacity: 0;
+}
+.slide-enter-to, .slide-leave-from {
+  transform: translateX(0);
+  opacity: 1;
+}
+
 </style>

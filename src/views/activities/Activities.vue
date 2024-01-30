@@ -7,7 +7,6 @@
       <div v-html="item.intro" class="lg:text-xl text-sm"></div>
     </div>
   </div>
-  
 </template>
 
 <script setup>

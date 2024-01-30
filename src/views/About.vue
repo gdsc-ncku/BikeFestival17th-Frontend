@@ -22,13 +22,6 @@
     </div>
     <h1 class="text-[40px] font-bold my-5">認識籌備團隊</h1>
     <MemberCard />
-    <h1 class="text-[40px] font-bold my-5">歷年活動</h1>
-    <div class="flex lg:justify-between justify-center flex-wrap mt-12">
-      <div class="w-[340px] h-[192px] bg-slate-500 mb-10"></div>
-      <div class="w-[340px] h-[192px] bg-slate-500 mb-10"></div>
-      <div class="w-[340px] h-[192px] bg-slate-500 mb-10"></div>
-      <div class="w-[340px] h-[192px] bg-slate-500 mb-10"></div>
-    </div>
   </div>
 </template>
 
