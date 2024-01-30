@@ -14,9 +14,9 @@
             <span class="block text-primary-900 font-bold text-xl underline">{{
               activity
             }}</span>
-            <div class="flex sm:justify-center gap-8 max-sm:flex-wrap max-sm:gap-y-2">
+            <div class="flex sm:justify-center gap-8 max-sm:flex-wrap max-sm:gap-y-2 items-center">
               <span
-                class="text-black font-bold sm:text-[40px] text-xl sm:max-w-[350px] truncate"
+                class="text-black font-bold sm:text-[40px] sm:leading-tight text-xl sm:max-w-[350px]"
               >
                 {{ name }}
               </span>

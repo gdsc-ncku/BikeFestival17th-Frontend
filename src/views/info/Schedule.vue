@@ -1,4 +1,5 @@
 <template>
+  <Tutorial v-if="showTutorial === true" @close-tutorial="() => {showTutorial = false; emit('tutorial-active', false)}" @next-step="NextStep"/>
   <!-- center container -->
   <div class="w-fill flex justify-center max-sm:hidden">
     <!-- activity list -->
@@ -34,7 +35,7 @@
         <!-- right fake box -->
         <div class="w-[65px] h-[35px] opacity-0">fake</div>
       </div>
-      <div v-for="item in event" class="box absolute" :style="`--l:${activityOrderList.indexOf(item.activity)};--h:${parseInt(item.startTime.split(':')[0])};--m: ${parseInt(item.startTime.split(':')[1])}`">
+      <div v-for="(item, index) in event" class="box absolute" :class="(index === 95 && step === 0) ? 'z-40' : ''" :style="`--l:${activityOrderList.indexOf(item.activity)};--h:${parseInt(item.startTime.split(':')[0])};--m: ${parseInt(item.startTime.split(':')[1])}`">
         <ScheduleCardSingle
           :key="item.id"
           :id="item.id"
@@ -47,18 +48,18 @@
           :host="item.host"
           :location="item.location"
           :height="computeHeight(item)"
+          :step="step"
         />
       </div>
     </div>
   </div>
-
   <div
     class="flex flex-col space-y-4 sm:hidden max-sm:mb-12"
   >
     <div v-for="time in Object.keys(selectedData)" class="flex flex-col gap-4" :key="time">
       <div class="text-primary-900 font-bold text-[0.875rem]">{{ time }}</div>
-      <ScheduleCardSingle
-        v-for="item in selectedData[time]"
+      <div v-for="(item, index) in selectedData[time]" :class="(index === 0 && step === 0) ? 'z-40' : ''">
+        <ScheduleCardSingle
         :key="item.id"
         :id="item.id"
         :activity="item.activity"
@@ -69,8 +70,10 @@
         :endTime="item.endTime"
         :host="item.host"
         :location="item.location"
+        :step="step"
         width="auto"
       />
+      </div>
     </div>
   </div>
 
@@ -89,6 +92,7 @@
 <script setup>
 import event from "../../data/event.json";
 import ScheduleCardSingle from "../../components/ScheduleCardSingle.vue";
+import Tutorial from "../../components/Tutorial.vue";
 import { ref, onMounted, onBeforeMount, computed } from "vue";
 
 // the top bar from left to right
@@ -207,6 +211,16 @@ const selectedData = computed(() => Object.fromEntries(
   )
 ))
 
+//tutorial model
+const showTutorial = ref(true);
+const step = ref(0);
+const emit = defineEmits(['tutorial-active']);
+
+const NextStep = () => {
+  step.value = step.value + 1;
+  if(step.value === 1) emit('tutorial-active', true);
+  else emit('tutorial-active', false);
+}
 // onMounted(() => {
 //   console.log(activityListRef.value);
 //   console.log("activity 0 (x,y,w,h):");

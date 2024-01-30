@@ -1,6 +1,6 @@
 <template>
   <div
-    class="lg:h-auto h-[190px] p-3 rounded-lg bg-[#FFF3EA] hover:bg-[#FFD7AF] flex lg:items-center justify-between"
+    class="lg:h-auto h-[190px] p-3 bg-[#FFF3EA] hover:bg-[#FFD7AF] flex lg:items-center justify-between cursor-pointer mb-2 border-y border-primary"
     @click="showModal = true"
     @close="showModal = false"
   >
