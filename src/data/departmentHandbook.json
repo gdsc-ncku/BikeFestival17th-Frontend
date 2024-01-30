@@ -1,38 +1,30 @@
 [
   {
     "college_name": "文學院",
-    "photoURL": "",
+    "photoURL": "/BikeFestival17th-Frontend/forum_page/colleges/college_liberal.webp",
     "description": "文學院為成功大學之首院，其設立宗旨在因應時代潮流與社會脈動，配合國家長期發展，整合理論與實務，從事人文、語言及藝術方面之教學與研究；以培育通達人才，豐富生活內涵，擴展國際視野，認識多元文化，提升生命境界為目標。",
     "departments": [
       {
         "id": "dep_chinese_literature",
         "name": "中國文學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1Mmb49KvoL4bHHCUWVD6g4-5wnEGvoawe/preview",
         "related_event_id": []
       },
       {
         "id": "dep_foreign_literature",
         "name": "外國語文學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1jFTCr5Qe6Md10xsyyQEhnKb8sVcllwZf/preview",
         "related_event_id": []
       },
       {
         "id": "dep_taiwanese_literature",
         "name": "台灣文學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1gJc811q3nNTrWt-aKzsQtgUEyaBPDPCt/preview",
         "related_event_id": []
       },
       {
         "id": "dep_history",
         "name": "歷史學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1plGjF96BcI7CV5m_nIFQLJaYYYuqHOnE/preview",
         "related_event_id": []
       }
@@ -40,46 +32,36 @@
   },
   {
     "college_name": "理學院",
-    "photoURL": "",
-    "description": "",
+    "photoURL": "/BikeFestival17th-Frontend/forum_page/colleges/college_science.webp",
+    "description": "理學院院以「窮理致知」為特色，是兼具基礎研究、跨域發展以及產學合作能力的學院。重視各理學領域基礎科目教學，訓練學生畢業後，除繼續攻讀理學院研究所之外，也可往各個應用相關領域繼續深造。理學院的教學目標是培養兼具人文素養、創新能力、跨領域學習，國際宏觀、社會關懷與卓越領導的自然科學專業人才。",
     "departments": [
       {
         "id": "dep_mathematics",
         "name": "數學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1kZwMgT15zOu0RPd8cCpJawZj30V_T9P0/preview",
         "related_event_id": []
       },
       {
         "id": "dep_chemistry",
         "name": "化學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1Y1sHQT1ynSEmmmP61Zq1iAkLKeb6ZxKp/preview",
         "related_event_id": []
       },
       {
         "id": "dep_physics",
         "name": "物理學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1TaTU5FNdnHUj2Id8kKaSld90tTPBitWl/preview",
         "related_event_id": []
       },
       {
         "id": "dep_earth_sciences",
         "name": "地球科學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1mbZuPxllqXs4NL2tWL995JaFQozA2uTm/preview",
         "related_event_id": []
       },
       {
         "id": "dep_photonics",
         "name": "光電科學與工程學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/18xG2GwBjd8y-NIZmNyJ6K5MrZscrQHr0/preview",
         "related_event_id": []
       }
@@ -87,46 +69,36 @@
   },
   {
     "college_name": "管理學院",
-    "photoURL": "",
-    "description": "",
+    "photoURL": "/BikeFestival17th-Frontend/forum_page/colleges/college_management.webp",
+    "description": "國立成功大學於1956年正式設立商學院，於1980年更名為管理學院，現有5個學系、11個研究所、9個博士班、5個碩士在職專班，以及院屬高階管理碩士在職專班EMBA與AMBA經營管理碩士學位學程等教學單位，另設置國際學術交流中心專責國際交流事務，個案教學中心規劃產學合作及個案教學活動，APMR（Asia Pacific Management Review）期刊編輯中心負責英文期刊編輯業務。",
     "departments": [
       {
         "id": "dep_accountancy",
         "name": "會計學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/16cwNB7afyqwzd3CDCPW3P27tN7wsmS9n/preview",
         "related_event_id": []
       },
       {
         "id": "dep_statistics",
         "name": "統計學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1sq6ec-uZeELr45h4QK1pYNZf0hUS7EXd/preview",
         "related_event_id": []
       },
       {
         "id": "dep_business_administration",
         "name": "企業管理學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1sASDpHUNTqbUPGmMCgL4ZKj92cxZmMJq/preview",
         "related_event_id": []
       },
       {
         "id": "dep_transportation_management",
         "name": "交通管理科學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1o6GKd0t-Kf5ZYphpD3GbxP4pXD0-Vu3h/preview",
         "related_event_id": []
       },
       {
         "id": "dep_industrial_and_information_management",
         "name": "工業與資訊管理學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1b8SdcdABUuilQwYFrLTy-IIC5X63DWvC/preview",
         "related_event_id": []
       }
@@ -134,102 +106,78 @@
   },
   {
     "college_name": "工學院",
-    "photoURL": "",
-    "description": "",
+    "photoURL": "/BikeFestival17th-Frontend/forum_page/colleges/college_engineering.webp",
+    "description": "國立成功大學工學院創立於1931年，為學校發展過程中重要的基石與支柱; 系所領域規模完整，以培育具有深厚理論基礎、創新實作能力、高雅人文素養、與宏觀國際思維，術德兼修之一流人才為教育目標。",
     "departments": [
       {
         "id": "dep_mechanical_engineering",
         "name": "機械工程學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1eC23fm1-jpM5eoyLejGsUUE4-gYAl95v/preview",
         "related_event_id": []
       },
       {
         "id": "dep_chemical_engineering",
         "name": "化學工程學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1C6ecPwmPEJwm_7-nua7ab5tQf4WrTtsI/preview",
         "related_event_id": []
       },
       {
         "id": "dep_civil_engineering",
         "name": "土木工程學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1OTn_M_Y_rjX3Z6vemjDgv2RWcvV9StW3/preview",
         "related_event_id": []
       },
       {
         "id": "dep_materials_engineering",
         "name": "材料科學與工程學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1TStqEBYN4eWVX-E_T6TlQnK4pgPuoBTa/preview",
         "related_event_id": []
       },
       {
         "id": "dep_hydraulic_and_ocean_engineering",
         "name": "水利及海洋工程學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/110N0IQZHH7QId5SBOcZYPgzaqn9RvWR9/preview",
         "related_event_id": []
       },
       {
         "id": "dep_engineering_science",
         "name": "工程科學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1IaWvixVrXVURqwTfCg4V-zcDLL6mVsSb/preview",
         "related_event_id": []
       },
       {
         "id": "dep_system_and_naval_mechatronic_engineering",
         "name": "系統及船舶機電工程學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1cn5pcAjEpFV_ZaPUjibFovMmI15-duS5/preview",
         "related_event_id": []
       },
       {
         "id": "dep_aeronautics_and_astronautics",
         "name": "航空太空工程學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1Rb7PSsfenQuvdXDwsidKPHH6M1u4LtWz/preview",
         "related_event_id": []
       },
       {
         "id": "dep_resources_engineering",
         "name": "資源工程學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1GUr_dLnf-dR3G5VQqcYhWTmj9shPxoT_/preview",
         "related_event_id": []
       },
       {
         "id": "dep_environmental_ngineering",
         "name": "環境工程學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1SALykWWlnDZ0Et9zbN2oG7vKt8dlvZzg/preview",
         "related_event_id": []
       },
       {
         "id": "dep_biomedical_engineering",
         "name": "生物醫學工程學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1pwqwEJxKzeoB857fFKDuW-jVd7NhZJvG/preview",
         "related_event_id": []
       },
       {
         "id": "dep_geomatics",
         "name": "測量及空間資訊學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1voF-gsFo1bQFk-FxbOKI8wtN_O_CkWv3/preview",
         "related_event_id": []
       }
@@ -237,22 +185,18 @@
   },
   {
     "college_name": "電機資訊學院",
-    "photoURL": "",
-    "description": "",
+    "photoURL": "/BikeFestival17th-Frontend/forum_page/colleges/college_ee_cs.webp",
+    "description": "國立成功大學電機資訊學院源自成立於1931年之電氣工程學系，承擔培育電機、電子、資訊與電信方面之產業及研究界極為殷切之高科技人才的重責大任，培育一萬多位優秀畢業生，貢獻台灣經濟奇蹟的創造，為配合台灣電資產業的快速成長，又因師生眾多且表現卓越，於2003年8月，由原工學院屬下相關系所正式成立「電機資訊學院」。",
     "departments": [
       {
         "id": "dep_electrical_engineering",
         "name": "電機工程學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1_k78C4r4xp6az5JWushLrMXR2wcU7tuF/preview",
         "related_event_id": []
       },
       {
         "id": "dep_computer_cience",
         "name": "資訊工程學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1hx2dVMhHwVpjhE2r0c801XBt5F2gYr2a/preview",
         "related_event_id": []
       }
@@ -260,38 +204,30 @@
   },
   {
     "college_name": "社會科學院",
-    "photoURL": "",
-    "description": "",
+    "photoURL": "/BikeFestival17th-Frontend/forum_page/colleges/college_social.webp",
+    "description": "社會科學院正式成立于民國86年。本校以理工科起家且聞名，雖早在民國58年即成立了獨立的文學院，但三大科學領域之一的社會科學，卻始終未有機會生根，實屬憾事。 為了因應台灣民主改革、社會開放的客觀環境，並使成功大學正式邁入綜合大學的時代。",
     "departments": [
       {
         "id": "dep_political_science",
         "name": "政治學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1GNUm8EadGAXrZO2yeANBWInpA0qsEblI/preview",
         "related_event_id": []
       },
       {
         "id": "dep_economics",
         "name": "經濟學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1DkHKZtcYEH-_so4inGdcQu8i8SeatD7Y/preview",
         "related_event_id": []
       },
       {
         "id": "dep_law",
         "name": "法律學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1BMCkKlRm0E4o7NcdcLZGrYxCMGfRTklW/preview",
         "related_event_id": []
       },
       {
         "id": "dep_psychology",
         "name": "心理學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/12ntEoE3FO9UxKFRFfz1rgCpn-RPyHl9R/preview",
         "related_event_id": []
       }
@@ -299,30 +235,24 @@
   },
   {
     "college_name": "規劃與設計學院",
-    "photoURL": "",
-    "description": "",
+    "photoURL": "/BikeFestival17th-Frontend/forum_page/colleges/college_design.webp",
+    "description": "規劃與設計學院之教學及研究強調學術之實務應用，包括不同規模尺度空間與環境的規劃與設計，以及各種生活用品之研發與設計。各系基本之學理基礎即建立在本校長年以來所建立的理學、工學、醫學、管理學及人文社會科學之綜合學理上。",
     "departments": [
       {
         "id": "dep_architecture",
         "name": "建築學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/16BvjzcN_Do7b4gy44L7IV0W3gqq90Rjj/preview",
         "related_event_id": []
       },
       {
         "id": "dep_urban_planning",
         "name": "都市計劃學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1tMz6mT3WLbIw_MIp50hOvr8pEDWPneyx/preview",
         "related_event_id": []
       },
       {
         "id": "dep_industrial_design",
         "name": "工業設計學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1p38KscdqU5MAEcXhrJOAHZLA4xRV1tHT/preview",
         "related_event_id": []
       }
@@ -330,22 +260,18 @@
   },
   {
     "college_name": "生物科學與科技學院",
-    "photoURL": "",
-    "description": "",
+    "photoURL": "/BikeFestival17th-Frontend/forum_page/colleges/college_bioscience.webp",
+    "description": "生物科學與科技學院積極結合醫學、理學、工學及電資學院相關系所進行跨領域合作，以增加「生科學院」教學研究能量，並積極完成「生科學院」教學研究團隊之組建與重整，藉由團隊整合凝聚研究發展方向與能量，發展成世界頂尖的研究型學院。",
     "departments": [
       {
         "id": "dep_life_sciences",
         "name": "生命科學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1-trxZpVoqmVA0KiPpMR95Sr5Ro9n_Mwg/preview",
         "related_event_id": []
       },
       {
         "id": "dep_biotechnology_and_bioindustry_sciences",
         "name": "生物科技與產業科學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/19yObgkyptp6fnSHhP6qFA0ELv2bfz1ZQ/preview",
         "related_event_id": []
       }
@@ -353,54 +279,42 @@
   },
   {
     "college_name": "醫學院",
-    "photoURL": "",
-    "description": "",
+    "photoURL": "/BikeFestival17th-Frontend/forum_page/colleges/college_medicine.webp",
+    "description": "醫學院與醫院毗鄰而設，基礎與臨床教育融合一體，為一所學術自由、創造力蓬勃的醫學院，與其他醫院相比，師資及課程安排多元化，亦充分享有綜合大學豐富且多樣的社團活動，是一所注重人文修養與藝術薰陶的醫學院。",
     "departments": [
       {
         "id": "dep_medicine",
         "name": "醫學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/18-FzaJgkfxqugnpsY8gmWr2iXTX4c3Zf/preview",
         "related_event_id": []
       },
       {
         "id": "dep_nursing",
         "name": "護理學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1-Vqkvju1tUt8kJCZGE9NCWLRvsvMkuwQ/preview",
         "related_event_id": []
       },
       {
         "id": "dep_dentistry",
         "name": "牙醫學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1z-URBL4PUXOaiNvlvrbZTG7UoHO47jvq/preview",
         "related_event_id": []
       },
       {
         "id": "dep_physical_therapy",
         "name": "物理治療學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/11ZJkwGLerQGmYDCGl60SuEE8kUabKBdp/preview",
         "related_event_id": []
       },
       {
         "id": "dep_occupational_therapy",
         "name": "職能治療學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1N3XspdRJUindUskStHdjhnOl4_oy6uVt/preview",
         "related_event_id": []
       },
       {
         "id": "dep_medical_laboratory_science",
         "name": "醫學檢驗暨生物技術學系",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1oOH2gpvqjruhoAvINx_dVnitkH5ZseiU/preview",
         "related_event_id": []
       }
@@ -408,14 +322,12 @@
   },
   {
     "college_name": "不分系",
-    "photoURL": "",
-    "description": "",
+    "photoURL": "/BikeFestival17th-Frontend/forum_page/colleges/program_cross_college_elite.webp",
+    "description": "全校不分系學士學位學程之成立是考量環境快速變遷，尊重學生多元化選擇，為每個進入本班的學生量身打造一套差異化學習，以培育具有宏觀視野、專業素養、終身學習能力與社會關懷之高科技創新與未來領導人才為目標。",
     "departments": [
       {
         "id": "dep_cross_college_elite_program",
         "name": "全校不分系學士學位學程",
-        "photoURL": "",
-        "description": "",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1y1YB5Tw8YOP0toMyFVwNyxwED934ngf4/preview",
         "related_event_id": []
       }

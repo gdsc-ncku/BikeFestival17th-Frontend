@@ -5,7 +5,7 @@
       v-if="show"
       class="z-[9999] fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 max-sm:flex-col max-sm:justify-end"
     >
-      <div class="sm:w-[720px] w-[100vw] h-[600px] bg-white px-9 py-10 sm:rounded sm:rounded max-sm:rounded-tl-[1.25rem] max-sm:rounded-tr-[1.25rem]">
+      <div class="sm:w-[720px] w-[100vw] h-[600px] bg-white px-9 py-10 sm:rounded max-sm:rounded-tl-[1.25rem] max-sm:rounded-tr-[1.25rem]">
         <!-- top -->
 
         <div class="flex justify-between">

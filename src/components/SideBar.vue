@@ -5,14 +5,18 @@
       <label class="text-xl font-bold py-2 flex items-center justify-between">
         <span class="cursor-pointer">{{ subtitleData.name }}</span>
         <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none">
-          <path d="M13 1.5L7 7.5L1 1.5" stroke="#404040" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" />
+          <path d="M13 1.5L7 7.5L1 1.5" stroke="#404040" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
         <input type="checkbox" class="hidden" />
       </label>
-      <RouterLink v-for="content in subtitleData.content" :to="content.link" class="text-base p-2 rounded" :data-selected="content.selected">{{
-        content.name
-      }}</RouterLink>
+      <RouterLink
+        v-for="content in subtitleData.content"
+        class="text-base p-2 rounded hover:text-primary"
+        :to="content.link"
+        :data-selected="content.selected"
+      >
+        {{content.name}}
+      </RouterLink>
     </div>
   </div>
 </template>
@@ -49,6 +53,9 @@ const props = defineProps({
 }
 .subtitle:has(input:checked)>a {
   display: block;
+}
+.subtitle:has(input:checked) label svg {
+  transform: scaleY(-1);
 }
 .subtitle>a[data-selected=true] {
   background-color: #FFE6D4;

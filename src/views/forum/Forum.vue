@@ -5,7 +5,6 @@
       <img :src="d.imgLink" class="sm:w-[23.5rem] w-[6.875rem] sm:h-[13.875rem] h-[6.5rem] bg-[#ADADAD] sm:rounded-[0.625rem] rounded-[0.3125rem]" >
       <div class="flex flex-col sm:gap-4 gap-[0.38rem] flex-1">
         <div class="sm:hidden text-xs text-primary-900">{{ d.class_ }}</div>
-        <!-- <div class="sm:text-4xl text-xl font-bold">{{ d.name }}</div> -->
         <RouterLink class="sm:text-4xl text-xl font-bold" :to="d.link">
           {{ d.name }}
         </RouterLink>
@@ -23,21 +22,21 @@ const data = [
   {
     class_: "分類",
     name: "科系手冊",
-    context: "123456 abcdefg",
+    context: "收錄成功大學所有院系之概覽、課程、特色介紹、迷思破解，以及 108 課綱相關解說。",
     link: "/forum/departmentHandbook",
     imgLink: "",
   },
   {
     class_: "分類",
     name: "專欄文章",
-    context: "123456 abcdefg",
+    context: "從自學小撇步、大學攻略、超實用技能、考試備戰到生活小知識（懂生活），收攬著我們的多元主題的專欄文章。",
     link: "/forum/featuredArticles",
     imgLink: "",
   },
   {
     class_: "分類",
     name: "給高中生的一封信",
-    context: "123456 abcdefg",
+    context: "透過在職人士及畢業校友分享現職工作情況、所需技能，以及十年間心路歷程，讓對產業、未來職涯感到迷茫的高中生有所啟發。",
     link: "/forum/letterToHighSchoolStudents",
     imgLink: "",
   },
