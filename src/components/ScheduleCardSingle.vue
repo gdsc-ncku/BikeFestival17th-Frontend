@@ -4,6 +4,7 @@
     :style="`
       height: ${height ?? '190px'};
       width: ${width ?? '155px'};
+      ${top&&left ? `position: absolute; top: ${top}; left: ${left}` : ''}
       ${height ? 'display: flex; flex-direction: column; justify-content: center' : ''}
     `"
     @click="showModal = true"
@@ -178,6 +179,14 @@ let props = defineProps({
   step: {
     type: Number,
     default: 0,
+  },
+  top: {
+    type: String,
+    required: false,
+  },
+  left: {
+    type: String,
+    required: false,
   },
   height: {
     type: String,
