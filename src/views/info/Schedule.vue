@@ -104,6 +104,7 @@ const activityOrderList = [
   "解憂茶軒",
   "沈浸式體驗",
   "人生叉路口",
+  "告別前任永續市集",
 ];
 
 const activityList = ref([
@@ -114,6 +115,7 @@ const activityList = ref([
   "解憂茶軒",
   "沈浸式體驗",
   "人生叉路口",
+  "告別前任永續市集",
 ]);
 
 // activityList ref list
@@ -146,7 +148,7 @@ onBeforeMount(() => {
       解憂茶軒: [],
       沈浸式體驗: [],
       人生叉路口: [],
-      // 告別前任永續市集: [],
+      告別前任永續市集: [],
     },
     "3/3": {
       舞台活動: [],
@@ -156,12 +158,12 @@ onBeforeMount(() => {
       解憂茶軒: [],
       沈浸式體驗: [],
       人生叉路口: [],
-      // 告別前任永續市集: [],
+      告別前任永續市集: [],
     },
   };
 
   console.log(eventDict);
-  // console.log(eventDict.value);
+  console.log(eventDict.value);
 
   // add event to eventDict 將event.json 中所有活動加入到 eventDict 活動字典
   event.map((item) => {
@@ -170,7 +172,7 @@ onBeforeMount(() => {
     console.log(item.activity);
     eventDict.value[item.date][item.activity].push(item);
     console.log(eventDict.value[item.date]);
-    // console.log(eventDict.value[item.date][item.activity]);
+    console.log(eventDict.value[item.date][item.activity]);
   });
 
   // sort event by date & start time
