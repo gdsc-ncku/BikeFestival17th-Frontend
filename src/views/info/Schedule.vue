@@ -60,26 +60,26 @@
       <div class="text-primary-900 font-bold text-[0.875rem]">{{ time }}</div>
       <div v-for="(item, index) in selectedData[time]" :class="(index === 0 && step === 0) ? 'z-40' : ''">
         <ScheduleCardSingle
-        :key="item.id"
-        :id="item.id"
-        :activity="item.activity"
-        :description="item.description"
-        :name="item.name"
-        :date="item.date"
-        :startTime="item.startTime"
-        :endTime="item.endTime"
-        :host="item.host"
-        :location="item.location"
-        :step="step"
-        width="auto"
-      />
+          :key="item.id"
+          :id="item.id"
+          :activity="item.activity"
+          :description="item.description"
+          :name="item.name"
+          :date="item.date"
+          :startTime="item.startTime"
+          :endTime="item.endTime"
+          :host="item.host"
+          :location="item.location"
+          :step="step"
+          width="auto"
+        />
       </div>
     </div>
   </div>
 
   <div class="fixed w-[100vw] h-[3.3125rem] flex bottom-0 left-0 sm:hidden">
     <button
-      v-for="(key, i) in ['2024/3/2', '2024/3/3']"
+      v-for="(key, i) in ['3/2', '3/3']"
       class="flex-1 border-solid border-2 border-primary-900 font-bold"
       :class="`${selectedDate === key ? 'bg-[#FFF] text-primary-900' : 'bg-primary-900 text-white'}`"
       @click="selectedDate = key"
@@ -119,65 +119,66 @@ const activityList = ref([
 // activityList ref list
 const activityListRef = ref([]);
 
-const eventDict = ref({});
 // process event data before mount
-/*
-  schema :
-  {
-    "2024/3/2" : {
-      "舞台活動" : [event1, event2, ...],
-      "大學藍圖" : [event1, event2, ...],
-      ...
-    },
-    "2024/3/3" : {
-      "科系博覽" : [event1, event2, ...],
-      "大學藍圖" : [event1, event2, ...],
-      ...
-    },
-  }
-  */
+/* schema :
+{
+  "3/2" : {
+    "舞台活動" : [event1, event2, ...],
+    "大學藍圖" : [event1, event2, ...],
+    ...
+  },
+  "3/3" : {
+    "科系博覽" : [event1, event2, ...],
+    "大學藍圖" : [event1, event2, ...],
+    ...
+  },
+} */
+const eventDict = ref({});
 
 onBeforeMount(() => {
   // init eventDict in the order above
   eventDict.value = {
-    "2024/3/2": {
+    "3/2": {
       舞台活動: [],
       大學藍圖: [],
       科系博覽: [],
       升學指南: [],
       解憂茶軒: [],
       沈浸式體驗: [],
-      人生岔路口: [],
+      人生叉路口: [],
+      // 告別前任永續市集: [],
     },
-    "2024/3/3": {
+    "3/3": {
       舞台活動: [],
       大學藍圖: [],
       科系博覽: [],
       升學指南: [],
       解憂茶軒: [],
       沈浸式體驗: [],
-      人生岔路口: [],
+      人生叉路口: [],
+      // 告別前任永續市集: [],
     },
   };
 
-  console.log(eventDict.value);
+  console.log(eventDict);
+  // console.log(eventDict.value);
 
-  // add event to eventDict
+  // add event to eventDict 將event.json 中所有活動加入到 eventDict 活動字典
   event.map((item) => {
     console.log(item);
     console.log(item.date);
     console.log(item.activity);
-    console.log(eventDict.value[item.date]);
-    console.log(eventDict.value[item.date][item.activity]);
     eventDict.value[item.date][item.activity].push(item);
+    console.log(eventDict.value[item.date]);
+    // console.log(eventDict.value[item.date][item.activity]);
   });
 
   // sort event by date & start time
   activityOrderList.map((activity) => {
-    eventDict.value["2024/3/2"][activity].sort((a, b) => {
+    eventDict.value["3/2"][activity].sort((a, b) => {
       return a.startTime > b.startTime ? 1 : -1;
     });
-    eventDict.value["2024/3/3"][activity].sort((a, b) => {
+    eventDict.value["3/3"][activity].sort((a, b) => {
       return a.startTime > b.startTime ? 1 : -1;
     });
   });
@@ -202,7 +203,7 @@ const startTimeData = Object.fromEntries(
   )
 );
 
-const selectedDate = ref("2024/3/2");
+const selectedDate = ref("3/2");
 const selectedData = computed(() => Object.fromEntries(
   Object.entries(startTimeData).map(
     ([k, v]) => [k, v.filter(d => d.date === selectedDate.value)]
