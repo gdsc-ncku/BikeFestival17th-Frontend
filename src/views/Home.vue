@@ -146,14 +146,14 @@
     <div class="text-white xl:text-2xl lg:text-base text-sm">
       <h2 class="font-bold text-white xl:text-4xl lg:text-3xl text-2xl lg:mb-12 sm:mb-10 mb-7">紀念品小舖</h2>
       <div class="*:w-max w-max sm:m-0 mx-auto mb-6">
-        <p>Horem ipsum dolor sit </p><!-- 這邊要改自動換行，不然會跑版 -->
+        <p>敬請期待！</p>
       </div>
       <RouterLink
         class="lg:flex w-24 h-10 justify-center bg-white rounded-lg mt-7 sm:visible hidden"
         to="#"
       >
         <div class="flex flex-col justify-center">
-          <span class="block text-primary-900 font-medium"> 前往購買 </span>
+          <span class="block text-primary-900 font-medium"> 商品介紹 </span>
         </div>
       </RouterLink>
     </div>
@@ -195,6 +195,7 @@
   </div>
 
   <!-- line official account  -->
+  
 
   <!-- key visual bottom -->
   <div class="w-full sm:visible hidden">
