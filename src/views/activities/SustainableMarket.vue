@@ -1,6 +1,6 @@
 <template>
   <Breadcrumb />
-  <ActivityContent :list=activityDetails.goodbyeEx title="告別前任永續市集" :img="`/BikeFestival17th-Frontend/public/${activities[7].img}`"/>
+  <ActivityContent :list=activityDetails.sustainableMarket title="告別前任永續市集" :img="`/BikeFestival17th-Frontend/public/${activities[7].img}`"/>
 </template>
 
 <script setup>
