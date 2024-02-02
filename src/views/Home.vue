@@ -199,7 +199,7 @@
     <img src="/home/line.png" alt="line" width="200">
     <div>
       <h1 class="mb-10 lg:text-5xl text-3xl font-bold leading-tight">加入LINE官方帳號，<br>活動通知不漏接！</h1>
-      <a href="https://lin.ee/7Y8Zdu0" class="px-4 py-2 bg-[#00CB42] hover:bg-[#007626] text-white text-xl rounded-lg">加入好友</a>
+      <a href="https://lin.ee/7Y8Zdu0" class="px-4 py-2 bg-[#00CB42] hover:bg-[#00B23A] text-white text-xl rounded-lg transition-all ease-in ">加入好友</a>
     </div>
   </div>
 
