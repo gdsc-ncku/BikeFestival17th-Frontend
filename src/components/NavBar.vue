@@ -57,12 +57,13 @@
       <transition
         v-show="isSidebarOpen"
         name="slide"
-        class="absolute h-screen top-0 right-0 w-1/2 overflow-y-auto bg-primary shadow-lg z-20"
+        class="absolute h-svh top-0 right-0 w-1/2 overflow-y-auto bg-primary shadow-lg z-20"
       >
-        <div class="flex flex-col gap-5 pt-20 px-6 text-base text-white">
+        <div class="flex flex-col gap-5 pt-20 pb-10 px-6 text-base text-white">
+          <RouterLink to="/" @click="sidebarToggle">首頁</RouterLink>
           <RouterLink to="/about" @click="sidebarToggle">關於單車節</RouterLink>
-          <div class="w-full flex justify-between items-center">
-            <RouterLink to="/info/traffic" @click="sidebarToggle">參加資訊</RouterLink>
+          <div class="w-full flex items-center">
+            <RouterLink to="/info/traffic" @click="sidebarToggle" class="mr-2">參加資訊</RouterLink>
             <svg v-if="isInfoOpen" @click="infoToggle"
               xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none"><path d="M13 1.5L7 7.5L1 1.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
             <svg v-else @click="infoToggle" class="-rotate-90"
@@ -74,8 +75,8 @@
             <RouterLink to="/info/schedule" @click="sidebarToggle">行程表</RouterLink>
             <RouterLink to="/info/mySchedule" @click="sidebarToggle">我的行程</RouterLink>
           </div>
-          <div class="w-full flex justify-between items-center">
-            <RouterLink to="/activities" @click="sidebarToggle">主題活動</RouterLink>
+          <div class="w-full flex items-center">
+            <RouterLink to="/activities" @click="sidebarToggle" class="mr-2">主題活動</RouterLink>
             <svg v-if="isActivitiesOpen" @click="activitiesToggle"
               xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none"><path d="M13 1.5L7 7.5L1 1.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
             <svg v-else @click="activitiesToggle" class="-rotate-90"
@@ -91,8 +92,8 @@
             <RouterLink to="/activities/unworriedTeaHouse" @click="sidebarToggle">解憂茶軒</RouterLink>
             <RouterLink to="/activities/sustainableMarket" @click="sidebarToggle">告別前任永續市集</RouterLink>
           </div>
-          <div class="w-full flex justify-between items-center">
-            <RouterLink to="/forum" @click="sidebarToggle">知識論壇</RouterLink>
+          <div class="w-full flex items-center">
+            <RouterLink to="/forum" @click="sidebarToggle" class="mr-2">知識論壇</RouterLink>
             <svg v-if="isForumOpen" @click="forumToggle"
               xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none"><path d="M13 1.5L7 7.5L1 1.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
             <svg v-else @click="forumToggle" class="-rotate-90"
