@@ -62,7 +62,7 @@
     <!-- right content container -->
     <div class="flex-1 relative px-[2rem] sm:p-0 py-10 sm:overflow-visible overflow-hidden">
       <h2 class="mb-10 font-bold text-white xl:text-4xl lg:text-3xl text-2xl">
-        測驗 - 你是哪一種動物？
+        測驗 - 你是哪一種車車？
       </h2>
       <!-- ellipse on right container -->
       <div class="absolute ellipse xl:-translate-x-[50px] xl:translate-y-[60px] -translate-x-[20px] translate-y-[-20px] xl:left-0 left-[1/5]"></div>
@@ -195,7 +195,7 @@
   </div>
 
   <!-- line official account -->
-  <div class="layout_content w-full py-20 flex lg:flex-row flex-col justify-center lg:gap-20 gap-10">
+  <div class="layout_content py-20 flex lg:flex-row flex-col justify-center lg:gap-20 gap-10">
     <img src="/home/line.png" alt="line" width="200">
     <div>
       <h1 class="mb-10 lg:text-5xl text-3xl font-bold leading-tight">加入LINE官方帳號，<br>活動通知不漏接！</h1>
