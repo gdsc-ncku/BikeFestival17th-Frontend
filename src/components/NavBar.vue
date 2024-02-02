@@ -25,7 +25,7 @@
 
       <!-- sign-up button -->
       <div class="flex flex-col justify-center">
-        <a href="#" class="block text-center font-bold bg-primary-900 rounded-full lg:h-14 lg:w-36 lg:text-xl md:h-10 md:w-24 h-8 w-20">
+        <a href="#" class="block text-center font-bold bg-primary-900 hover:bg-primary-700 transition-all ease-in rounded-full lg:h-14 lg:w-36 lg:text-xl md:h-10 md:w-24 h-8 w-20">
           <div class="flex flex-col justify-center h-full">
             <span class="text-bold text-primary-50 text-sm lg:text-xl md:text-base">即刻報名</span>
           </div>
