@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted, onUpdated } from 'vue';
 
 let props = defineProps({
   tabs: Array,
@@ -21,6 +21,10 @@ let props = defineProps({
     default: false
   }
 });
-console.log(props.inTutorial);
+
+onUpdated(() => {
+  target.value = props.currTarget;
+});
+
 const target = ref(props.currTarget);
 </script>
