@@ -1,17 +1,19 @@
 <template>
-  <div class="lg:max-w-[1500px] max-w-[370px] mx-auto">
-    <div class="bg-white rounded-2xl px-5 py-3 h-fit min-w-[250px] lg:fixed mb-10">
-      <h1 class="font-bold text-primary text-2xl mb-5">{{ props.title }}</h1>
-      <a @click="setNum(index)" :href="'#item_' + index" v-for="(item, index) in list" :key="index"><h2 class="text-content text-xl mb-5 hover:bg-[#FFE0CA] rounded-lg p-1" :class="num === index ? 'bg-[#FFE0CA]' : ''">{{ item.subtitle }}</h2></a>
+  <div class="layout_content">
+    <div class="bg-white rounded-2xl mb-5 px-4 lg:pt-5 py-2 min-w-[250px] lg:fixed ">
+      <a @click="setNum(index)" :href="'#item_' + index" v-for="(item, index) in list" :key="index">
+        <h2 class="text-content lg:text-xl text-base lg:mb-5 mb-2 p-1 hover:bg-[#FFE0CA] rounded-lg" :class="num === index ? 'bg-[#FFE0CA]' : ''">
+          {{ item.subtitle }}
+        </h2>
+      </a>
     </div>
     <div class="lg:w-3/4 lg:ml-[400px]">
       <div class="relative w-full lg:h-[400px] h-[200px] mb-5">
         <img :src="img" class="rounded-2xl object-cover w-full mb-[400px] absolute h-full" />
-        <div style="border-radius: 16px;
-background: linear-gradient(0deg, #404040 0%, rgba(217, 217, 217, 0.00) 100%);" class="absolute z-10 w-full h-full"></div>
+        <div style="border-radius: 16px; background: linear-gradient(0deg, #404040 0%, rgba(217, 217, 217, 0.00) 100%);" class="absolute z-10 w-full h-full"></div>
         <h1 class="text-white lg:text-5xl text-4xl font-bold absolute z-10 lg:top-80 top-32 lg:right-10 lg:left-auto left-5">{{ props.title }}</h1>
       </div>
-      
+
       <div v-for="(item, index) in props.list" :key=index class="text-content text-xl mb-72">
         <div class="w-fit">
           <h2 :id="'item_' + index" class="text-3xl font-bold block -mb-3">{{ item.subtitle }}</h2>
@@ -42,8 +44,8 @@ background: linear-gradient(0deg, #404040 0%, rgba(217, 217, 217, 0.00) 100%);" 
       </div>
     </div>
   </div>
-  
-  
+
+
 </template>
 
 <script setup>
@@ -90,7 +92,7 @@ const activityListRef = ref([]);
 const eventDict = ref({});
 // process event data before mount
 /*
-  schema : 
+  schema :
   {
     "2024/3/2" : {
       "舞台活動" : [event1, event2, ...],
