@@ -19,7 +19,7 @@
   </div>
 
   <!-- Story -->
-  <div class="layout_content md:my-20 my-10 flex md:flex-row flex-col">
+  <div class="layout_content md:py-20 py-10 flex md:flex-row flex-col">
     <div class="flex-1 md:ml-10 md:mb-0 mb-12">
       <h2 id="typewriter" class="font-bold text-content xl:text-4xl lg:text-3xl text-2xl md:mb-6 mb-7 pr-7">
         單車十七 有點東西
@@ -170,7 +170,7 @@
   </div>
 
   <!-- partners -->
-  <div class="sm:px-36 sm:pt-20 sm:pb-48 pt-10 pb-12 px-8">
+  <div class="layout_content py-20">
     <div class="w-full text-center">
       <p class="text-black font-black xl:text-4xl lg:text-3xl text-2xl">贊助廠商</p>
       <p class="text-black mt-3 font-medium xl:text-xl text-lg">依照中英文筆畫順序排列</p>
@@ -194,8 +194,14 @@
     </div>
   </div>
 
-  <!-- line official account  -->
-  
+  <!-- line official account -->
+  <div class="layout_content w-full py-20 flex lg:flex-row flex-col justify-center lg:gap-20 gap-10">
+    <img src="/home/line.png" alt="line" width="200">
+    <div>
+      <h1 class="mb-10 lg:text-5xl text-3xl font-bold leading-tight">加入LINE官方帳號，<br>活動通知不漏接！</h1>
+      <a href="https://lin.ee/7Y8Zdu0" class="px-4 py-2 bg-[#00CB42] hover:bg-[#007626] text-white text-xl rounded-lg">加入好友</a>
+    </div>
+  </div>
 
   <!-- key visual bottom -->
   <div class="w-full sm:visible hidden">
