@@ -19,43 +19,38 @@
   </div>
 
   <!-- Story -->
-  <div class="layout_content sm:flex sm:justify-evenly xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pt-10">
-    <div>
+  <div class="layout_content md:my-20 my-10 flex md:flex-row flex-col">
+    <div class="flex-1 md:ml-10 md:mb-0 mb-12">
       <h2 id="typewriter" class="font-bold text-content xl:text-4xl lg:text-3xl text-2xl md:mb-6 mb-7 pr-7">
-        單車故事
+        單車十七 有點東西
       </h2>
-      <div class="pr-6 text-content xl:text-2xl lg:text-base text-sm">
-        <p>成大單車節，致力於弭平高中與大學端之資訊落差。
-          我們創造對話的平台，讓身處第一線戰場的大學生，
-          分享屬於我們的故事，激盪出的火花與羈絆，將是你
-          們勇敢前行的最佳後盾。<br><br>
-          今年三月二號、三號，一起來到成大單車節，讓我們
-          攜手前行，帶你一步步構築屬於自己的大學藍圖。</p>
+      <div class="md:pr-10 text-content lg:text-base text-sm">
+        <p>成大單車節，致力於弭平高中與大學端之資訊落差。<br>
+          我們創造對話的平台，讓身處第一線戰場的大學生，分享屬於我們的故事，激盪出的火花與羈絆，將是你們勇敢前行的最佳後盾。
+          <br><br>今年三月二號、三號，一起來到成大單車節，讓我們攜手前行，帶你一步步構築屬於自己的大學藍圖。</p>
       </div>
     </div>
-    <div class="lg:mt-[64px] mt-12">
+    <div class="flex-1 flex flex-col items-center">
       <iframe
-        class="lg:w-[432px] lg:h-[237px] md:w-[300px] md:h-[170px] sm:w-[260px] sm:h-40 w-full h-[300px]"
+        class="lg:w-[432px] md:w-[300px] sm:w-[330px] aspect-video"
         src="https://www.youtube.com/embed/dQw4w9WgXcQ"
       >
       </iframe>
-      <div class="pt-3 w-full sm:flex sm:justify-center hidden">
-        <span class="font-black xl:text-xl text-lg">宣傳短片</span>
-      </div>
+      <span class="font-black xl:text-xl text-lg">宣傳短片</span>
     </div>
   </div>
 
   <!-- psychological test -->
-  <div class="sm:flex sm:justify-evenly xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pb-10 bg-primary-900">
+  <div class="flex md:flex-row flex-col sm:justify-evenly xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pb-10 bg-primary-900">
     <!-- left image container -->
-    <div>
+    <div class="flex-1 flex flex-col items-center lg:pt-0 pt-5">
       <img
-        class="lg:w-[432px] w-80 sm:relative hidden"
+        class="lg:w-96 w-80"
         alt="psychological-test"
-        src="https://fakeimg.pl/432x237"
+        src="https://fakeimg.pl/300x200"
       />
       <!-- desktop button link -->
-      <div class="sm:mt-10 w-full sm:flex sm:justify-center hidden">
+      <div class="sm:mt-4 w-full sm:flex sm:justify-center hidden">
         <RouterLink to="#" class="flex lg:w-40 lg:h-16 lg:p-0 px-6 py-3 justify-center bg-white rounded-lg">
           <div class="flex flex-col justify-center">
             <span class="block text-primary-900 font-bold"> 即刻遊玩 </span>
@@ -63,9 +58,10 @@
         </RouterLink>
       </div>
     </div>
+
     <!-- right content container -->
-    <div class="relative sm:p-0 py-10 sm:overflow-visible overflow-hidden">
-      <h2 class="mb-10 font-bold text-white xl:text-4xl lg:text-3xl text-2xl sm:p-0 px-7">
+    <div class="flex-1 relative px-[2rem] sm:p-0 py-10 sm:overflow-visible overflow-hidden">
+      <h2 class="mb-10 font-bold text-white xl:text-4xl lg:text-3xl text-2xl">
         測驗 - 你是哪一種動物？
       </h2>
       <!-- ellipse on right container -->
@@ -74,14 +70,7 @@
       <div class="absolute ellipse xl:translate-x-[280px] xl:translate-y-[170px] translate-x-[80px] translate-y-[90px] xl:left-0 left-[1/5]"></div>
       <div class="opacity-95 text-white xl:text-2xl lg:text-base text-sm">
         <!-- https://stackoverflow.com/questions/50530436/how-to-keep-a-transformed-element-behind-another-element -->
-        <div class="*:w-max w-max sm:m-0 mx-auto"> <!-- 這邊要改自動換行，不然會跑版 -->
-          <p>猶記得高三那年，一出學測考場，人生頓失方向。該</p>
-          <p>讀哪間學校、報什麼學系？此起彼落的疑問，成了每</p>
-          <p>個考生心中的困擾，也迴盪在每次與父母、導師的談</p>
-          <p>話間。不管閱覽了多少網路資料，你仍然躊躇不前，</p>
-          <p>甚至更加心焦</p>
-          <p>——這樣的選擇是對的嗎？去了那裡會不會後悔？</p>
-        </div>
+        <p>猶記得高三那年，一出學測考場，人生頓失方向。該讀哪間學校、報什麼學系？此起彼落的疑問，成了每個考生心中的困擾，也迴盪在每次與父母、導師的談話間。不管閱覽了多少網路資料，你仍然躊躇不前，甚至更加心焦<br>——這樣的選擇是對的嗎？去了那裡會不會後悔？</p>
       </div>
     </div>
 
@@ -95,23 +84,33 @@
     </div>
   </div>
 
-  <!-- 7 theme activities -->
-  <div class="xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pt-10">
-    <h2 class="mb-12 font-bold text-content xl:text-4xl lg:text-3xl text-2xl">七大主題活動</h2>
-    <!-- carousel -->
-    <div class="mx-auto sm:pt-16 sm:px-16 px-10 pb-10 rounded-lg border-2 border-content max-w-[1110px]">
-      <div class="w-full text-center mb-6">
-        <h2 class="font-bold text-black xl:text-4xl lg:text-3xl text-2xl">
-          活動標題
-        </h2>
-      </div>
+  <!-- 8 theme activities -->
+  <div class="layout_content md:my-20 my-10 flex flex-col items-center">
+    <h2 class="mb-12 font-bold text-content xl:text-4xl lg:text-3xl text-2xl">八大主題活動</h2>
+    <div class="lg:w-[800px] w-full sm:pt-16 sm:px-16 px-10 py-10 rounded-lg border-2 border-content bg-white">
+      <Splide
+        :options="{
+          autoplay: true, interval: 2000, type: 'loop', perPage: 1, padding: '10rem', gap: '2rem',
+          breakpoints: { 640: {padding: '0rem', gap: '0rem'}, },
+      }">
+        <SplideSlide v-for="(item, index) in activities" :key="index">
+          <RouterLink :to=item.url class="w-full">
+            <div class="relative w-full aspect-video mb-5">
+              <img :src="item.img" :alt="item.title" class="absolute w-full h-full object-cover md:rounded-2xl rounded-lg" />
+              <div style="border-radius: 16px; background: linear-gradient(0deg, #404040 0%, rgba(217, 217, 217, 0.00) 100%);" class="absolute z-10 w-full h-full"></div>
+              <h1 class="text-white text-xl font-bold absolute z-10 bottom-5 right-10 lg:left-auto left-5">{{ item.title }}</h1>
+            </div>
+          </RouterLink>
+          <div class="mb-10 lg:text-xl text-base">{{ item.brief }}</div>
+        </SplideSlide>
+      </Splide>
     </div>
   </div>
 
   <!-- column articles -->
-  <div class="flex flex-col items-center xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pt-10">
+  <div class="layout_content flex flex-col md:my-20 my-10">
     <h2 class="mb-12 font-bold text-content xl:text-4xl lg:text-3xl text-2xl">專欄文章</h2>
-    <div class="flex gap-5 md:flex-row flex-col">
+    <div class="flex gap-5 md:flex-row flex-col items-center justify-between">
       <DiscCard
         class="max-sm:hidden max-sm:first:block"
         title="真假新聞分不清？不私藏網路新聞指南！"
@@ -170,19 +169,6 @@
     </div>
   </div>
 
-  <!-- key visual bottom -->
-  <div class="w-full sm:visible hidden">
-    <div
-      class="w-full h-[900px] bg-cover bg-center relative"
-      style="background-image: url('/BikeFestival17th-Frontend/home/key-visual-bottom.png')"
-    ></div>
-    <div class="absolute -translate-y-80 left-1/2 -translate-x-1/2">
-      <h2 class="text-white font-black lg:text-4xl text-2xl">
-        邀請你踏上探索科系的旅程！
-      </h2>
-    </div>
-  </div>
-
   <!-- partners -->
   <div class="sm:px-36 sm:pt-20 sm:pb-48 pt-10 pb-12 px-8">
     <div class="w-full text-center">
@@ -208,13 +194,29 @@
     </div>
   </div>
 
-  <!-- footer -->
+  <!-- line official account  -->
+
+  <!-- key visual bottom -->
+  <div class="w-full sm:visible hidden">
+    <div
+      class="w-full h-[900px] bg-cover bg-center relative"
+      style="background-image: url('/BikeFestival17th-Frontend/home/key-visual-bottom.png')"
+    ></div>
+    <div class="absolute -translate-y-80 left-1/2 -translate-x-1/2">
+      <h2 class="text-white font-black lg:text-4xl text-2xl">
+        邀請你踏上探索科系的旅程！
+      </h2>
+    </div>
+  </div>
 </template>
 
 <script setup>
 import { RouterLink } from 'vue-router';
 import downChevron from '@/assets/down-chevron.svg';
 import DiscCard from '@/components/DiscCard.vue';
+import activities from "@/data/activities.json";
+import { Splide, SplideSlide } from '@splidejs/vue-splide';
+import '@splidejs/splide/dist/css/splide.min.css';
 
 document.addEventListener('scroll', function() {
   const element = document.querySelector('#typewriter');
@@ -296,5 +298,15 @@ document.addEventListener('scroll', function() {
     typing 2s steps(30, end) forwards,
     blink-caret .75s step-end infinite,
     fadeOutCursor 1s forwards 2s;
+}
+
+/* carousel style */
+.splide__slide {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.splide__slide.is-active {
+  opacity: 1;
 }
 </style>
