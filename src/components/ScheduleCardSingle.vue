@@ -1,8 +1,6 @@
 <template>
-  <!-- TODO: let the width of the card can be divided by the props.divider -->
   <div
-    class="w-[155px] h-[190px] p-3 rounded-lg bg-[#FFF3EA] hover:bg-[#FFD7AF] opacity-50"
-    :style="{transform: 'scale(' + 1 / divider + ', 1)'}"
+    class="w-[155px] h-[190px] p-3 rounded-lg bg-[#FFF3EA] hover:bg-[#FFD7AF] opacity-50 absolute"
     @click="showModal = true"
     @close="showModal = false"
   >
@@ -171,11 +169,7 @@ let props = defineProps({
   saved: {
     type: Boolean,
     default: false,
-  },
-  divider: {
-    type: Number,
-    default: 1,
-  },
+  }
 });
 
 let {
@@ -189,7 +183,6 @@ let {
   location,
   link,
   saved,
-  divider,
 } = props;
 
 const handleSave = () => {
