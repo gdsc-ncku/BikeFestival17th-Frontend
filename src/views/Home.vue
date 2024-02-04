@@ -178,32 +178,18 @@
   </div>
 
   <!-- partners -->
-  <div class="layout_content py-20">
-    <div class="w-full text-center">
-      <p class="text-black font-black xl:text-4xl lg:text-3xl text-2xl">贊助廠商</p>
-      <p class="text-black mt-3 font-medium xl:text-xl text-lg">依照中英文筆畫順序排列</p>
-    </div>
-    <div class="w-full flex justify-center">
-      <div
-        class="max-w-[1200px] mt-11 grid justify-center gap-x-8 gap-y-10 sm:grid-cols-5 grid-cols-2 *:mx-auto *:block sm:*:w-48 *:w-40"
-        grid gap-x-8 gap-y-4 sm:grid-cols-3 grid-cols-2
-      >
-        <img  src="https://fakeimg.pl/200x200" />
-        <img  src="https://fakeimg.pl/200x200" />
-        <img  src="https://fakeimg.pl/200x200" />
-        <img  src="https://fakeimg.pl/200x200" />
-        <img  src="https://fakeimg.pl/200x200" />
-        <img  src="https://fakeimg.pl/200x200" />
-        <img  src="https://fakeimg.pl/200x200" />
-        <img  src="https://fakeimg.pl/200x200" />
-        <img  src="https://fakeimg.pl/200x200" />
-        <img  src="https://fakeimg.pl/200x200" />
-      </div>
+  <div class="layout_content my-20 flex flex-col justify-center gap-5">
+    <h1 class="text-content font-bold text-center xl:text-4xl lg:text-3xl text-2xl">贊助廠商</h1>
+    <p class="mb-10 text-content text-center text-base">依照中英文筆畫順序排列</p>
+    <div class="flex flex-wrap gap-x-16 gap-y-8 justify-center">
+      <a v-for="sponsor in sponsors" :href="sponsor.websiteURL" target="_blank">
+        <img class="sm:w-[12.5rem] w-32 sm:h-[12.5rem] h-32 object-contain" :src="sponsor.imgURL">
+      </a>
     </div>
   </div>
 
   <!-- line official account -->
-  <div class="layout_content py-20 flex lg:flex-row flex-col justify-center lg:gap-20 gap-10">
+  <div class="layout_content md:pt-20 pt-0 pb-20 flex lg:flex-row flex-col justify-center lg:gap-20 gap-10">
     <img src="/home/line.png" alt="line" width="200">
     <div>
       <h1 class="mb-5 lg:text-5xl text-3xl font-bold">加入LINE官方帳號，</h1>
@@ -242,6 +228,16 @@ document.addEventListener('scroll', function() {
     element.classList.add('typewriter');
   }
 });
+const sponsors = [
+  { imgURL: "partners/ADHIL.webp", websiteURL: "https://www.adhilshop.com/h/Index?key=1dg19" },
+  { imgURL: "partners/deya.webp", websiteURL: "https://www.deya.tw/?lang=zh-TW" },
+  { imgURL: "partners/seemore.webp", websiteURL: "https://www.see-more.com.tw/" },
+  { imgURL: "partners/Sunshing.webp", websiteURL: "https://splus.com.tw/" },
+  { imgURL: "partners/宏達.jpg", websiteURL: "https://www.hdps.com.tw/" },
+  { imgURL: "partners/志光.webp", websiteURL: "https://www.ckpublic.com.tw/" },
+  { imgURL: "partners/高點.webp", websiteURL: "https://www.get.com.tw/" },
+  { imgURL: "partners/樂學網.webp", websiteURL: "https://347.com.tw/" },
+];
 </script>
 
 <style scoped>
