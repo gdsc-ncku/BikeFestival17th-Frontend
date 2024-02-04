@@ -22,7 +22,7 @@
     <!-- laptop container -->
     <div class="w-full flex justify-center">
       <!-- left time list -->
-      <div class="w-fill flex justify-start">
+      <div class="w-fill flex justify-start mt-11">
         <!-- time line -->
         <div class="flex flex-col gap-[150px] max-w-full">
           <div
@@ -47,7 +47,10 @@
             v-for="(project, projectIndex) in projectList"
             :key="project"
           >
-            <div class="text-black font-bold text-center text-xl min-w-[160px]">
+            <div class="text-black font-medium text-center text-xl min-w-[160px] px-4 py-2"
+              :style="{ backgroundColor: projectColorList[project] }"
+              :id="project"
+              ref="projectElementList">
               {{ project }}
             </div>
             <div class="flex flex-col gap-4">
@@ -60,6 +63,7 @@
                   :style="{
                     top: calculateEventTopOffset(eventGroup.events[0]),
                     height: calculateEventHeight(eventGroup.events[0]),
+                    transform: `translateX(${calculateLeftOffset(projectIndex)}px)`,
                   }"
                   class="absolute"
                 >
@@ -101,7 +105,7 @@
               {{ index + 8 }}:00
             </div> -->
               <div class="flex flex-col justify-center">
-                <div class="w-[4000px] h-0 border-[1px]"></div>
+                <div class="w-[4400px] h-0 border-[1px]"></div>
               </div>
               <!-- right fake box -->
               <div class="w-[65px] h-[35px] opacity-0">fake</div>
@@ -118,15 +122,10 @@ import event from "../../data/event.json";
 import ScheduleCardSingle from "../../components/ScheduleCardSingle.vue";
 import { ref, onMounted, onBeforeMount, computed } from "vue";
 
-// const activityList = ref([
-//   "舞台活動",
-//   "大學藍圖",
-//   "科系博覽",
-//   "升學指南",
-//   "解憂茶軒",
-//   "沈浸式體驗",
-//   "人生岔入口",
-// ]);
+// Constants for layout
+const pixelsPerHour = 185; // Height of one hour in pixels on the timeline
+const timelineStartHour = 9; // timeline starts at 9:00 AM
+const cardWidth = 155; // Width of each card
 
 const projectList = ref([
   "舞台活動",
@@ -143,9 +142,37 @@ const projectList = ref([
   "人生岔路口",
 ]);
 
-// Constants for layout
-const pixelsPerHour = 185; // Height of one hour in pixels on the timeline
-const timelineStartHour = 9; // timeline starts at 9:00 AM
+const projectElementList = ref(null);
+
+const cardTransformList = ref([
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+]);
+
+const projectColorList = ref({
+  舞台活動: null,
+  傑出校友生涯講座: "#FF5C0045",
+  "What Matters Most 工作坊": "#FF5C0045",
+  校園論壇: "#FF5C0045",
+  教授面試技巧演講: "#9CDAF7",
+  學習歷程講座: "#9CDAF7",
+  申請入學經驗談: "#9CDAF7",
+  科系體驗坊: "#FFEAA0",
+  系館導覽: "#FFEAA0",
+  解憂茶軒: null,
+  沈浸式體驗: null,
+  人生岔路口: null,
+});
 
 const selectedDate = ref("3/2");
 
@@ -237,7 +264,7 @@ function calculateEventTopOffset(event) {
   const [startHour, startMinute] = event.startTime.split(":").map(Number);
   const hourOffset = startHour - timelineStartHour;
   const minuteOffset = startMinute / 60;
-  return (hourOffset + minuteOffset) * pixelsPerHour + 45 + "px";
+  return (hourOffset + minuteOffset) * pixelsPerHour + 45 + 15 + "px";
 }
 
 function calculateEventHeight(event) {
@@ -248,6 +275,17 @@ function calculateEventHeight(event) {
   const totalDurationInHours = durationHours + durationMinutes / 60;
   return totalDurationInHours * pixelsPerHour + "px";
 }
+
+function calculateLeftOffset(project) {
+  // update cardTransformList onMounted
+  return cardTransformList.value[project] ;
+}
+
+onMounted(() => {
+  for (let i = 0; i < projectElementList.value.length; i++) {
+    cardTransformList.value[i] = (projectElementList.value[i].clientWidth - cardWidth) / 2;
+  }
+});
 </script>
 
 <style scoped>
