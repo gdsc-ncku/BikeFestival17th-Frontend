@@ -1,6 +1,6 @@
 <template>
   <Breadcrumb />
-  <ActivityContent :list=activityDetails.mainStage title="主舞台〈曦瓣〉" :img="`/BikeFestival17th-Frontend/public/${activities[0].img}`"/>
+  <ActivityContent :list=activityDetails.mainStage title="主舞台〈曦瓣〉" :img="`/BikeFestival17th-Frontend/${activities[0].img}`"/>
 </template>
 
 <script setup>

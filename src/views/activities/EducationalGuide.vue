@@ -1,6 +1,6 @@
 <template>
   <Breadcrumb />
-  <ActivityContent :list=activityDetails.educationalGuide title="升學指南" :img="`/BikeFestival17th-Frontend/public/${activities[3].img}`"/>
+  <ActivityContent :list=activityDetails.educationalGuide title="升學指南" :img="`/BikeFestival17th-Frontend/${activities[3].img}`"/>
 </template>
 
 <script setup>

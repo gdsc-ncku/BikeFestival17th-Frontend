@@ -1,6 +1,6 @@
 <template>
   <Breadcrumb />
-  <ActivityContent :list=activityDetails.unworriedTeaHouse title="解憂茶軒" :img="`/BikeFestival17th-Frontend/public/${activities[6].img}`"/>
+  <ActivityContent :list=activityDetails.unworriedTeaHouse title="解憂茶軒" :img="`/BikeFestival17th-Frontend/${activities[6].img}`"/>
 </template>
 
 <script setup>

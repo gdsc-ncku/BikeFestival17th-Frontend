@@ -1,6 +1,6 @@
 <template>
   <Breadcrumb />
-  <ActivityContent :list=activityDetails.universityBlueprint title="大學藍圖" :img="`/BikeFestival17th-Frontend/public/${activities[2].img}`"/>
+  <ActivityContent :list=activityDetails.universityBlueprint title="大學藍圖" :img="`/BikeFestival17th-Frontend/${activities[2].img}`"/>
 </template>
 
 <script setup>
