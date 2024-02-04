@@ -21,7 +21,7 @@
   <!-- Story -->
   <div class="layout_content md:py-20 py-10 flex md:flex-row flex-col">
     <div class="flex-1 md:ml-10 md:mb-0 mb-12">
-      <h2 id="typewriter" class="font-bold text-content xl:text-4xl lg:text-3xl text-2xl md:mb-6 mb-7 pr-7">
+      <h2 id="typewriter" class="font-bold text-content xl:text-4xl lg:text-3xl text-2xl md:mb-6 mb-7">
         單車十七 有點東西
       </h2>
       <div class="md:pr-10 text-content lg:text-base text-sm">
@@ -206,7 +206,8 @@
   <div class="layout_content py-20 flex lg:flex-row flex-col justify-center lg:gap-20 gap-10">
     <img src="/home/line.png" alt="line" width="200">
     <div>
-      <h1 class="mb-10 lg:text-5xl text-3xl font-bold leading-tight">加入LINE官方帳號，<br>活動通知不漏接！</h1>
+      <h1 class="mb-5 lg:text-5xl text-3xl font-bold">加入LINE官方帳號，</h1>
+      <h1 class="mb-10 lg:text-5xl text-3xl font-bold">活動通知不漏接！</h1>
       <a href="https://lin.ee/7Y8Zdu0" class="px-4 py-2 bg-[#00CB42] hover:bg-[#00B23A] text-white text-xl rounded-lg transition-all ease-in ">加入好友</a>
     </div>
   </div>
@@ -290,18 +291,26 @@ document.addEventListener('scroll', function() {
     opacity: 1;
   }
   to {
-    width: 100%;
+    width: 270px;
     opacity: 1;
   }
+}
+@media screen and (max-width: 640px) {
+  @keyframes typing {
+  from {
+    width: 0;
+    opacity: 1;
+  }
+  to {
+    width: 220px;
+    opacity: 1;
+  }
+}
 }
 
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: orange; }
-}
-
-@keyframes fadeOutCursor {
-  to { border-color: transparent; }
 }
 
 .typewriter {
@@ -310,9 +319,8 @@ document.addEventListener('scroll', function() {
   opacity: 0;
   border-right: .15em solid orange;
   animation:
-    typing 2s steps(30, end) forwards,
-    blink-caret .75s step-end infinite,
-    fadeOutCursor 1s forwards 2s;
+    typing 3s steps(30, end) forwards,
+    blink-caret .75s infinite;
 }
 
 /* carousel style */
