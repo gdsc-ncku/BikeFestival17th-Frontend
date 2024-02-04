@@ -14,7 +14,7 @@
         <h1 class="text-white lg:text-5xl text-4xl font-bold absolute z-10 lg:top-80 top-32 lg:right-10 lg:left-auto left-5">{{ props.title }}</h1>
       </div>
 
-      <div v-for="(item, index) in props.list" :key=index class="text-content text-xl mb-72">
+      <div v-for="(item, index) in props.list" :key=index class="text-content text-xl mb-24">
         <div class="w-fit">
           <h2 :id="'item_' + index" class="text-3xl font-bold block -mb-3">{{ item.subtitle }}</h2>
         <div class="bg-[#FF5C0045] h-6 -mt-10 ml-4 w-full inline-block"></div>
