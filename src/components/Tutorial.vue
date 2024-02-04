@@ -2,7 +2,7 @@
   <!--background shadow-->
   <div class="fixed inset-0 bg-black opacity-50 z-40"></div>
   <!-- hint box -->
-  <div class="lg:w-[470px] w-full h-[180px] fixed lg:bottom-4 lg:right-4 bottom-0 right-0 bg-white z-50 lg:rounded-2xl rounded-t-2xl p-7">
+  <div class="lg:w-[470px] w-full h-[180px] fixed lg:bottom-64 lg:right-8 bottom-0 right-0 bg-white z-50 lg:rounded-2xl rounded-t-2xl p-7">
     <div class="flex flex-col justify-between">
       <div class="flex justify-between items-baseline">
         <h3 class="text-primary text-2xl font-bold">{{ hints[step].title }}</h3>
