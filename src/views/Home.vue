@@ -70,7 +70,15 @@
       <div class="absolute ellipse xl:translate-x-[280px] xl:translate-y-[170px] translate-x-[80px] translate-y-[90px] xl:left-0 left-[1/5]"></div>
       <div class="opacity-95 text-white xl:text-2xl lg:text-base text-sm">
         <!-- https://stackoverflow.com/questions/50530436/how-to-keep-a-transformed-element-behind-another-element -->
-        <p>猶記得高三那年，一出學測考場，人生頓失方向。該讀哪間學校、報什麼學系？此起彼落的疑問，成了每個考生心中的困擾，也迴盪在每次與父母、導師的談話間。不管閱覽了多少網路資料，你仍然躊躇不前，甚至更加心焦<br>——這樣的選擇是對的嗎？去了那裡會不會後悔？</p>
+        <p>
+          在尋找方向之前，要先知道自己是誰，才能知道自己適合什麼、想要什麼。<br>
+          但，你真的了解自己嗎？<br>
+          第十七屆成大單車節限定心理測驗！<br>
+          <br>
+          「在單車的世界裡，你的本體是...？」<br>
+          各式各樣的單車，你是哪一種單車呢？<br>
+          此外還有推薦的單車節行程、能力分析、好夥伴和壞夥伴們，等你來解鎖！
+        </p>
       </div>
     </div>
 
