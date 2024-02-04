@@ -116,36 +116,37 @@
   </div>
 
   <!-- column articles -->
-  <div class="layout_content flex flex-col md:my-20 my-10">
-    <h2 class="mb-12 font-bold text-content xl:text-4xl lg:text-3xl text-2xl">專欄文章</h2>
-    <div class="flex gap-5 md:flex-row flex-col items-center justify-between">
+  <div class="layout_content flex flex-col md:my-20 my-10 items-center">
+    <h2 class="mb-12 font-bold text-content xl:text-4xl lg:text-3xl text-2xl text-center">專欄文章</h2>
+    <div class="flex gap-10 md:flex-row flex-col items-center justify-around">
       <DiscCard
-        class="max-sm:hidden max-sm:first:block"
-        title="真假新聞分不清？不私藏網路新聞指南！"
-        class_="自學力"
-        timestamp="2023-12-28"
-        context="在這個資訊量龐大、訊息流通快速的世界，你是否曾經懷疑網路新聞的真實性？，是否曾被假新聞騙得團團轉？，這篇貼文直接報給你最實用的網路新聞指南！"
+        title="我們所不知道的升學"
+        class_="衝升學"
+        timestamp="2023-12-30"
+        context="小編在這裡整理了一些升大學管道有關簡介，還有貼心附上時程表🕒 讓大家的升學之路更清晰，裡面有主要採用的 #個人申請 用多元面向去展現自己；在學校都排名很靠前 #繁星 是你的好夥伴⭐；硬實力才是王道 #分科 見真章；覺得科大也適合自己那就用 #四技申請；某幾個技能特別突出 #特殊選才 等著你！"
         title-size="text-base"
-        link="/forum/featuredArticles/selfLearning_1"
+        link="/forum/featuredArticles/education_4"
       />
       <DiscCard
-        class="max-sm:hidden max-sm:first:block"
-        title="真假新聞分不清？不私藏網路新聞指南！"
-        class_="自學力"
-        timestamp="2023-12-28"
-        context="在這個資訊量龐大、訊息流通快速的世界，你是否曾經懷疑網路新聞的真實性？，是否曾被假新聞騙得團團轉？，這篇貼文直接報給你最實用的網路新聞指南！"
+        title="成為工程師的第一步－認識程式語言"
+        class_="技能點"
+        timestamp="2023-12-20"
+        context="我們統整了#Python #JavaScript C++的優缺點以及應用層面，也簡單地說明了前端與後端的差異，大家不妨先了解前後端的差異，再選擇適合自己的程式語言喔！"
         title-size="text-base"
-        link="/forum/featuredArticles/selfLearning_1"
+        link="/forum/featuredArticles/skill_3"
       />
       <DiscCard
-        class="max-sm:hidden max-sm:first:block"
-        title="真假新聞分不清？不私藏網路新聞指南！"
-        class_="自學力"
-        timestamp="2023-12-28"
-        context="在這個資訊量龐大、訊息流通快速的世界，你是否曾經懷疑網路新聞的真實性？，是否曾被假新聞騙得團團轉？，這篇貼文直接報給你最實用的網路新聞指南！"
+        title="能力開光加持-證照一把抓"
+        class_="拼考試"
+        timestamp="2024-02-10"
+        context="證照在我手，考運我來有🔥這邊為大家介紹不同科系的相關證照，讓我們收藏有興趣的證照並贏在起跑點吧！"
         title-size="text-base"
-        link="/forum/featuredArticles/selfLearning_1"
+        link="/forum/featuredArticles/exam_3"
       />
+    </div>
+    <div class="flex items-center mt-5">
+      <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none"><path d="M13.7881 23.4291L20.6902 16.5813L13.8424 9.6792L13.7881 23.4291Z" fill="#FF974D"/></svg>
+      <RouterLink to="/forum" class="text-primary text-base underline underline-offset-2">查看更多專欄文章</RouterLink>
     </div>
   </div>
 
@@ -158,7 +159,7 @@
       </div>
       <RouterLink
         class="lg:flex w-24 h-10 justify-center bg-white rounded-lg mt-7 sm:visible hidden"
-        to="#"
+        to="/souvenir"
       >
         <div class="flex flex-col justify-center">
           <span class="block text-primary-900 font-medium"> 商品介紹 </span>

@@ -1,12 +1,12 @@
 <template>
-    <RouterLink  :to="link" class="w-[21.1875rem] h-[15.25rem] bg-[#E1E1E1] rounded-[0.3125rem] mt-[8.1875rem] relative">
+    <RouterLink :to="link" class="w-[21.1875rem] h-[14rem] bg-[#E1E1E1] rounded-[0.3125rem] mt-[8.1875rem] relative">
         <div class="title bg-secondary px-[1.3125rem] pt-[0.8125rem] pb-[0.75rem] text-xl relative rounded-[0.3125rem]">
             <div class="font-bold text-right text-content" :class="titleSize">{{ title }}</div>
             <!-- <div class="font-bold text-right text-content" :class="titleSize">{{ title }}</div> -->
             <div class="absolute bottom-[calc(100%_+_0.44rem)] left-[2.25rem] text-white text-justify">#{{ class_ }}</div>
         </div>
-        <div class="text-content mt-8 ml-[0.94rem] mr-[1.69rem]">{{ context }}</div>
-        <div class="text-white text-center py-[0.38rem] bg-[#5A5A5A] rounded-bl-[0.3125rem] rounded-br-[0.3125rem] absolute w-full bottom-0">published on {{ timestamp }}</div>
+        <div class="text-content mt-4 ml-[0.94rem] mr-[1.69rem] text-sm">{{ context }}</div>
+        <div class="text-white text-center py-[0.38rem] bg-[#5A5A5A] rounded-bl-[0.3125rem] rounded-br-[0.3125rem] absolute w-full bottom-0 text-sm">發佈於 {{ timestamp }}</div>
     </RouterLink>
 </template>
 

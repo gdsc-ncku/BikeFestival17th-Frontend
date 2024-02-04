@@ -1,9 +1,10 @@
 <template>
   <Breadcrumb />
   <div v-if="$route.params.article === undefined" v-for="key in dataKey" class="max-w-[1200px] sm:mx-auto sm:w-[72.815rem] mx-[1.81rem]">
-    <div class="sm:pl-[2.31rem] pl-[1.38rem] sm:pb-[0.94rem] pb-2 sm:text-[2.5rem] text-2xl font-bold border-l-[7px] border-l-solid border-l-primary-900">{{
-      key }}</div>
-    <div class="sm:mt-[4.5rem] sm:mb-[3.37rem] my-4 flex gap-[2.47rem] flex-wrap">
+    <div class="sm:pl-[2.31rem] pl-[1.38rem] sm:pb-[0.94rem] pb-2 sm:text-[2.5rem] text-2xl font-bold border-l-[7px] border-l-solid border-l-primary-900">
+      {{ key }}
+    </div>
+    <div class="sm:mt-[4.5rem] sm:mb-[3.37rem] my-4 flex gap-[2.47rem] flex-wrap justify-center">
       <DiscCard
         class="sm:block hidden"
         v-for="d in featuredArticles.filter(v => v.category === key)"
@@ -25,16 +26,16 @@
         :link="`/forum/featuredArticles/${d.id}`"
       />
     </div>
-    <div v-if="featuredArticles.filter(v => v.category === key).length > 3" class="flex ml-auto items-center justify-end my-4 sm:hidden" v-on:click="() => {open[key] = !open[key]}">
-      <svg v-if="open[key]" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-        <path d="M13.7881 23.4291L20.6902 16.5813L13.8424 9.6792L13.7881 23.4291Z" fill="#FF974D"/>
-      </svg>
-      <svg v-else xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
+    <div v-if="featuredArticles.filter(v => v.category === key).length > 3" class="flex ml-auto items-center justify-center my-4 sm:hidden" v-on:click="() => {open[key] = !open[key]}">
+      <svg v-if="open[key]" xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
         <path d="M9.625 13.75L16.5 20.625L23.375 13.75H9.625Z" fill="#FF974D"/>
       </svg>
-      <div class="min-w-[4em] text-xs text-primary-900">{{ open[key] ? "收合" : "更多專欄" }}</div>
+      <svg v-else xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+        <path d="M13.7881 23.4291L20.6902 16.5813L13.8424 9.6792L13.7881 23.4291Z" fill="#FF974D"/>
+      </svg>
+      <div class="min-w-[4em] text-base text-primary-900">{{ open[key] ? "收合" : "更多文章" }}</div>
     </div>
-    <div v-if="open[key]" class="sm:hidden my-4 flex gap-[2.47rem] flex-wrap mb-[1.12rem]">
+    <div v-if="open[key]" class="sm:hidden my-4 flex gap-[2.47rem] flex-wrap mb-[1.12rem] justify-center">
       <DiscCard
         v-for="d in featuredArticles.filter(v => v.category === key).slice(3)"
         :title="d.title"
