@@ -56,7 +56,11 @@
       <div class="text-primary-900 text-base">{{ `發布於 ${selectedData.uploadDate}` }}</div>
       <div class="text-base whitespace-pre-line text-[#3A3A3A]">{{ selectedData.content }}</div>
       <div class="flex flex-wrap gap-8 lg:flex-row flex-col">
-        <img class="block lg:w-[calc(25%_-_1.5rem)] w-full" v-for="src in selectedData.imageURL.slice(1)" :src="src">
+        <label class="block lg:w-[calc(25%_-_1.5rem)] w-full group" v-for="src in selectedData.imageURL.slice(1)">
+          <img class="h-full w-full sm:hover:scale-110 group-has-[:checked]:sm:scale-100 cursor-pointer group-has-[:checked]:sm:fixed group-has-[:checked]:sm:h-[80vmin] group-has-[:checked]:sm:w-[80vmin] group-has-[:checked]:sm:top-[9rem] group-has-[:checked]:sm:left-[calc(50vw_-_40vmin)] z-10" :src="src">
+          <div class="h-screen w-screen group-has-[:checked]:sm:bg-[#3336] fixed top-0 left-0 pointer-events-none" ></div>
+          <input type="checkbox" class="hidden" />
+        </label>
       </div>
     </div>
     <RouterLink class="text-2xl font-bold underline text-primary-900 text-right block ml-auto mt-[2.37rem] mb-[3.44rem]" to="./">回到上一頁</RouterLink>
