@@ -18,14 +18,6 @@
       </div>
     </div>
   </div>
-  <!--step 1-->
-  <!-- <div v-if="step === 0" class="fixed top-96 left-[750px] z-50 w-[155px] h-[190px] bg-transparent"></div> -->
-  <!--step 2-->
-  <div v-if="step === 1"></div>
-  <!--step 3-->
-  <div v-if="step === 2"></div>
-  <!--step 4-->
-  <div v-if="step === 3"></div>
 </template>
 
 <script setup>

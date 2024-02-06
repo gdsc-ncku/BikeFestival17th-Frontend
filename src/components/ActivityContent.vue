@@ -2,12 +2,12 @@
   <div class="layout_content">
     <div class="bg-white rounded-2xl mb-5 px-4 lg:pt-5 py-2 min-w-[250px] lg:fixed ">
       <a @click="setNum(index)" :href="'#item_' + index" v-for="(item, index) in list" :key="index">
-        <h2 class="text-content lg:text-xl text-base lg:mb-5 mb-2 p-1 hover:bg-[#FFE0CA] rounded-lg" :class="num === index ? 'bg-[#FFE0CA]' : ''">
+        <h2 class="text-content lg:text-lg text-base lg:mb-5 mb-2 p-1 hover:bg-[#FFE0CA] rounded-lg" :class="num === index ? 'bg-[#FFE0CA]' : ''">
           {{ item.subtitle }}
         </h2>
       </a>
     </div>
-    <div class="lg:w-3/4 lg:ml-[400px]">
+    <div class="lg:w-3/4 lg:ml-[300px]">
       <div class="relative w-full lg:h-[400px] h-[200px] mb-5">
         <img :src="img" class="rounded-2xl object-cover w-full mb-[400px] absolute h-full" />
         <div style="border-radius: 16px; background: linear-gradient(0deg, #404040 0%, rgba(217, 217, 217, 0.00) 100%);" class="absolute z-10 w-full h-full"></div>
