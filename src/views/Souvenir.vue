@@ -27,11 +27,11 @@ import { ref } from "vue";
 
 const data = [
   {
-    name: "毛巾",
+    name: "徽章",
     img: [
-      "",
-      "",
-      "",
+      "/BikeFestival17th-Frontend/souvenir/Bike17_pin.png",
+      "/BikeFestival17th-Frontend/souvenir/Bike17_pin_2.png",
+      "/BikeFestival17th-Frontend/souvenir/Bike17_pin_3.png",
     ],
     designConcept: "設計理念",
     context: "123456 abcde",
@@ -39,8 +39,8 @@ const data = [
   {
     name: "毛巾",
     img: [
-      "",
-      "",
+      "/BikeFestival17th-Frontend/souvenir/Bike17_towel.png",
+      "/BikeFestival17th-Frontend/souvenir/Bike17_towel_2.png",
       "",
     ],
     designConcept: "設計理念",
