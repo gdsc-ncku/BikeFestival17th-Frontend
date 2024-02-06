@@ -44,19 +44,22 @@
         <iframe class="absolute w-full h-full top-0 left-0" :src="selectedData.pdfEmbeddedURL"></iframe>
       </div>
       <div class="text-2xl text-content font-bold max-sm:text-center">相關活動行程</div>
-      <StripCard
-        v-for="d in selectedData.related_event_id.map(id => event.find(e => e.id == id))"
-        :id="d.id"
-        :project="d.project"
-        :description="d.description"
-        :name="d.name"
-        :date="d.date"
-        :startTime="d.startTime"
-        :endTime="d.endTime"
-        :host="d.host"
-        :location="d.location"
-        :link="d.link"
-      />
+      <div>
+        <StripCard
+          v-for="d in selectedData.related_event_id.map(id => event.find(e => e.id == id))"
+          :id="d.id"
+          :project="d.project"
+          :description="d.description"
+          :name="d.name"
+          :date="d.date"
+          :startTime="d.startTime"
+          :endTime="d.endTime"
+          :host="d.host"
+          :location="d.location"
+          :link="d.link"
+          class="lg:mb-0 mb-7"
+        />
+      </div>
       <RouterLink class="text-primary-900 text-right sm:text-2xl text-base font-bold underline" to="/forum/departmentHandbook/" >回到院系列表</RouterLink>
     </div>
 

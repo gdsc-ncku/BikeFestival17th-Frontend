@@ -93,7 +93,9 @@
 import event from "../../data/event.json";
 import ScheduleCardSingle from "../../components/ScheduleCardSingle.vue";
 import Tutorial from "../../components/Tutorial.vue";
-import { ref, onMounted, onBeforeMount, computed } from "vue";
+import { ref, onBeforeMount, computed } from "vue";
+import Cookies from 'js-cookie';
+
 
 // the top bar from left to right
 const activityOrderList = [
@@ -187,6 +189,11 @@ onBeforeMount(() => {
 
   // finish processing event data
   console.log(eventDict.value);
+
+  //set cookie
+  let isVisited = Cookies.get('isVisited');
+  if(isVisited == undefined) Cookies.set('isVisited', 'yes');
+  else showTutorial.value = false;
 });
 
 const computeHeight = (item) => {
