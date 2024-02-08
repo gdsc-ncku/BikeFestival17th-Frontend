@@ -83,7 +83,7 @@
 </template>
 
 <script setup>
-import ScalableImg from '@/components/ScalableImg.Vue';
+import ScalableImg from '@/components/ScalableImg.vue';
 
 import Breadcrumb from '@/components/Breadcrumb.vue';
 import DiscCard from '../../components/DiscCard.vue';
