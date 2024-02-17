@@ -7,26 +7,30 @@
       {
         "id": "dep_chinese_literature",
         "name": "中國文學系",
+        "officialWebsite": "https://chinese.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1Mmb49KvoL4bHHCUWVD6g4-5wnEGvoawe/preview",
         "related_event_id": []
       },
       {
         "id": "dep_foreign_literature",
         "name": "外國語文學系",
+        "officialWebsite": "https://flld.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1jFTCr5Qe6Md10xsyyQEhnKb8sVcllwZf/preview",
         "related_event_id": []
       },
       {
         "id": "dep_taiwanese_literature",
         "name": "台灣文學系",
+        "officialWebsite": "https://twl.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1gJc811q3nNTrWt-aKzsQtgUEyaBPDPCt/preview",
-        "related_event_id": []
+        "related_event_id": ["11", "24", "45"]
       },
       {
         "id": "dep_history",
         "name": "歷史學系",
+        "officialWebsite": "https://his.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1plGjF96BcI7CV5m_nIFQLJaYYYuqHOnE/preview",
-        "related_event_id": []
+        "related_event_id": ["5", "10"]
       }
     ]
   },
@@ -38,32 +42,37 @@
       {
         "id": "dep_mathematics",
         "name": "數學系",
+        "officialWebsite": "http://www.math.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1kZwMgT15zOu0RPd8cCpJawZj30V_T9P0/preview",
         "related_event_id": []
       },
       {
         "id": "dep_chemistry",
         "name": "化學系",
+        "officialWebsite": "https://www.ch.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1Y1sHQT1ynSEmmmP61Zq1iAkLKeb6ZxKp/preview",
-        "related_event_id": []
+        "related_event_id": ["22", "35"]
       },
       {
         "id": "dep_physics",
         "name": "物理學系",
+        "officialWebsite": "http://www.phys.ncku.edu.tw/2012/ch/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1TaTU5FNdnHUj2Id8kKaSld90tTPBitWl/preview",
-        "related_event_id": []
+        "related_event_id": ["23", "36"]
       },
       {
         "id": "dep_earth_sciences",
         "name": "地球科學系",
+        "officialWebsite": "https://earth.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1mbZuPxllqXs4NL2tWL995JaFQozA2uTm/preview",
         "related_event_id": []
       },
       {
         "id": "dep_photonics",
         "name": "光電科學與工程學系",
+        "officialWebsite": "https://dps.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/18xG2GwBjd8y-NIZmNyJ6K5MrZscrQHr0/preview",
-        "related_event_id": []
+        "related_event_id": ["51"]
       }
     ]
   },
@@ -75,31 +84,36 @@
       {
         "id": "dep_accountancy",
         "name": "會計學系",
+        "officialWebsite": "http://www.acc.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/16cwNB7afyqwzd3CDCPW3P27tN7wsmS9n/preview",
-        "related_event_id": []
+        "related_event_id": ["41", "50"]
       },
       {
         "id": "dep_statistics",
         "name": "統計學系",
+        "officialWebsite": "http://www.stat.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1sq6ec-uZeELr45h4QK1pYNZf0hUS7EXd/preview",
         "related_event_id": []
       },
       {
         "id": "dep_business_administration",
         "name": "企業管理學系",
-        "pdfEmbeddedURL": "https://drive.google.com/file/d/1sASDpHUNTqbUPGmMCgL4ZKj92cxZmMJq/preview",
-        "related_event_id": []
+        "officialWebsite": "https://ba.ncku.edu.tw/",
+        "pdfEmbeddedURL": "https://drive.google.com/file/d/1SYQjLVMPJ9hPCbDPMx34wvttAVsCQ7fK/preview",
+        "related_event_id": ["1", "6"]
       },
       {
         "id": "dep_transportation_management",
         "name": "交通管理科學系",
+        "officialWebsite": "https://tcm.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1o6GKd0t-Kf5ZYphpD3GbxP4pXD0-Vu3h/preview",
         "related_event_id": []
       },
       {
         "id": "dep_industrial_and_information_management",
         "name": "工業與資訊管理學系",
-        "pdfEmbeddedURL": "https://drive.google.com/file/d/1b8SdcdABUuilQwYFrLTy-IIC5X63DWvC/preview",
+        "officialWebsite": "https://iim.ncku.edu.tw/",
+        "pdfEmbeddedURL": "https://drive.google.com/file/d/1LtyR4qr_Gm0v31CTbhpLWo3HwskvAlqb/preview",
         "related_event_id": []
       }
     ]
@@ -112,73 +126,92 @@
       {
         "id": "dep_mechanical_engineering",
         "name": "機械工程學系",
+        "officialWebsite": "https://me.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1eC23fm1-jpM5eoyLejGsUUE4-gYAl95v/preview",
-        "related_event_id": []
+        "related_event_id": ["4", "9", "44"]
       },
       {
         "id": "dep_chemical_engineering",
         "name": "化學工程學系",
+        "officialWebsite": "https://www.che.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1C6ecPwmPEJwm_7-nua7ab5tQf4WrTtsI/preview",
-        "related_event_id": []
+        "related_event_id": ["16", "29"]
       },
       {
         "id": "dep_civil_engineering",
         "name": "土木工程學系",
+        "officialWebsite": "http://www.civil.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1OTn_M_Y_rjX3Z6vemjDgv2RWcvV9StW3/preview",
         "related_event_id": []
       },
       {
         "id": "dep_materials_engineering",
         "name": "材料科學與工程學系",
+        "officialWebsite": "http://www.mse.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1TStqEBYN4eWVX-E_T6TlQnK4pgPuoBTa/preview",
         "related_event_id": []
       },
       {
         "id": "dep_hydraulic_and_ocean_engineering",
         "name": "水利及海洋工程學系",
+        "officialWebsite": "http://www.hyd.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/110N0IQZHH7QId5SBOcZYPgzaqn9RvWR9/preview",
         "related_event_id": []
       },
       {
         "id": "dep_engineering_science",
         "name": "工程科學系",
+        "officialWebsite": "http://www.es.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1IaWvixVrXVURqwTfCg4V-zcDLL6mVsSb/preview",
-        "related_event_id": []
+        "related_event_id": ["21", "34"]
       },
       {
         "id": "dep_system_and_naval_mechatronic_engineering",
         "name": "系統及船舶機電工程學系",
+        "officialWebsite": "https://sname.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1cn5pcAjEpFV_ZaPUjibFovMmI15-duS5/preview",
-        "related_event_id": []
+        "related_event_id": ["12", "25"]
       },
       {
         "id": "dep_aeronautics_and_astronautics",
         "name": "航空太空工程學系",
+        "officialWebsite": "https://iaa.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1Rb7PSsfenQuvdXDwsidKPHH6M1u4LtWz/preview",
         "related_event_id": []
       },
       {
         "id": "dep_resources_engineering",
         "name": "資源工程學系",
+        "officialWebsite": "https://mp.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1GUr_dLnf-dR3G5VQqcYhWTmj9shPxoT_/preview",
         "related_event_id": []
       },
       {
         "id": "dep_environmental_ngineering",
         "name": "環境工程學系",
+        "officialWebsite": "https://ev.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1SALykWWlnDZ0Et9zbN2oG7vKt8dlvZzg/preview",
-        "related_event_id": []
+        "related_event_id": ["14", "27"]
       },
       {
         "id": "dep_biomedical_engineering",
         "name": "生物醫學工程學系",
-        "pdfEmbeddedURL": "https://drive.google.com/file/d/1pwqwEJxKzeoB857fFKDuW-jVd7NhZJvG/preview",
+        "officialWebsite": "https://bme.ncku.edu.tw/",
+        "pdfEmbeddedURL": "https://drive.google.com/file/d/19ygrIwhyo-UeVo_aiJiz_eqasu-QzLuN/preview",
         "related_event_id": []
       },
       {
         "id": "dep_geomatics",
         "name": "測量及空間資訊學系",
+        "officialWebsite": "https://www.geomatics.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1voF-gsFo1bQFk-FxbOKI8wtN_O_CkWv3/preview",
+        "related_event_id": []
+      },
+      {
+        "id": "program_international_energy",
+        "name": "能源工程國際學位學程",
+        "officialWebsite": "https://ibdpe.ncku.edu.tw/",
+        "pdfEmbeddedURL": "https://drive.google.com/file/d/1R4lgqCtCC5oDQDsZRI2pxItK-M9xl0f_/preview",
         "related_event_id": []
       }
     ]
@@ -191,14 +224,16 @@
       {
         "id": "dep_electrical_engineering",
         "name": "電機工程學系",
+        "officialWebsite": "http://www.ee.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1_k78C4r4xp6az5JWushLrMXR2wcU7tuF/preview",
-        "related_event_id": []
+        "related_event_id": ["39"]
       },
       {
         "id": "dep_computer_cience",
         "name": "資訊工程學系",
+        "officialWebsite": "http://www.csie.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1hx2dVMhHwVpjhE2r0c801XBt5F2gYr2a/preview",
-        "related_event_id": []
+        "related_event_id": ["2", "7"]
       }
     ]
   },
@@ -210,26 +245,30 @@
       {
         "id": "dep_political_science",
         "name": "政治學系",
+        "officialWebsite": "http://www.polsci.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1GNUm8EadGAXrZO2yeANBWInpA0qsEblI/preview",
-        "related_event_id": []
+        "related_event_id": ["48"]
       },
       {
         "id": "dep_economics",
         "name": "經濟學系",
+        "officialWebsite": "http://economics.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1DkHKZtcYEH-_so4inGdcQu8i8SeatD7Y/preview",
         "related_event_id": []
       },
       {
         "id": "dep_law",
         "name": "法律學系",
+        "officialWebsite": "http://www.law.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1BMCkKlRm0E4o7NcdcLZGrYxCMGfRTklW/preview",
-        "related_event_id": []
+        "related_event_id": ["3", "8", "52"]
       },
       {
         "id": "dep_psychology",
         "name": "心理學系",
+        "officialWebsite": "http://psychology.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/12ntEoE3FO9UxKFRFfz1rgCpn-RPyHl9R/preview",
-        "related_event_id": []
+        "related_event_id": ["18", "31"]
       }
     ]
   },
@@ -241,20 +280,23 @@
       {
         "id": "dep_architecture",
         "name": "建築學系",
-        "pdfEmbeddedURL": "https://drive.google.com/file/d/16BvjzcN_Do7b4gy44L7IV0W3gqq90Rjj/preview",
-        "related_event_id": []
+        "officialWebsite": "http://www.arch.ncku.edu.tw/",
+        "pdfEmbeddedURL": "https://drive.google.com/file/d/1Qbo5pTzQ7MBely549m8VZ5p2s94oWIJC/preview",
+        "related_event_id": ["19", "32", "46"]
       },
       {
         "id": "dep_urban_planning",
         "name": "都市計劃學系",
-        "pdfEmbeddedURL": "https://drive.google.com/file/d/1tMz6mT3WLbIw_MIp50hOvr8pEDWPneyx/preview",
-        "related_event_id": []
+        "officialWebsite": "http://www.up.ncku.edu.tw/",
+        "pdfEmbeddedURL": "https://drive.google.com/file/d/1kUeLgYaVxxEzFcEUqYtl2D8UXk0iJcw8/preview",
+        "related_event_id": ["19", "32"]
       },
       {
         "id": "dep_industrial_design",
         "name": "工業設計學系",
-        "pdfEmbeddedURL": "https://drive.google.com/file/d/1p38KscdqU5MAEcXhrJOAHZLA4xRV1tHT/preview",
-        "related_event_id": []
+        "officialWebsite": "https://ide.ncku.edu.tw/",
+        "pdfEmbeddedURL": "https://drive.google.com/file/d/1oNpcpbcD55mcPCRAA5tjwQpPHM04ziGj/preview",
+        "related_event_id": ["15", "28"]
       }
     ]
   },
@@ -266,14 +308,16 @@
       {
         "id": "dep_life_sciences",
         "name": "生命科學系",
-        "pdfEmbeddedURL": "https://drive.google.com/file/d/1-trxZpVoqmVA0KiPpMR95Sr5Ro9n_Mwg/preview",
-        "related_event_id": []
+        "officialWebsite": "https://www.bio.ncku.edu.tw/",
+        "pdfEmbeddedURL": "https://drive.google.com/file/d/1rpIDRDOrwqhuDAlGeu1Kvj93e94v6nhr/preview",
+        "related_event_id": ["20", "33"]
       },
       {
         "id": "dep_biotechnology_and_bioindustry_sciences",
         "name": "生物科技與產業科學系",
-        "pdfEmbeddedURL": "https://drive.google.com/file/d/19yObgkyptp6fnSHhP6qFA0ELv2bfz1ZQ/preview",
-        "related_event_id": []
+        "officialWebsite": "https://dbbs.ncku.edu.tw/",
+        "pdfEmbeddedURL": "https://drive.google.com/file/d/1zHPXBFmTdZQ5iqzTkXAw5DwcTVLLWqqR/preview",
+        "related_event_id": ["13", "26"]
       }
     ]
   },
@@ -285,36 +329,49 @@
       {
         "id": "dep_medicine",
         "name": "醫學系",
-        "pdfEmbeddedURL": "https://drive.google.com/file/d/18-FzaJgkfxqugnpsY8gmWr2iXTX4c3Zf/preview",
+        "officialWebsite": "https://medicine.ncku.edu.tw/?Lang=zh-tw",
+        "pdfEmbeddedURL": "https://drive.google.com/file/d/1XnJxTy3qXeMquRwdTBqN2T0Kbcxa4VbY/preview",
+        "related_event_id": ["40", "49"]
+      },
+      {
+        "id": "dep_pharmacy",
+        "name": "藥學系",
+        "officialWebsite": "https://pharmacy.ncku.edu.tw/",
+        "pdfEmbeddedURL": "https://drive.google.com/file/d/1h6IXs56nd_lcJ46ngrEfYGRR9PkhJnw3/preview",
         "related_event_id": []
       },
       {
         "id": "dep_nursing",
         "name": "護理學系",
-        "pdfEmbeddedURL": "https://drive.google.com/file/d/1-Vqkvju1tUt8kJCZGE9NCWLRvsvMkuwQ/preview",
-        "related_event_id": []
+        "officialWebsite": "https://nursing.ncku.edu.tw/",
+        "pdfEmbeddedURL": "https://drive.google.com/file/d/1cwS3Jcg__dlPhyDMfAKd9xuNI2wkBRa0/preview",
+        "related_event_id": ["47"]
       },
       {
         "id": "dep_dentistry",
         "name": "牙醫學系",
-        "pdfEmbeddedURL": "https://drive.google.com/file/d/1z-URBL4PUXOaiNvlvrbZTG7UoHO47jvq/preview",
-        "related_event_id": []
+        "officialWebsite": "https://dentistry.ncku.edu.tw/",
+        "pdfEmbeddedURL": "https://drive.google.com/file/d/1cN_gsDqUPxKUT_5uP9gg7rYc0sQJB4n9/preview",
+        "related_event_id": ["38", "43"]
       },
       {
         "id": "dep_physical_therapy",
         "name": "物理治療學系",
+        "officialWebsite": "https://pt.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/11ZJkwGLerQGmYDCGl60SuEE8kUabKBdp/preview",
-        "related_event_id": []
+        "related_event_id": ["53"]
       },
       {
         "id": "dep_occupational_therapy",
         "name": "職能治療學系",
+        "officialWebsite": "https://ot.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1N3XspdRJUindUskStHdjhnOl4_oy6uVt/preview",
-        "related_event_id": []
+        "related_event_id": ["17", "30"]
       },
       {
         "id": "dep_medical_laboratory_science",
         "name": "醫學檢驗暨生物技術學系",
+        "officialWebsite": "https://mt.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1oOH2gpvqjruhoAvINx_dVnitkH5ZseiU/preview",
         "related_event_id": []
       }
@@ -328,8 +385,9 @@
       {
         "id": "dep_cross_college_elite_program",
         "name": "全校不分系學士學位學程",
+        "officialWebsite": "https://ccep.ctld.ncku.edu.tw/",
         "pdfEmbeddedURL": "https://drive.google.com/file/d/1y1YB5Tw8YOP0toMyFVwNyxwED934ngf4/preview",
-        "related_event_id": []
+        "related_event_id": ["37", "54"]
       }
     ]
   }

@@ -138,13 +138,26 @@
       </div>
     </div>
   </div>
+
+  <div class="fixed w-[100vw] h-[3.3125rem] flex bottom-0 left-0 sm:hidden">
+    <button
+      v-for="(key, i) in ['3/2', '3/3']"
+      class="flex-1 border-solid border-2 border-primary-900 font-bold"
+      :class="`${selectedDate === key ? 'bg-[#FFF] text-primary-900' : 'bg-primary-900 text-white'}`"
+      @click="selectedDate = key"
+    >
+      {{ `DAY ${i + 1} ${key}` }}
+    </button>
+  </div>
 </template>
 
 <script setup>
 import event from "../../data/event.json";
 import ScheduleCardSingle from "../../components/ScheduleCardSingle.vue";
 import ScheduleCardMulti from "../../components/ScheduleCardMulti.vue";
-import { ref, onMounted, onBeforeMount, computed } from "vue";
+import { ref, onBeforeMount, computed } from "vue";
+import Cookies from 'js-cookie';
+
 
 // Constants for layout
 const pixelsPerHour = 185; // Height of one hour in pixels on the timeline
@@ -163,8 +176,9 @@ const projectList = ref([
   "系館導覽",
   "解憂茶軒",
   "沈浸式體驗",
-  "人生岔路口",
-]);
+  "人生叉路口",
+  "告別前任永續市集",
+];
 
 const projectElementList = ref(null);
 
@@ -200,7 +214,6 @@ const projectColorList = ref({
 
 const selectedDate = ref("3/2");
 
-const eventDict = ref({});
 // process event data before mount
 /*
   schema : 
@@ -232,9 +245,10 @@ onBeforeMount(() => {
     eventDict.value["3/3"][project] = [];
   }
 
+  console.log(eventDict);
   console.log(eventDict.value);
 
-  // add event to eventDict
+  // add event to eventDict 將event.json 中所有活動加入到 eventDict 活動字典
   event.map((item) => {
     console.log(item);
     console.log(item.date);
@@ -256,6 +270,11 @@ onBeforeMount(() => {
 
   // finish processing event data
   console.log(eventDict.value);
+
+  //set cookie
+  let isVisited = Cookies.get('isVisited');
+  if(isVisited == undefined) Cookies.set('isVisited', 'yes');
+  else showTutorial.value = false;
 });
 
 function selectDate(date) {

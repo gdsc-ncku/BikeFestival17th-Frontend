@@ -1,6 +1,6 @@
 <template>
   <Breadcrumb />
-  <ActivityContent :list=activityDetails.immersiveExperience title="沉浸式體驗" :img="`/BikeFestival17th-Frontend/public/${activities[5].img}`"/>
+  <ActivityContent :list=activityDetails.immersiveExperience title="沉浸式體驗" :img="`/BikeFestival17th-Frontend/${activities[5].img}`"/>
 </template>
 
 <script setup>

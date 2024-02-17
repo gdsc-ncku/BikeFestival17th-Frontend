@@ -9,8 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@splidejs/vue-splide": "^0.6.12",
     "autoprefixer": "^10.4.16",
     "axios": "^1.6.5",
+    "js-cookie": "^3.0.5",
     "pinia": "^2.1.7",
     "postcss": "^8.4.33",
     "vue": "^3.3.8",

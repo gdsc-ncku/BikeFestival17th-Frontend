@@ -1,35 +1,35 @@
 <template>
   <div
-    class="lg:h-auto h-[190px] p-3 rounded-lg bg-[#FFF3EA] hover:bg-[#FFD7AF] flex lg:items-center justify-between"
+    class="lg:h-auto h-[190px] p-3 bg-[#FFF3EA] hover:bg-[#FFD7AF] flex lg:items-center justify-between cursor-pointer mb-2 border border-primary rounded-lg"
     @click="showModal = true"
     @close="showModal = false"
   >
     <div class="lg:flex justify-start lg:items-center lg:max-w-[66%] max-w-[75%]">
       <span class="block text-primary-900 text-xs underline lg:hidden">{{ project }}</span>
-      <div class="lg:flex justify-start gap-[5px] mr-4 hidden">
+      <div class="grow-0 w-36 lg:flex justify-start gap-[5px] mr-4 hidden">
         <img
           :src="'/BikeFestival17th-Frontend/schedule/time.svg'"
           alt=""
-          class="flex w-4 h-4"
+          class="w-4 h-4"
         />
-        <p class="text-black text-xs font-[350] truncate">
+        <p class="text-black text-xs font-[350]">
           {{ date }} {{ startTime }}-{{ endTime }}
         </p>
       </div>
-      <button class="px-2 rounded-[14px] border-[1px] border-primary-900 box-border mr-4 lg:block hidden">
+      <button class="grow-0 w-20 px-2 rounded-[14px] border-[1px] border-primary-900 box-border mr-4 lg:block hidden">
         <div class="flex justify-center items-center">
           <span
-            class="flex justify-center font-bold text-[11px] text-primary-900"
+            class="justify-center font-bold text-[11px] text-primary-900"
             >報名中</span
           >
           <img
             :src="'/BikeFestival17th-Frontend/schedule/gesture-tap.svg'"
             alt=""
-            class="flex w-4"
+            class="w-4"
           />
         </div>
       </button>
-      <p class="max-w-[350px] block text-black lg:text-base text-xl font-bold leading-8 truncate">{{ name }}</p>
+      <p class="grow-0 w-[350px] block text-black lg:text-base text-xl font-bold leading-8 truncate">{{ name }}</p>
       <div class="flex justify-start gap-[5px] mr-8 lg:hidden">
         <img
           :src="'/BikeFestival17th-Frontend/schedule/time.svg'"
@@ -44,7 +44,7 @@
         <img
           :src="'/BikeFestival17th-Frontend/schedule/host.svg'"
           alt=""
-          class="flex w-4 h-4"
+          class="w-4 h-4"
         />
         <p class="text-black text-xs font-[350]">{{ host }}</p>
       </div>
@@ -58,16 +58,16 @@
       </div>
     </div>  
     <div class="flex lg:flex-row flex-col justify-between lg:items-center items-end lg:min-w-[33%] min-w-[25%]">
-      <div class="lg:flex hidden justify-start gap-[5px]">
+      <div class="grow-0 w-80 lg:flex hidden justify-start gap-[5px]">
         <img
           :src="'/BikeFestival17th-Frontend/schedule/host.svg'"
           alt=""
-          class="flex w-4 h-4"
+          class="w-4 h-4"
         />
         <p class="text-black text-xs font-[350]">{{ host }}</p>
       </div>
       <div class="flex items-center ml-4">
-        <div class="lg:flex gap-[5px] hidden">
+        <div class="grow-0 w-28 lg:flex gap-[5px] hidden">
           <img
             :src="'/BikeFestival17th-Frontend/schedule/location.svg'"
             alt=""

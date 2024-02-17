@@ -10,7 +10,7 @@
     body {
         background-image: url(/bg_noise_texture.svg);
         background-color: #FFF8F2;
-        letter-spacing: 0.2rem;
+        letter-spacing: 0.1rem;
     }
     .layout_content {
         max-width: 1200px;

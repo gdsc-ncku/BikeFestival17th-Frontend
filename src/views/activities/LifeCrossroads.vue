@@ -1,6 +1,6 @@
 <template>
   <Breadcrumb />
-  <ActivityContent :list=activityDetails.lifeCrossroads title="人生叉路口" :img="`/BikeFestival17th-Frontend/public/${activities[4].img}`"/>
+  <ActivityContent :list=activityDetails.lifeCrossroads title="人生叉路口" :img="`/BikeFestival17th-Frontend/${activities[4].img}`"/>
 </template>
 
 <script setup>
