@@ -29,6 +29,7 @@
               </a>
               <div class="flex flex-col justify-center">
                 <svg
+                  @click="handleSave"
                   xmlns="http://www.w3.org/2000/svg"
                   width="30"
                   height="36"
@@ -71,6 +72,7 @@
 
 <script setup>
 import { defineProps } from "vue";
+import { apiSubscribeEvent } from "../apis/user";
 const props = defineProps({
   show: {
     type: Boolean,
@@ -123,4 +125,8 @@ const props = defineProps({
 });
 
 const { id, link, host, location, date, startTime, endTime, saved } = props;
+const handleSave = () => {
+  // TODO: the parameters in the function below are just for testing, please replace them with the actual values
+  apiSubscribeEvent("1", "", "2021/01/01 00:00", "2021/01/01 00:00");
+};
 </script>
