@@ -1,15 +1,20 @@
 import {req} from "./instance";
 
-export const apiSubscribeEvent = (event_id) => {
+export const apiSubscribeEvent = (
+  event_id,
+  event_detail,
+  event_time_end,
+  event_time_start
+  ) => {
   req({
     method: "POST",
     url: "/users/events",
     data: {
+      event_detail: event_detail,
       id: event_id,
+      event_time_end: event_time_end,
+      event_time_start: event_time_start,
     },
-    headers:{
-        withCredentials: true
-    }
   });
     // return fetch('http://localhost:8000/users/events', {
     //     method: 'POST',
