@@ -67,7 +67,30 @@
                   }"
                   class="absolute"
                 >
-                  <div
+                  <template v-if="eventGroup.events.length > 1">
+                    <ScheduleCardMulti
+                      :activity="project"
+                      :events="eventGroup.events"
+                      :showModal="showModal"
+                      @close="showModal = false"
+                    />
+                  </template>
+                  <div v-else class="flex justify-between">
+                    <ScheduleCardSingle
+                      :id="eventGroup.events[0].id"
+                      :name="eventGroup.events[0].name"
+                      :date="eventGroup.events[0].date"
+                      :startTime="eventGroup.events[0].startTime"
+                      :endTime="eventGroup.events[0].endTime"
+                      :host="eventGroup.events[0].host"
+                      :location="eventGroup.events[0].location"
+                      :activity="eventGroup.events[0].activity"
+                      :link="eventGroup.events[0].link"
+                      :showModal="showModal"
+                      @close="showModal = false"
+                    />
+                  </div>
+                  <!-- <div
                     v-for="(event, eventIndex) in eventGroup.events"
                     class="flex justify-between"
                   >
@@ -84,7 +107,7 @@
                       :showModal="showModal"
                       @close="showModal = false"
                     />
-                  </div>
+                  </div> -->
                 </div>
               </template>
             </div>
@@ -120,6 +143,7 @@
 <script setup>
 import event from "../../data/event.json";
 import ScheduleCardSingle from "../../components/ScheduleCardSingle.vue";
+import ScheduleCardMulti from "../../components/ScheduleCardMulti.vue";
 import { ref, onMounted, onBeforeMount, computed } from "vue";
 
 // Constants for layout

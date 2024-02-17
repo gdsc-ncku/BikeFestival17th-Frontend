@@ -1259,5 +1259,18 @@
     "location": "唯農大樓 2樓 7213、7215、7248",
     "host": "黃詩芩",
     "link": "https://kktix.com/events/17th-3/registrations/new"
+  },
+  {
+    "id": "69420",
+    "name": "測試:李老師好",
+    "activity": "舞台活動",
+    "project": "舞台活動",
+    "description": "李老師好",
+    "date": "3/2",
+    "startTime": "10:00",
+    "endTime": "12:00",
+    "location": "唯農大樓 2樓 7213、7215、7248",
+    "host": "黃詩芩",
+    "link": "https://kktix.com/events/17th-3/registrations/new"
   }
 ]
