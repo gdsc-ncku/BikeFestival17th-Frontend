@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-[155px] h-[190px] p-3 rounded-lg bg-[#FFF3EA] hover:bg-[#FFD7AF] opacity-99 absolute"
+    class="sm:w-[155px] w-full h-[190px] p-3 rounded-lg bg-[#FFF3EA] hover:bg-[#FFD7AF] opacity-99"
     @click="handleCardClick"
     @close="showModal = false"
   >
