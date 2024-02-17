@@ -40,6 +40,7 @@
             :endTime="e.endTime"
             :host="e.host"
             :location="e.location"
+            :link="e.link"
           />
         </div>
       </div>
@@ -72,7 +73,7 @@ const setNum = (index) => {
 //   "升學指南",
 //   "解憂茶軒",
 //   "沈浸式體驗",
-//   "人生岔路口",
+//   "人生路口",
 // ];
 
 // const activityList = ref([

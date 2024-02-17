@@ -134,7 +134,7 @@ const props = defineProps({
   },
   link: {
     type: String,
-    required: false,
+    required: true,
   },
   saved: {
     type: Boolean,
