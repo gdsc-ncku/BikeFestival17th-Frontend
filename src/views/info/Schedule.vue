@@ -155,7 +155,7 @@
 import event from "../../data/event.json";
 import ScheduleCardSingle from "../../components/ScheduleCardSingle.vue";
 import ScheduleCardMulti from "../../components/ScheduleCardMulti.vue";
-import { ref, onBeforeMount, computed } from "vue";
+import { ref, onBeforeMount, computed ,onMounted } from "vue";
 import Cookies from 'js-cookie';
 
 
@@ -178,7 +178,7 @@ const projectList = ref([
   "沈浸式體驗",
   "人生叉路口",
   "告別前任永續市集",
-];
+]);
 
 const projectElementList = ref(null);
 
@@ -213,7 +213,9 @@ const projectColorList = ref({
 });
 
 const selectedDate = ref("3/2");
-
+const eventDict = ref({});
+const showModal = ref(false);
+const showTutorial = ref(true);
 // process event data before mount
 /*
   schema : 
