@@ -18,7 +18,7 @@
           <img src="/schedule/gesture-tap.svg" alt="" class="w-4"/>
         </div>
       </button>
-      <p class="grow-0 w-[350px] block text-black lg:text-base text-xl font-bold leading-8 truncate">{{ name }}</p>
+      <p class="grow md:w-[350px] w-[270px] block text-black lg:text-base text-xl font-bold leading-8 truncate">{{ name }}</p>
       <div class="flex justify-start gap-[5px] mr-8 lg:hidden">
         <img src="/schedule/time.svg" alt="" class="flex w-4 h-4"/>
         <p class="text-black text-xs font-[350] truncate">
