@@ -19,7 +19,7 @@
             : ''
         "
         :style="
-          eventStore.isEventSubscribed
+          eventStore.isEventSubscribed(id)
             ? 'background: url(/BikeFestival17th-Frontend/schedule/subscribed.svg) no-repeat'
             : 'background: url(/BikeFestival17th-Frontend/schedule/not-subscribed.svg) no-repeat'
         "
@@ -33,7 +33,7 @@
             : ''
         "
         :style="
-          eventStore.isEventSubscribed
+          eventStore.isEventSubscribed(id)
             ? 'background: url(/BikeFestival17th-Frontend/schedule/subscribed.svg) no-repeat'
             : 'background: url(/BikeFestival17th-Frontend/schedule/not-subscribed.svg) no-repeat'
         "
@@ -117,7 +117,7 @@ import ScheduleCardModal from "./ScheduleCardModal.vue";
 import { useEventStore } from "../stores/user";
 
 const eventStore = useEventStore();
-const { subscribeEvent } = eventStore;
+// const { isEventSubscribed } = eventStore;
 
 let props = defineProps({
   id: {
@@ -183,7 +183,17 @@ const {
 } = props;
 
 const handleSave = () => {
-  subscribeEvent(id);
+  // YYYY-MM-DD HH:MM:SS
+  if (eventStore.isEventSubscribed(id)) {
+    console.log("unsubscribed");
+    eventStore.unSubscribeEvent(id);
+    return;
+  }
+  const day = date.split("/")[1];
+  const start = `2024/03/0${day} ${startTime}`;
+  const end= `2024/03/0${day} ${endTime}`;
+  const detail = JSON.stringify({ id, activity, name, date, start, end, host, location, link, saved });
+  eventStore.subscribeEvent(id,start,end, detail);
 };
 
 const handleCardClick = (e) => {

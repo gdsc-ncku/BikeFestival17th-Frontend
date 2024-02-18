@@ -7,32 +7,34 @@ export const useEventStore = defineStore('loading', () => {
     const userEvents = ref({});
     const dialogStore = useDialogStore();
 
-    const isEventSubscribed = computed((event_id) => {
+    // https://github.com/vuejs/pinia/discussions/2183
+    const isEventSubscribed = computed(() => (event_id) => {
         return userEvents.value[event_id];
     });
 
+
     async function fetchUserEvents() {
-        try {
-            const response = await apiGetUserEvents();
-            // update userEvents ref
-            // response.data = [{id: 1, name: 'event1'}, {id: 2, name: 'event2'}]
+        apiGetUserEvents()
+        .then((response) => {
             const dict = {};
-            response.data.forEach(event => {
+            response.data.data.forEach(event => {
                 dict[event.id] = true;
             });
             userEvents.value = dict;
-        } catch (error) {
+
+        }).catch((error) => {
             console.log(error);
             dialogStore.setError({
                 'title': 'Error',
                 'firstLine': 'Failed to fetch user events',
                 'secondLine': '',
             });
-        }
+        });
     }
 
-    async function subscribeEvent(event_id) {
-        apiSubscribeEvent(event_id)
+    async function subscribeEvent(event_id,start,end,detail) {
+        console.log('subscribe event');
+        apiSubscribeEvent(event_id,start,end,detail)
         .then(() => {
             userEvents.value[event_id] = true;
             dialogStore.setSuccess({
@@ -52,8 +54,9 @@ export const useEventStore = defineStore('loading', () => {
 
     async function unSubscribeEvent(event_id) {
         apiUnSubscribeEvent(event_id)
-        .then(() => {
+        .then((response) => {
             delete userEvents.value[event_id];
+            console.log("ubSubscribed response",response);
             dialogStore.setSuccess({
                 'title': 'Success',
                 'firstLine': 'You have successfully unsubscribed from the event',

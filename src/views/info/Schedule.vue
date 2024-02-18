@@ -174,8 +174,12 @@
 import event from "../../data/event.json";
 import ScheduleCardSingle from "../../components/ScheduleCardSingle.vue";
 import ScheduleCardMulti from "../../components/ScheduleCardMulti.vue";
-import { ref, onBeforeMount, computed, onMounted } from "vue";
+import { ref, onBeforeMount, onMounted } from "vue";
+import { useEventStore } from "../../stores/user";
 import Cookies from "js-cookie";
+
+const eventStore = useEventStore();
+const { fetchUserEvents } = eventStore;
 
 // Constants for layout
 const pixelsPerHour = 185; // Height of one hour in pixels on the timeline
@@ -366,6 +370,9 @@ function calculateLeftOffset(project) {
 }
 
 onMounted(() => {
+  // fetch user events
+  fetchUserEvents();
+
   for (let i = 0; i < projectElementList.value.length; i++) {
     cardTransformList.value[i] =
       (projectElementList.value[i].clientWidth - cardWidth) / 2;
