@@ -186,14 +186,14 @@ const handleSave = () => {
   // YYYY-MM-DD HH:MM:SS
   if (eventStore.isEventSubscribed(id)) {
     console.log("unsubscribed");
-    eventStore.unSubscribeEvent(id);
+    eventStore.unSubscribeEvent(id, name);
     return;
   }
   const day = date.split("/")[1];
   const start = `2024/03/0${day} ${startTime}`;
   const end= `2024/03/0${day} ${endTime}`;
   const detail = JSON.stringify({ id, activity, name, date, start, end, host, location, link, saved });
-  eventStore.subscribeEvent(id,start,end, detail);
+  eventStore.subscribeEvent(id,start,end, detail,name);
 };
 
 const handleCardClick = (e) => {

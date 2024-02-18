@@ -23,52 +23,63 @@ export const useEventStore = defineStore('loading', () => {
             userEvents.value = dict;
 
         }).catch((error) => {
-            console.log(error);
-            dialogStore.setError({
-                'title': 'Error',
-                'firstLine': 'Failed to fetch user events',
-                'secondLine': '',
-            });
+            if (error.response.status === 401) {
+                dialogStore.showDialog({
+                    'title': 'Warning',
+                    'firstLine': '登入 Line 帳號才能訂閱活動!',
+                },'warning');
+                return;
+            }
         });
     }
 
-    async function subscribeEvent(event_id,start,end,detail) {
+    async function subscribeEvent(event_id,start,end,detail,name) {
         console.log('subscribe event');
         apiSubscribeEvent(event_id,start,end,detail)
         .then(() => {
             userEvents.value[event_id] = true;
-            dialogStore.setSuccess({
+            dialogStore.showDialog({
                 'title': 'Success',
-                'firstLine': 'You have successfully subscribed to the event',
-                'secondLine': '',
-            });
+                'firstLine': '成功訂閱活動',
+                'secondLine': name,
+            },'success');
         }).catch((error) => {
             console.log(error);
-            dialogStore.setError({
-                'title': 'Error',
-                'firstLine': 'Failed to subscribe to the event',
-                'secondLine': '',
-            });
+            // 401: Unauthorized
+
+            if (error.response.status === 401) {
+                dialogStore.showDialog({
+                    'title': 'Error',
+                    'firstLine': '請先登入 Line 帳號才能訂閱活動',
+                },'error');
+                return;
+            }
+
+            // 422: To many subscriptions
+            if (error.response.status === 422) {
+                dialogStore.showDialog({
+                    'title': 'Warning',
+                    'firstLine': '只能訂閱 10 個活動',
+                },'warning');
+                return;
+            }
         });
     }
 
-    async function unSubscribeEvent(event_id) {
+    async function unSubscribeEvent(event_id,name) {
         apiUnSubscribeEvent(event_id)
         .then((response) => {
             delete userEvents.value[event_id];
-            console.log("ubSubscribed response",response);
-            dialogStore.setSuccess({
+            dialogStore.showDialog({
                 'title': 'Success',
-                'firstLine': 'You have successfully unsubscribed from the event',
-                'secondLine': '',
-            });
+                'firstLine': '成功取消訂閱活動',
+                'secondLine': name,
+            },'success');
         }).catch((error) => {
-            console.log(error);
-            dialogStore.setError({
-                'title': 'Error',
-                'firstLine': 'Failed to unsubscribe from the event',
-                'secondLine': '',
-            });
+            dialogStore.showDialog({
+                'title': 'Success',
+                'firstLine': error.response.data.data.msg,
+            },'success');
         });
     }
 
