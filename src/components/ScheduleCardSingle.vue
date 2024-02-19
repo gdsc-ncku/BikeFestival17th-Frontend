@@ -197,10 +197,11 @@ const handleSave = () => {
 };
 
 const handleCardClick = (e) => {
-  e.stopPropagation();
-  if (e.target.tagName === "BUTTON") {
-    return;
-  }
+  // e.stopPropagation();
+  // if (e.target.tagName === "BUTTON") {
+  //   return;
+  // }
+  console.log("click");
   showModal.value = true;
 };
 
