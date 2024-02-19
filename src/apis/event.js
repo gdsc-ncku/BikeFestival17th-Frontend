@@ -1,4 +1,4 @@
-import req from "./instance";
+import {req} from "./instance";
 
 export const apiGetEvents = (page, limit) =>
   req({

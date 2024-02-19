@@ -12,7 +12,7 @@
 
 <script setup>
 import { ref, getCurrentInstance, onUpdated, onMounted } from 'vue';
-import Breadcrumb from '@/components/Breadcrumb.vue';
+import Breadcrumb from '../components/Breadcrumb.vue';
 import Traffic from './info/Traffic.vue';
 import Map from './info/Map.vue';
 import Schedule from './info/Schedule.vue';
