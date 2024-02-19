@@ -31,25 +31,26 @@
       </div>
     </div>
     <div class="flex-1 flex flex-col items-center">
-      <iframe
+      <!-- <iframe
         class="lg:w-[432px] md:w-[300px] sm:w-[330px] aspect-video"
         src="https://www.youtube.com/embed/dQw4w9WgXcQ"
       >
-      </iframe>
-      <span class="font-black xl:text-xl text-lg">宣傳短片</span>
+      </iframe> -->
+      <!-- <span class="font-black xl:text-xl text-lg">宣傳短片</span> -->
+      <div class="lg:w-[432px] md:w-[300px] sm:w-[330px] aspect-video flex justify-center items-center text-xl border-2">
+        敬請期待宣傳短片！
+      </div>
     </div>
   </div>
 
   <!-- psychological test -->
-  <div class="flex md:flex-row flex-col sm:justify-evenly xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pb-10 bg-primary-900">
-    <!-- left image container -->
+  <!-- <div class="flex md:flex-row flex-col sm:justify-evenly xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pb-10 bg-primary-900">
     <div class="flex-1 flex flex-col items-center lg:pt-0 pt-5">
       <img
         class="lg:w-96 w-80"
         alt="psychological-test"
         src="https://fakeimg.pl/300x200"
       />
-      <!-- desktop button link -->
       <div class="sm:mt-4 w-full sm:flex sm:justify-center hidden">
         <RouterLink to="#" class="flex lg:w-40 lg:h-16 lg:p-0 px-6 py-3 justify-center bg-white rounded-lg">
           <div class="flex flex-col justify-center">
@@ -59,17 +60,14 @@
       </div>
     </div>
 
-    <!-- right content container -->
     <div class="flex-1 relative px-[2rem] sm:p-0 py-10 sm:overflow-visible overflow-hidden">
       <h2 class="mb-10 font-bold text-white xl:text-4xl lg:text-3xl text-2xl">
         測驗 - 你是哪一種車車？
       </h2>
-      <!-- ellipse on right container -->
       <div class="absolute ellipse xl:-translate-x-[50px] xl:translate-y-[60px] -translate-x-[20px] translate-y-[-20px] xl:left-0 left-[1/5]"></div>
       <div class="absolute ellipse xl:translate-x-[510px] xl:-translate-y-[30px] translate-x-[300px] -translate-y-[0px]"></div>
       <div class="absolute ellipse xl:translate-x-[280px] xl:translate-y-[170px] translate-x-[80px] translate-y-[90px] xl:left-0 left-[1/5]"></div>
       <div class="opacity-95 text-white xl:text-2xl lg:text-base text-sm">
-        <!-- https://stackoverflow.com/questions/50530436/how-to-keep-a-transformed-element-behind-another-element -->
         <p>
           在尋找方向之前，要先知道自己是誰，才能知道自己適合什麼、想要什麼。<br>
           但，你真的了解自己嗎？<br>
@@ -82,7 +80,6 @@
       </div>
     </div>
 
-    <!-- mobile button link -->
     <div class="sm:hidden w-full flex justify-center opacity-[99%]">
       <RouterLink class="flex justify-center bg-white rounded-lg w-80 h-12" to="#">
         <div class="flex flex-col justify-center">
@@ -90,7 +87,7 @@
         </div>
       </RouterLink>
     </div>
-  </div>
+  </div> -->
 
   <!-- 8 theme activities -->
   <div class="layout_content md:my-20 my-10 flex flex-col items-center">
