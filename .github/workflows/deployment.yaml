@@ -1,0 +1,22 @@
+name: Wheel CI for Frontend Deployment
+
+on:
+    push:
+        branches: [ feature/action, main]
+        tags:
+          - "*"
+
+env:
+  WHEEL_CI_SERVICE_NAME: frontend
+  WHEEL_CI_SERVICE_HOST: https://nckubikefestival.ncku.edu.tw/
+
+jobs:
+    docker:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Trigger webhook using curl
+              run: |
+                curl -X POST -H "Content-Type: application/json" -d '{"token": "${{ secrets.WHEEL_CI_TOKEN }}"}' ${{ env.WHEEL_CI_SERVICE_HOST }}/devops/api/v1/webhooks/github/service/${{ env.WHEEL_CI_SERVICE_NAME }}
+
