@@ -158,7 +158,7 @@
         <p>敬請期待！</p>
       </div>
       <RouterLink
-        class="lg:flex w-24 h-10 justify-center bg-white rounded-lg mt-7 sm:visible hidden"
+        class="lg:flex w-24 h-10 justify-center bg-white rounded-lg mt-7 "
         to="/souvenir"
       >
         <div class="flex flex-col justify-center">
@@ -199,13 +199,20 @@
     </div>
   </div>
 
+  <div class="layout_content md:pt-20 pt-0 pb-20 lg:gap-20 gap-10 text-center">
+      <span class="text-primary">成大駐警隊</span>：06-2757575 #66666<br>
+      <span class="text-primary">成大醫院急診部</span>：06-2353535 #2237、06-2359562<br>
+      地址：70146 臺南市北區勝利路138號<br>
+      如病情或受傷狀況宜由專業人員照護者，應打119專線申請專業單位救護。<br>
+  </div>
+
   <!-- key visual bottom -->
-  <div class="w-full sm:visible hidden">
+  <div class="w-full">
     <div
-      class="w-full h-[900px] bg-cover bg-center relative"
-      style="background-image: url('/BikeFestival17th-Frontend/home/key-visual-bottom.png')"
+      class="w-full h-[400px] bg-cover bg-center relative"
+      style="background-image: url('/BikeFestival17th-Frontend/home/key-visual-bottom.webp')"
     ></div>
-    <div class="absolute -translate-y-80 left-1/2 -translate-x-1/2">
+    <div class="absolute -translate-y-48 left-1/2 -translate-x-1/2">
       <h2 class="text-white font-black lg:text-4xl text-2xl">
         邀請你踏上探索科系的旅程！
       </h2>
