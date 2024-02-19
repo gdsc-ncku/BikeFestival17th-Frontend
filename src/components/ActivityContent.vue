@@ -1,6 +1,6 @@
 <template>
   <div class="layout_content">
-    <div class="bg-white rounded-2xl mb-5 px-4 lg:pt-5 py-2 min-w-[250px] lg:fixed ">
+    <div class="bg-white rounded-2xl mb-5 px-4 lg:pt-5 py-2 min-w-[250px] lg:fixed">
       <a @click="setNum(index)" :href="'#item_' + index" v-for="(item, index) in list" :key="index">
         <h2 class="text-content lg:text-lg text-base lg:mb-5 mb-2 p-1 hover:bg-[#FFE0CA] rounded-lg" :class="num === index ? 'bg-[#FFE0CA]' : ''">
           {{ item.subtitle }}
@@ -10,42 +10,42 @@
     <div class="lg:w-3/4 lg:ml-[300px]">
       <div class="relative w-full lg:h-[400px] h-[200px] mb-5">
         <img :src="img" class="rounded-2xl object-cover w-full mb-[400px] absolute h-full" />
-        <div style="border-radius: 16px; background: linear-gradient(0deg, #404040 0%, rgba(217, 217, 217, 0.00) 100%);" class="absolute z-10 w-full h-full"></div>
+        <div style="border-radius: 16px; background: linear-gradient(0deg, #404040 0%, rgba(217, 217, 217, 0) 100%)" class="absolute z-10 w-full h-full"></div>
         <h1 class="text-white lg:text-5xl text-4xl font-bold absolute z-10 lg:top-80 top-32 lg:right-10 lg:left-auto left-5">{{ props.title }}</h1>
       </div>
 
-      <div v-for="(item, index) in props.list" :key=index class="text-content text-xl mb-24">
+      <div v-for="(item, index) in props.list" :key="index" class="text-content text-xl mb-24">
         <div class="w-fit">
-          <h2 :id="'item_' + index" class="text-3xl font-bold block -mb-3">{{ item.subtitle }}</h2>
-        <div class="bg-[#FF5C0045] h-6 -mt-10 ml-4 w-full inline-block"></div>
+          <h2 :id="'item_' + index" class="text-3xl font-bold block -mb-3 z-10">{{ item.subtitle }}</h2>
+          <div class="bg-[#FF5C0045] h-6 -mt-10 ml-4 w-full inline-block"></div>
         </div>
-        <h3 class="text-2xl font-bold mb-5">活動介紹</h3>
-        <div v-html=item.intro class="mb-5"></div>
-        <h3 class="text-2xl font-bold mb-5">活動地點</h3>
-        <p class="mb-5">{{ item.info }}</p>
-        <h3 class="text-2xl font-bold mb-5">報名方式</h3>
-        <div v-html=item.register class="mb-5"></div>
-        <h3 class="text-2xl font-bold mb-5">相關活動行程</h3>
+        <h3 class="text-2xl font-bold mb-2">活動介紹</h3>
+        <div v-html="item.intro" class="mb-5 ml-6"></div>
+        <h3 class="text-2xl font-bold mb-2">活動地點</h3>
+        <p class="mb-5 ml-6">{{ item.info }}</p>
+        <h3 class="text-2xl font-bold mb-2">報名方式</h3>
+        <div v-html="item.register" class="mb-5 ml-6"></div>
+        <h3 class="text-2xl font-bold mb-2">相關活動行程</h3>
         <div v-for="e in event" class="lg:mb-0 mb-7">
-        <StripCard
-        v-if="e.project == item.subtitle"
-          :key="e.id"
-          :id="e.id"
-          :project="e.project"
-          :description="e.description"
-          :name="e.name"
-          :date="e.date"
-          :startTime="e.startTime"
-          :endTime="e.endTime"
-          :host="e.host"
-          :location="e.location"
-        />
-      </div>
+          <StripCard
+            v-if="e.project == item.subtitle"
+            :key="e.id"
+            :id="e.id"
+            :activity="e.activity"
+            :project="e.project"
+            :description="e.description"
+            :name="e.name"
+            :date="e.date"
+            :startTime="e.startTime"
+            :endTime="e.endTime"
+            :host="e.host"
+            :location="e.location"
+            :link="e.link"
+          />
+        </div>
       </div>
     </div>
   </div>
-
-
 </template>
 
 <script setup>
@@ -56,14 +56,14 @@ import StripCard from "./StripCard.vue";
 const props = defineProps({
   title: String,
   list: Array, //subproject list
-  img: String
+  img: String,
 });
 
 const num = ref(0); //tab target
 
 const setNum = (index) => {
   num.value = index;
-}
+};
 
 // // the top bar from left to right
 // const activityOrderList = [
@@ -73,7 +73,7 @@ const setNum = (index) => {
 //   "升學指南",
 //   "解憂茶軒",
 //   "沈浸式體驗",
-//   "人生岔路口",
+//   "人生路口",
 // ];
 
 // const activityList = ref([
@@ -132,7 +132,7 @@ const eventDict = ref({});
 
 //   console.log(eventDict.value);
 
-  // add event to eventDict
+// add event to eventDict
 //   event.map((item) => {
 //     console.log(item);
 //     console.log(item.date);
@@ -157,21 +157,19 @@ const eventDict = ref({});
 // });
 
 const startTimeData = Object.fromEntries(
-  Array.from(new Set(event.map(v => v.startTime))).sort(
-    (a, b) => parseInt(a.replace(":", "")) - parseInt(b.replace(":", ""))
-  ).map(
-    v => [v, event.filter(d => d.startTime === v)]
-  )
+  Array.from(new Set(event.map((v) => v.startTime)))
+    .sort((a, b) => parseInt(a.replace(":", "")) - parseInt(b.replace(":", "")))
+    .map((v) => [v, event.filter((d) => d.startTime === v)])
 );
 
 const selectedDate = ref("2024/3/2");
-const selectedData = computed(() => Object.fromEntries(
-  Object.entries(startTimeData).map(
-    ([k, v]) => [k, v.filter(d => d.date === selectedDate.value)]
-  ).filter(
-    ([k, v]) => v.length > 0
+const selectedData = computed(() =>
+  Object.fromEntries(
+    Object.entries(startTimeData)
+      .map(([k, v]) => [k, v.filter((d) => d.date === selectedDate.value)])
+      .filter(([k, v]) => v.length > 0)
   )
-))
+);
 
 // onMounted(() => {
 //   console.log(activityListRef.value);
@@ -185,4 +183,3 @@ const selectedData = computed(() => Object.fromEntries(
 //   });
 // });
 </script>
-
