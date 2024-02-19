@@ -294,15 +294,27 @@ const sponsors = [
 }
 @media screen and (max-width: 640px) {
   @keyframes typing {
-  from {
-    width: 0;
-    opacity: 1;
-  }
-  to {
-    width: 220px;
-    opacity: 1;
+    from {
+      width: 0;
+      opacity: 1;
+    }
+    to {
+      width: 220px;
+      opacity: 1;
+    }
   }
 }
+@media screen and (min-width: 1280px) {
+  @keyframes typing {
+    from {
+      width: 0;
+      opacity: 1;
+    }
+    to {
+      width: 320px;
+      opacity: 1;
+    }
+  }
 }
 
 @keyframes blink-caret {
