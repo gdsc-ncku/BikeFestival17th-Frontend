@@ -31,15 +31,12 @@
       </div>
     </div>
     <div class="flex-1 flex flex-col items-center">
-      <!-- <iframe
+      <iframe
         class="lg:w-[432px] md:w-[300px] sm:w-[330px] aspect-video"
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        src="https://www.youtube.com/embed/VSyUVDKVxKM?si=Yo2SvWps-_pVNS5I"
       >
-      </iframe> -->
-      <!-- <span class="font-black xl:text-xl text-lg">宣傳短片</span> -->
-      <div class="lg:w-[432px] md:w-[300px] sm:w-[330px] aspect-video flex justify-center items-center text-xl border-2">
-        敬請期待宣傳短片！
-      </div>
+      </iframe>
+      <span class="font-black xl:text-xl text-lg">宣傳短片</span>
     </div>
   </div>
 
