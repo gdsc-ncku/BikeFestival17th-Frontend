@@ -152,7 +152,7 @@
         <p>敬請期待！</p>
       </div>
       <RouterLink
-        class="lg:flex w-24 h-10 justify-center bg-white rounded-lg mt-7 "
+        class="lg:flex h-16 justify-center bg-white rounded-lg mt-7 "
         to="/souvenir"
       >
         <div class="flex flex-col justify-center">
