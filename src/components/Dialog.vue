@@ -34,6 +34,13 @@
         <p v-if="store.dialogContent.secondLine">
           {{ store.dialogContent.secondLine }}
         </p>
+        <p v-if="store.dialogContent.firstLine == '登入 Line 帳號才能訂閱活動!'">
+          <a
+            :href="loginUrl"
+            class="underline"
+            >點我登入</a
+          >
+        </p>
       </div>
       <div class="flex flex-col justify-start h-full p-1">
         <button
@@ -58,4 +65,5 @@
 <script setup>
 import { useDialogStore } from "../stores/dialog";
 const store = useDialogStore();
+const loginUrl = import.meta.env.VITE_APP_API_URL + "line-login/auth?redirect_path=" + window.location.pathname;
 </script>
