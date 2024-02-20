@@ -163,12 +163,12 @@
     <div
       class="grid gap-x-8 gap-y-4 sm:grid-cols-3 grid-cols-2 *:mx-auto *:block sm:*:w-48 *:w-40 object-fill"
     >
-      <img src="/BikeFestival17th-Frontend/souvenir/Bike17_pin.png" />
-      <img src="/BikeFestival17th-Frontend/souvenir/Bike17_pin_2.png" />
-      <img src="/BikeFestival17th-Frontend/souvenir/Bike17_pin_3.png" />
-      <img src="/BikeFestival17th-Frontend/souvenir/Bike17_towel.png" />
-      <img src="/BikeFestival17th-Frontend/souvenir/Bike17_towel_2.png" />
-      <img src="/BikeFestival17th-Frontend/souvenir/omamori.jpg" />
+      <img src="/souvenir/Bike17_pin.png" />
+      <img src="/souvenir/Bike17_pin_2.png" />
+      <img src="/souvenir/Bike17_pin_3.png" />
+      <img src="/souvenir/Bike17_towel.png" />
+      <img src="/souvenir/Bike17_towel_2.png" />
+      <img src="/souvenir/omamori.jpg" />
     </div>
   </div>
 
