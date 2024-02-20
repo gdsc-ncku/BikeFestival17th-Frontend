@@ -65,5 +65,5 @@
 <script setup>
 import { useDialogStore } from "../stores/dialog";
 const store = useDialogStore();
-const loginUrl = import.meta.env.VITE_APP_API_URL + "line-login/auth?redirect_path=" + window.location.pathname;
+const loginUrl = import.meta.env.VITE_APP_API_URL + "line-login/auth?redirect_path=";
 </script>
