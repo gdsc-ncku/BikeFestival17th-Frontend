@@ -2,7 +2,7 @@
   <!-- center container (on laptop) -->
   <div class="w-fill sm:flex hidden justify-center flex-col">
     <!-- Date tabs -->
-    <div class="date-tabs">
+    <div class="date-tabs mb-5">
       <button
         class="date-tab"
         :class="{ active: selectedDate === '3/2' }"
@@ -24,7 +24,7 @@
       <!-- left time list -->
       <div class="w-fill flex justify-start mt-11">
         <!-- time line -->
-        <div class="flex flex-col gap-[150px] max-w-full">
+        <div class="flex flex-col gap-[150px] max-w-full border-r-2 ">
           <div
             class="w-fill flex justify-center gap-[40px]"
             v-for="index in 10"
@@ -165,7 +165,7 @@
       }`"
       @click="selectedDate = key"
     >
-      {{ `DAY ${i + 1} ${key}` }}
+      {{ `DAY ${i + 1} | ${key}` }}
     </button>
   </div>
 </template>
@@ -227,7 +227,7 @@ const showModal = ref(false);
 const showTutorial = ref(true);
 // process event data before mount
 /*
-  schema : 
+  schema :
   {
     "2024/3/2" : {
       "舞台活動" : [event1, event2, ...],
@@ -389,10 +389,9 @@ onMounted(() => {
 }
 
 .date-tab {
-  background-color: #ffa500;
   /* Orange color */
-  color: white;
-  border: none;
+  color: #ff4500;
+  border: 2px solid #ff4500;
   padding: 10px 20px;
   margin: 0 10px;
   cursor: pointer;
@@ -411,6 +410,7 @@ onMounted(() => {
 
 .active {
   background-color: #ff4500;
+  color: white;
   /* Darker orange for the active button */
 }
 </style>
