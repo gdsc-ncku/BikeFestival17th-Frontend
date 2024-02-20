@@ -1,12 +1,7 @@
 <template>
   <div
-    class="p-3 rounded-lg bg-[#FFF3EA] hover:bg-[#FFD7AF]"
-    :style="`
-      height: ${height ?? '190px'};
-      width: ${width ?? '155px'};
-      ${height ? 'display: flex; flex-direction: column; justify-content: center' : ''}
-    `"
-    @click="showModal = true"
+    class="sm:w-[155px] w-full h-[190px] p-3 rounded-lg bg-[#FFF3EA] hover:bg-[#FFD7AF] opacity-99"
+    @click="handleCardClick"
     @close="showModal = false"
   >
     <!-- top -->
@@ -18,39 +13,32 @@
       </div>
       <button
         class="w-[24px] h-[24px] lg:flex justify-center items-center hidden"
-        :class="id === '49' && props.step === 1 ? 'z-50 bg-primary-50 pointer-events-none' : ''"
+        :class="
+          id === '49' && props.step === 1
+            ? 'z-50 bg-primary-50 pointer-events-none'
+            : ''
+        "
+        :style="
+          eventStore.isEventSubscribed(id)
+            ? 'background: url(/BikeFestival17th-Frontend/schedule/subscribed.svg) no-repeat'
+            : 'background: url(/BikeFestival17th-Frontend/schedule/not-subscribed.svg) no-repeat'
+        "
         @click="handleSave"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="14"
-          height="18"
-          viewBox="0 0 14 18"
-          fill="none"
-        >
-          <path
-            d="M12 15L7 12.82L2 15V2H12M12 0H2C1.46957 0 0.960859 0.210714 0.585786 0.585786C0.210714 0.960859 0 1.46957 0 2V18L7 15L14 18V2C14 0.89 13.1 0 12 0Z"
-            fill="#FF7B1A"
-          />
-        </svg>
-      </button>
+      ></button>
       <button
         class="w-[24px] h-[24px] flex justify-center items-center lg:hidden"
-        :class="id === '1' && props.step === 1 ? 'z-50 bg-primary-50 pointer-events-none' : ''"
+        :class="
+          id === '1' && props.step === 1
+            ? 'z-50 bg-primary-50 pointer-events-none'
+            : ''
+        "
+        :style="
+          eventStore.isEventSubscribed(id)
+            ? 'background: url(/BikeFestival17th-Frontend/schedule/subscribed.svg) no-repeat'
+            : 'background: url(/BikeFestival17th-Frontend/schedule/not-subscribed.svg) no-repeat'
+        "
         @click="handleSave"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="14"
-          height="18"
-          viewBox="0 0 14 18"
-          fill="none"
-        >
-          <path
-            d="M12 15L7 12.82L2 15V2H12M12 0H2C1.46957 0 0.960859 0.210714 0.585786 0.585786C0.210714 0.960859 0 1.46957 0 2V18L7 15L14 18V2C14 0.89 13.1 0 12 0Z"
-            fill="#FF7B1A"
-          />
-        </svg>
       </button>
     </div>
     <!-- middle -->
@@ -124,8 +112,12 @@
 </template>
 
 <script setup>
-import { defineProps, ref, watch} from "vue";
+import { defineProps, ref, watch } from "vue";
 import ScheduleCardModal from "./ScheduleCardModal.vue";
+import { useEventStore } from "../stores/user";
+
+const eventStore = useEventStore();
+// const { isEventSubscribed } = eventStore;
 
 let props = defineProps({
   id: {
@@ -175,21 +167,9 @@ let props = defineProps({
     type: Boolean,
     default: false,
   },
-  step: {
-    type: Number,
-    default: 0,
-  },
-  height: {
-    type: String,
-    required: false,
-  },
-  width: {
-    type: String,
-    required: false,
-  }
 });
 
-let {
+const {
   id,
   activity,
   name,
@@ -200,11 +180,29 @@ let {
   location,
   link,
   saved,
-  step
 } = props;
 
 const handleSave = () => {
-  console.log("saved");
+  // YYYY-MM-DD HH:MM:SS
+  if (eventStore.isEventSubscribed(id)) {
+    console.log("unsubscribed");
+    eventStore.unSubscribeEvent(id, name);
+    return;
+  }
+  const day = date.split("/")[1];
+  const start = `2024/03/0${day} ${startTime}`;
+  const end= `2024/03/0${day} ${endTime}`;
+  const detail = JSON.stringify({ id, activity, name, date, start, end, host, location, link, saved });
+  eventStore.subscribeEvent(id,start,end, detail,name);
+};
+
+const handleCardClick = (e) => {
+  // e.stopPropagation();
+  // if (e.target.tagName === "BUTTON") {
+  //   return;
+  // }
+  console.log("click");
+  showModal.value = true;
 };
 
 const showModal = ref(false);

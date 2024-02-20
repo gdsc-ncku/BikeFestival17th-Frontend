@@ -33,7 +33,7 @@
     <div class="flex-1 flex flex-col items-center">
       <iframe
         class="lg:w-[432px] md:w-[300px] sm:w-[330px] aspect-video"
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        src="https://www.youtube.com/embed/VSyUVDKVxKM?si=Yo2SvWps-_pVNS5I"
       >
       </iframe>
       <span class="font-black xl:text-xl text-lg">宣傳短片</span>
@@ -41,15 +41,13 @@
   </div>
 
   <!-- psychological test -->
-  <div class="flex md:flex-row flex-col sm:justify-evenly xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pb-10 bg-primary-900">
-    <!-- left image container -->
+  <!-- <div class="flex md:flex-row flex-col sm:justify-evenly xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pb-10 bg-primary-900">
     <div class="flex-1 flex flex-col items-center lg:pt-0 pt-5">
       <img
         class="lg:w-96 w-80"
         alt="psychological-test"
         src="https://fakeimg.pl/300x200"
       />
-      <!-- desktop button link -->
       <div class="sm:mt-4 w-full sm:flex sm:justify-center hidden">
         <RouterLink to="#" class="flex lg:w-40 lg:h-16 lg:p-0 px-6 py-3 justify-center bg-white rounded-lg">
           <div class="flex flex-col justify-center">
@@ -59,17 +57,14 @@
       </div>
     </div>
 
-    <!-- right content container -->
     <div class="flex-1 relative px-[2rem] sm:p-0 py-10 sm:overflow-visible overflow-hidden">
       <h2 class="mb-10 font-bold text-white xl:text-4xl lg:text-3xl text-2xl">
         測驗 - 你是哪一種車車？
       </h2>
-      <!-- ellipse on right container -->
       <div class="absolute ellipse xl:-translate-x-[50px] xl:translate-y-[60px] -translate-x-[20px] translate-y-[-20px] xl:left-0 left-[1/5]"></div>
       <div class="absolute ellipse xl:translate-x-[510px] xl:-translate-y-[30px] translate-x-[300px] -translate-y-[0px]"></div>
       <div class="absolute ellipse xl:translate-x-[280px] xl:translate-y-[170px] translate-x-[80px] translate-y-[90px] xl:left-0 left-[1/5]"></div>
       <div class="opacity-95 text-white xl:text-2xl lg:text-base text-sm">
-        <!-- https://stackoverflow.com/questions/50530436/how-to-keep-a-transformed-element-behind-another-element -->
         <p>
           在尋找方向之前，要先知道自己是誰，才能知道自己適合什麼、想要什麼。<br>
           但，你真的了解自己嗎？<br>
@@ -82,7 +77,6 @@
       </div>
     </div>
 
-    <!-- mobile button link -->
     <div class="sm:hidden w-full flex justify-center opacity-[99%]">
       <RouterLink class="flex justify-center bg-white rounded-lg w-80 h-12" to="#">
         <div class="flex flex-col justify-center">
@@ -90,7 +84,7 @@
         </div>
       </RouterLink>
     </div>
-  </div>
+  </div> -->
 
   <!-- 8 theme activities -->
   <div class="layout_content md:my-20 my-10 flex flex-col items-center">
@@ -158,7 +152,7 @@
         <p>敬請期待！</p>
       </div>
       <RouterLink
-        class="lg:flex h-16 justify-center bg-white rounded-lg mt-7 sm:visible hidden"
+        class="lg:flex w-24 h-10 justify-center bg-white rounded-lg mt-7 "
         to="/souvenir"
       >
         <div class="flex flex-col justify-center">
@@ -199,13 +193,20 @@
     </div>
   </div>
 
+  <div class="layout_content md:pt-20 pt-0 pb-20 lg:gap-20 gap-10 text-center">
+      <span class="text-primary">成大駐警隊</span>：06-2757575 #66666<br>
+      <span class="text-primary">成大醫院急診部</span>：06-2353535 #2237、06-2359562<br>
+      地址：70146 臺南市北區勝利路138號<br>
+      如病情或受傷狀況宜由專業人員照護者，應打119專線申請專業單位救護。<br>
+  </div>
+
   <!-- key visual bottom -->
-  <div class="w-full sm:visible hidden">
+  <div class="w-full">
     <div
-      class="w-full h-[900px] bg-cover bg-center relative"
-      style="background-image: url('/BikeFestival17th-Frontend/home/key-visual-bottom.png')"
+      class="w-full h-[400px] bg-cover bg-center relative"
+      style="background-image: url('/BikeFestival17th-Frontend/home/key-visual-bottom.webp')"
     ></div>
-    <div class="absolute -translate-y-80 left-1/2 -translate-x-1/2">
+    <div class="absolute -translate-y-48 left-1/2 -translate-x-1/2">
       <h2 class="text-white font-black lg:text-4xl text-2xl">
         邀請你踏上探索科系的旅程！
       </h2>
@@ -294,15 +295,27 @@ const sponsors = [
 }
 @media screen and (max-width: 640px) {
   @keyframes typing {
-  from {
-    width: 0;
-    opacity: 1;
-  }
-  to {
-    width: 220px;
-    opacity: 1;
+    from {
+      width: 0;
+      opacity: 1;
+    }
+    to {
+      width: 220px;
+      opacity: 1;
+    }
   }
 }
+@media screen and (min-width: 1280px) {
+  @keyframes typing {
+    from {
+      width: 0;
+      opacity: 1;
+    }
+    to {
+      width: 320px;
+      opacity: 1;
+    }
+  }
 }
 
 @keyframes blink-caret {
