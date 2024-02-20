@@ -24,7 +24,7 @@
       <!-- left time list -->
       <div class="w-fill flex justify-start mt-11">
         <!-- time line -->
-        <div class="flex flex-col gap-[150px] max-w-full border-r-2 ">
+        <div class="flex flex-col gap-[150px] max-w-full border-r-2">
           <div
             class="w-fill flex justify-center gap-[40px]"
             v-for="index in 10"
@@ -43,65 +43,69 @@
         style="overflow-x: scroll; direction: ltr"
       >
         <!-- events display aligned to timeline and activity -->
-        <div class="flex justify-start gap-[40px] p-200 w-[3000px]">
-          <!-- <div class="relative" v-for="(activity, activityIndex) in activityList" :key="activity" > -->
+        <template v-for="(date, i) in dateList">
           <div
-            class="relative"
-            v-for="(project, projectIndex) in projectList"
-            :key="project"
+            class="flex justify-start gap-[40px] p-200 w-[3000px]"
+            v-if="selectedDate === date"
           >
             <div
-              class="text-black font-medium text-center text-xl min-w-[160px] px-4 py-2"
-              :style="{ backgroundColor: projectColorList[project] }"
-              :id="project"
-              ref="projectElementList"
+              class="relative"
+              v-for="(project, projectIndex) in projectList"
+              :key="project"
             >
-              {{ project }}
-            </div>
-            <div class="flex flex-col gap-4">
-              <template
-                v-for="(eventGroup, index) in groupEventsByTime(
-                  eventDict[selectedDate][project]
-                )"
+              <div
+                class="text-black font-medium text-center text-xl min-w-[160px] px-4 py-2"
+                :style="{ backgroundColor: projectColorList[project] }"
+                :id="project"
+                ref="projectElementList"
               >
-                <div
-                  :style="{
-                    top: calculateEventTopOffset(eventGroup.events[0]),
-                    height: calculateEventHeight(eventGroup.events[0]),
-                    transform: `translateX(${calculateLeftOffset(
-                      projectIndex
-                    )}px)`,
-                  }"
-                  class="absolute"
+                {{ project }}
+              </div>
+              <div class="flex flex-col gap-4">
+                <template
+                  v-for="(eventGroup, index) in groupEventsByTime(
+                    eventDict[selectedDate][project]
+                  )"
                 >
-                  <template v-if="eventGroup.events.length > 1">
-                    <ScheduleCardMulti
-                      :activity="project"
-                      :events="eventGroup.events"
-                      :showModal="showModal"
-                      @close="showModal = false"
-                    />
-                  </template>
-                  <div v-else class="flex justify-between">
-                    <ScheduleCardSingle
-                      :id="eventGroup.events[0].id"
-                      :name="eventGroup.events[0].name"
-                      :date="eventGroup.events[0].date"
-                      :startTime="eventGroup.events[0].startTime"
-                      :endTime="eventGroup.events[0].endTime"
-                      :host="eventGroup.events[0].host"
-                      :location="eventGroup.events[0].location"
-                      :activity="eventGroup.events[0].activity"
-                      :link="eventGroup.events[0].link"
-                      :showModal="showModal"
-                      @close="showModal = false"
-                    />
+                  <div
+                    :style="{
+                      top: calculateEventTopOffset(eventGroup.events[0]),
+                      height: calculateEventHeight(eventGroup.events[0]),
+                      transform: `translateX(${calculateLeftOffset(
+                        projectIndex
+                      )}px)`,
+                    }"
+                    class="absolute"
+                  >
+                    <template v-if="eventGroup.events.length > 1">
+                      <ScheduleCardMulti
+                        :activity="project"
+                        :events="eventGroup.events"
+                        :showModal="showModal"
+                        @close="showModal = false"
+                      />
+                    </template>
+                    <div v-else class="flex justify-between">
+                      <ScheduleCardSingle
+                        :id="eventGroup.events[0].id"
+                        :name="eventGroup.events[0].name"
+                        :date="eventGroup.events[0].date"
+                        :startTime="eventGroup.events[0].startTime"
+                        :endTime="eventGroup.events[0].endTime"
+                        :host="eventGroup.events[0].host"
+                        :location="eventGroup.events[0].location"
+                        :activity="eventGroup.events[0].activity"
+                        :link="eventGroup.events[0].link"
+                        :showModal="showModal"
+                        @close="showModal = false"
+                      />
+                    </div>
                   </div>
-                </div>
-              </template>
+                </template>
+              </div>
             </div>
           </div>
-        </div>
+        </template>
 
         <!-- center container -->
         <div class="w-fill flex justify-start">
@@ -129,30 +133,32 @@
   </div>
 
   <!-- mobile container -->
-  <div class="sm:hidden">
-    <div v-for="index in 10" :key="`mobile-${index}`" class=" mt-4">
-      <div class="w-full font-bold text-2xl text-primary-900">
-        {{ `${index == 1 ? "0" : ""}${index + 8}` }}:00
-      </div>
-      <div v-for="(event, idx) in filterEventsByStartTime(index)">
-        <div class="mt-4">
-          <ScheduleCardSingle
-            :id="event.id"
-            :name="event.name"
-            :date="event.date"
-            :startTime="event.startTime"
-            :endTime="event.endTime"
-            :host="event.host"
-            :location="event.location"
-            :activity="event.activity"
-            :link="event.link"
-            :showModal="showModal"
-            @close="showModal = false"
-          />
+  <template v-for="(date, i) in dateList">
+    <div class="sm:hidden" v-if="selectedDate === date">
+      <div v-for="index in 10" :key="`mobile-${index}`" class="mt-4">
+        <div class="w-full font-bold text-2xl text-primary-900">
+          {{ `${index == 1 ? "0" : ""}${index + 8}` }}:00
+        </div>
+        <div v-for="(event, idx) in filterEventsByStartTime(index)">
+          <div class="mt-4">
+            <ScheduleCardSingle
+              :id="event.id"
+              :name="event.name"
+              :date="event.date"
+              :startTime="event.startTime"
+              :endTime="event.endTime"
+              :host="event.host"
+              :location="event.location"
+              :activity="event.activity"
+              :link="event.link"
+              :showModal="showModal"
+              @close="showModal = false"
+            />
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </template>
 
   <div class="fixed w-[100vw] h-[3.3125rem] flex bottom-0 left-0 sm:hidden">
     <button
@@ -163,7 +169,7 @@
           ? 'bg-[#FFF] text-primary-900'
           : 'bg-primary-900 text-white'
       }`"
-      @click="selectedDate = key"
+      @click="selectDate(key)"
     >
       {{ `DAY ${i + 1} | ${key}` }}
     </button>
@@ -185,6 +191,8 @@ const { fetchUserEvents } = eventStore;
 const pixelsPerHour = 185; // Height of one hour in pixels on the timeline
 const timelineStartHour = 9; // timeline starts at 9:00 AM
 const cardWidth = 155; // Width of each card
+
+const dateList = ref(["3/2", "3/3"]);
 
 const projectList = ref([
   "舞台活動",
@@ -256,16 +264,16 @@ onBeforeMount(() => {
     eventDict.value["3/3"][project] = [];
   }
 
-  console.log(eventDict);
-  console.log(eventDict.value);
+  // console.log(eventDict);
+  // console.log(eventDict.value);
 
   // add event to eventDict 將event.json 中所有活動加入到 eventDict 活動字典
   event.map((item) => {
-    console.log(item);
-    console.log(item.date);
-    console.log(item.project);
-    console.log(eventDict.value[item.date]);
-    console.log(eventDict.value[item.date][item.project]);
+    // console.log(item);
+    // console.log(item.date);
+    // console.log(item.project);
+    // console.log(eventDict.value[item.date]);
+    // console.log(eventDict.value[item.date][item.project]);
     eventDict.value[item.date][item.project].push(item);
   });
 
@@ -280,7 +288,7 @@ onBeforeMount(() => {
   });
 
   // finish processing event data
-  console.log(eventDict.value);
+  // console.log(eventDict.value);
 
   //set cookie
   let isVisited = Cookies.get("isVisited");
@@ -320,9 +328,9 @@ function filterEventsByStartTime(start) {
 
   const startTime = `${start == 1 ? "0" : ""}${start + 8}:00`;
   const endTime = `${start + 9}:00`;
-  console.log("filterEventsByStartTime:condition");
-  console.log(startTime);
-  console.log(endTime);
+  // console.log("filterEventsByStartTime:condition");
+  // console.log(startTime);
+  // console.log(endTime);
 
   let groups = [];
   for (let project of projectList.value) {
@@ -342,8 +350,8 @@ function filterEventsByStartTime(start) {
     groups = groups.concat(filteredEvents);
   }
 
-  console.log("filterEventsByStartTime");
-  console.log(groups);
+  // console.log("filterEventsByStartTime");
+  // console.log(groups);
 
   return groups;
 }
