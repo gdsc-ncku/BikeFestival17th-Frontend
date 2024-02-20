@@ -158,7 +158,7 @@
         <p>敬請期待！</p>
       </div>
       <RouterLink
-        class="lg:flex w-24 h-10 justify-center bg-white rounded-lg mt-7 sm:visible hidden"
+        class="lg:flex h-16 justify-center bg-white rounded-lg mt-7 sm:visible hidden"
         to="/souvenir"
       >
         <div class="flex flex-col justify-center">
@@ -167,14 +167,14 @@
       </RouterLink>
     </div>
     <div
-      class="grid gap-x-8 gap-y-4 sm:grid-cols-3 grid-cols-2 *:mx-auto *:block sm:*:w-48 *:w-40"
+      class="grid gap-x-8 gap-y-4 sm:grid-cols-3 grid-cols-2 *:mx-auto *:block sm:*:w-48 *:w-40 object-fill"
     >
-      <img src="https://fakeimg.pl/200x200" />
-      <img src="https://fakeimg.pl/200x200" />
-      <img src="https://fakeimg.pl/200x200" />
-      <img src="https://fakeimg.pl/200x200" />
-      <img src="https://fakeimg.pl/200x200" />
-      <img src="https://fakeimg.pl/200x200" />
+      <img src="/BikeFestival17th-Frontend/souvenir/Bike17_pin.png" />
+      <img src="/BikeFestival17th-Frontend/souvenir/Bike17_pin_2.png" />
+      <img src="/BikeFestival17th-Frontend/souvenir/Bike17_pin_3.png" />
+      <img src="/BikeFestival17th-Frontend/souvenir/Bike17_towel.png" />
+      <img src="/BikeFestival17th-Frontend/souvenir/Bike17_towel_2.png" />
+      <img src="/BikeFestival17th-Frontend/souvenir/omamori.jpg" />
     </div>
   </div>
 

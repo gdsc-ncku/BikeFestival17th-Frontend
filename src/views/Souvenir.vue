@@ -1,5 +1,8 @@
 <template>
-  <div class="h-20"></div>
+  <div class="h-28"></div>
+  <WorkInProgress />
+  <div class="h-36"></div>
+  <!-- 
   <div class="pt-20 pb-10 sm:px-[8.26rem] px-10 flex flex-col gap-5">
     <h1 class="text-[#3A3A3A] font-bold text-center sm:text-5xl text-[2rem]">單車節限定紀念品</h1>
     <div class="w-full flex flex-wrap justify-between gap-[3.12rem]">
@@ -11,18 +14,19 @@
         <div class="flex w-32 gap-2 mx-auto my-3">
           <div class="p flex-1 h-[0.3125rem] rounded-[0.15625rem] cursor-pointer" v-for="i of 3" :data-select="select[di] === i - 1" @click="change(di, i - 1)()"></div>
 
-          <!-- <div class="p flex-1 h-[0.3125rem] rounded-[0.15625rem] cursor-pointer" :data-select="select[di] === 0" @click="change(di, 0)()"></div>
+          <div class="p flex-1 h-[0.3125rem] rounded-[0.15625rem] cursor-pointer" :data-select="select[di] === 0" @click="change(di, 0)()"></div>
           <div class="p flex-1 h-[0.3125rem] rounded-[0.15625rem] cursor-pointer" :data-select="select[di] === 1" @click="change(di, 1)()"></div>
-          <div class="p flex-1 h-[0.3125rem] rounded-[0.15625rem] cursor-pointer" :data-select="select[di] === 2" @click="change(di, 2)()"></div> -->
+          <div class="p flex-1 h-[0.3125rem] rounded-[0.15625rem] cursor-pointer" :data-select="select[di] === 2" @click="change(di, 2)()"></div>
         </div>
         <div class="text-primary-900 text-xs text-center my-2">{{ d.designConcept }}</div>
         <div class="text-xs text-center">{{ d.context }}</div>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script setup>
+import WorkInProgress from '../components/WorkInProgress.vue';
 import { ref } from "vue";
 
 const data = [
