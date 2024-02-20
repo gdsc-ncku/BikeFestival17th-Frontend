@@ -1,7 +1,7 @@
 <template>
   <Breadcrumb />
-  <div class="mx-[9.75rem]">
-    <div class="text-5xl font-bold mb-8">給高中生的一封信</div>
+  <div class="layout_content">
+    <div class="text-4xl font-bold mb-8">給高中生的一封信</div>
     <WorkInProgress />
   </div>
 </template>
