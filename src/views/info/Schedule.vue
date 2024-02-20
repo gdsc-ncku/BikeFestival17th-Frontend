@@ -274,7 +274,13 @@ onBeforeMount(() => {
     // console.log(item.project);
     // console.log(eventDict.value[item.date]);
     // console.log(eventDict.value[item.date][item.project]);
-    eventDict.value[item.date][item.project].push(item);
+
+    if (eventDict.value[item.date][item.project] == undefined){
+      console.log(`eventDict.value[${item.date}][${item.project}] is undefined`);
+    }
+    else{
+      eventDict.value[item.date][item.project].push(item);
+    }
   });
 
   // sort event by date & start time
