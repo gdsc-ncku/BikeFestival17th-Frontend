@@ -55,11 +55,7 @@ import events from "../../data/event.json";
 import StripCard from "@/components/StripCard.vue";
 
 
-const selectedDate = ref("3/2");
 const dateList = ref(['3/2' , '3/3']);
-const selectDate = (date) => {
-  selectedDate.value = date;
-};
 
 const eventStore = useEventStore();
 const dateStore = useDateStore();
@@ -70,7 +66,7 @@ onMounted(() => {
 });
 
 const currentEvents = computed(() => {
-  return events.filter((event) => event.date === selectedDate.value && eventStore.isEventSubscribed(event.id));
+  return events.filter((event) => event.date === dateStore.selectedDate && eventStore.isEventSubscribed(event.id));
 });
 
 </script>
