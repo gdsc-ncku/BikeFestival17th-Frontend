@@ -2,20 +2,14 @@
   <!-- center container (on laptop) -->
   <div class="w-fill sm:flex hidden justify-center flex-col">
     <!-- Date tabs -->
-    <div class="date-tabs mb-5">
-      <button
-        class="date-tab"
-        :class="{ active: selectedDate === '3/2' }"
-        @click="selectDate('3/2')"
+    <div class="mb-5 flex justify-center gap-7">
+      <button v-for="(date,idx) in dateList"
+        class="w-[360px]  rounded-lg font-semibold text-xl py-[11px]"
+        :class="{ ' bg-primary-900 text-white': selectedDate === date ,
+      'bg-white text-primary-900 border-primary-900 border-2': selectedDate !== date }"
+        @click="selectDate(date)"
       >
-        DAY 1 | 03/02
-      </button>
-      <button
-        class="date-tab"
-        :class="{ active: selectedDate === '3/3' }"
-        @click="selectDate('3/3')"
-      >
-        DAY 2 | 03/03
+        {{ `DAY ${idx+1} | 03/0${idx+2}` }}
       </button>
     </div>
 
@@ -393,38 +387,3 @@ onMounted(() => {
   }
 });
 </script>
-
-<style scoped>
-.date-tabs {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  /* Adjust as necessary */
-}
-
-.date-tab {
-  /* Orange color */
-  color: #ff4500;
-  border: 2px solid #ff4500;
-  padding: 10px 20px;
-  margin: 0 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-weight: bold;
-  border-radius: 20px;
-  /* Gives the rounded edges */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  /* Adds a subtle shadow */
-}
-
-.date-tab:not(.active):hover {
-  background-color: #e69500;
-  /* Slightly darker orange on hover for non-active buttons */
-}
-
-.active {
-  background-color: #ff4500;
-  color: white;
-  /* Darker orange for the active button */
-}
-</style>
