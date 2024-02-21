@@ -5,9 +5,9 @@
     <div class="mb-5 flex justify-center gap-7">
       <button v-for="(date,idx) in dateList"
         class="w-[360px]  rounded-lg font-semibold text-xl py-[11px]"
-        :class="{ ' bg-primary-900 text-white': selectedDate === date ,
-      'bg-white text-primary-900 border-primary-900 border-2': selectedDate !== date }"
-        @click="selectDate(date)"
+        :class="{ ' bg-primary-900 text-white': dateStore.selectedDate == date ,
+      'bg-white text-primary-900 border-primary-900 border-2': dateStore.selectedDate != date }"
+        @click="dateStore.selectDate(date)"
       >
         {{ `DAY ${idx+1} | 03/0${idx+2}` }}
       </button>
@@ -40,7 +40,7 @@
         <template v-for="(date, i) in dateList">
           <div
             class="flex justify-start gap-[40px] p-200 w-[3000px]"
-            v-if="selectedDate === date"
+            v-if="dateStore.selectedDate == date"
           >
             <div
               class="relative"
@@ -58,7 +58,7 @@
               <div class="flex flex-col gap-4">
                 <template
                   v-for="(eventGroup, index) in groupEventsByTime(
-                    eventDict[selectedDate][project]
+                    eventDict[dateStore.selectedDate][project]
                   )"
                 >
                   <div
@@ -128,7 +128,7 @@
 
   <!-- mobile container -->
   <template v-for="(date, i) in dateList">
-    <div class="sm:hidden" v-if="selectedDate === date">
+    <div class="sm:hidden" v-if="dateStore.selectedDate == date">
       <div v-for="index in 10" :key="`mobile-${index}`" class="mt-4">
         <div class="w-full font-bold text-2xl text-primary-900">
           {{ `${index == 1 ? "0" : ""}${index + 8}` }}:00
@@ -154,18 +154,19 @@
     </div>
   </template>
 
+  <!-- Date tabs for mobile -->
   <div class="fixed w-[100vw] h-[3.3125rem] flex bottom-0 left-0 sm:hidden">
     <button
-      v-for="(key, i) in ['3/2', '3/3']"
+      v-for="(date, idx) in dateList"
       class="flex-1 border-solid border-2 border-primary-900 font-bold"
       :class="`${
-        selectedDate === key
+        dateStore.selectedDate != date
           ? 'bg-[#FFF] text-primary-900'
           : 'bg-primary-900 text-white'
       }`"
-      @click="selectDate(key)"
+      @click="dateStore.selectDate(date)"
     >
-      {{ `DAY ${i + 1} | ${key}` }}
+      {{ `DAY ${idx + 1} | ${date}` }}
     </button>
   </div>
 </template>
@@ -176,8 +177,10 @@ import ScheduleCardSingle from "../../components/ScheduleCardSingle.vue";
 import ScheduleCardMulti from "../../components/ScheduleCardMulti.vue";
 import { ref, onBeforeMount, onMounted } from "vue";
 import { useEventStore } from "../../stores/user";
+import { useDateStore } from '../../stores/date';
 import Cookies from "js-cookie";
 
+const dateStore = useDateStore();
 const eventStore = useEventStore();
 const { fetchUserEvents } = eventStore;
 
@@ -223,7 +226,6 @@ const projectColorList = ref({
   人生岔路口: null,
 });
 
-const selectedDate = ref("3/2");
 const eventDict = ref({});
 const showModal = ref(false);
 const showTutorial = ref(true);
@@ -246,7 +248,6 @@ const showTutorial = ref(true);
 
 onBeforeMount(() => {
   // init eventDict in the order above
-  selectedDate.value = "3/2";
   eventDict.value = {
     "3/2": {},
     "3/3": {},
@@ -270,7 +271,7 @@ onBeforeMount(() => {
     // console.log(eventDict.value[item.date][item.project]);
 
     if (eventDict.value[item.date][item.project] == undefined){
-      console.log(`eventDict.value[${item.date}][${item.project}] is undefined`);
+      // console.log(`eventDict.value[${item.date}][${item.project}] is undefined`);
     }
     else{
       eventDict.value[item.date][item.project].push(item);
@@ -296,9 +297,6 @@ onBeforeMount(() => {
   else showTutorial.value = false;
 });
 
-function selectDate(date) {
-  selectedDate.value = date;
-}
 
 // set all events with the same start and end time in a group
 // [{startTime: '9:00', events: [event1, event2, ...], {startTime: '10:00', events: [event1, event2, ...], ...]}
@@ -334,9 +332,9 @@ function filterEventsByStartTime(start) {
 
   let groups = [];
   for (let project of projectList.value) {
-    const events = eventDict.value[selectedDate.value][project];
-    console.log("filterEventsByStartTime:project");
-    console.log(events);
+    const events = eventDict.value[dateStore.selectedDate][project];
+    // console.log("filterEventsByStartTime:project");
+    // console.log(events);
     const filteredEvents = events.filter(
       (event) => event.startTime >= startTime && event.startTime < endTime
     );
