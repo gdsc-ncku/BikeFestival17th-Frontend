@@ -1,7 +1,7 @@
 <template>
   <div></div>
   <div
-    class="fixed top-6 z-[101] w-full flex justify-center"
+    class="fixed top-6 z-[10000] w-full flex justify-center"
     v-bind:class="{
       hidden: !store.isShow,
     }"

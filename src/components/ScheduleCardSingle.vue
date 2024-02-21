@@ -11,35 +11,19 @@
           activity
         }}</span>
       </div>
-      <button
-        class="w-[24px] h-[24px] lg:flex justify-center items-center hidden"
-        :class="
-          id === '49' && props.step === 1
-            ? 'z-50 bg-primary-50 pointer-events-none'
-            : ''
-        "
-        :style="
-          eventStore.isEventSubscribed(id)
-            ? 'background: url(/BikeFestival17th-Frontend/schedule/subscribed.svg) no-repeat'
-            : 'background: url(/BikeFestival17th-Frontend/schedule/not-subscribed.svg) no-repeat'
-        "
-        @click="handleSave"
-      ></button>
-      <button
-        class="w-[24px] h-[24px] flex justify-center items-center lg:hidden"
-        :class="
-          id === '1' && props.step === 1
-            ? 'z-50 bg-primary-50 pointer-events-none'
-            : ''
-        "
-        :style="
-          eventStore.isEventSubscribed(id)
-            ? 'background: url(/BikeFestival17th-Frontend/schedule/subscribed.svg) no-repeat'
-            : 'background: url(/BikeFestival17th-Frontend/schedule/not-subscribed.svg) no-repeat'
-        "
-        @click="handleSave"
-      >
-      </button>
+      <SaveScheduleButton
+        :id="id"
+        :activity="activity"
+        :name="name"
+        :date="date"
+        :startTime="startTime"
+        :endTime="endTime"
+        :host="host"
+        :location="location"
+        :link="link"
+        :saved="saved"
+        :size="'sm'"
+      ></SaveScheduleButton>
     </div>
     <!-- middle -->
     <div class="flex flex-col gap-2">
@@ -114,6 +98,7 @@
 <script setup>
 import { defineProps, ref, watch } from "vue";
 import ScheduleCardModal from "./ScheduleCardModal.vue";
+import SaveScheduleButton from "./SaveScheduleButton.vue";
 import { useEventStore } from "../stores/user";
 
 const eventStore = useEventStore();
