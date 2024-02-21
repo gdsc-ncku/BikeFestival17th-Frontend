@@ -40,18 +40,19 @@
                   即刻報名
                 </a>
                 <div class="flex flex-col justify-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="30"
-                    height="36"
-                    viewBox="0 0 30 36"
-                    fill="none"
-                  >
-                    <path
-                      d="M25.7143 0H4.28571C3.14907 0 2.05898 0.421427 1.25526 1.17157C0.451529 1.92172 0 2.93913 0 4V36L15 30L30 36V4C30 1.78 28.0714 0 25.7143 0Z"
-                      fill="#FF7B1A"
-                    />
-                  </svg>
+                  <SaveScheduleButton
+                    :id="event.id"
+                    :activity="event.activity"
+                    :name="event.name"
+                    :date="event.date"
+                    :startTime="event.startTime"
+                    :endTime="event.endTime"
+                    :host="event.host"
+                    :location="event.location"
+                    :link="event.link"
+                    :saved="event.saved"
+                    :size="'lg'"
+                  ></SaveScheduleButton>
                 </div>
               </div>
             </div>
@@ -87,7 +88,9 @@
 </template>
 
 <script setup>
-import { defineProps } from "vue";
+import { defineProps,defineEmits } from "vue";
+import SaveScheduleButton from "./SaveScheduleButton.vue";
+
 const props = defineProps({
   events: {
     type: Array,
@@ -96,53 +99,9 @@ const props = defineProps({
   show: {
     type: Boolean,
     required: true,
-  },
-  // name: {
-  //   type: String,
-  //   required: true,
-  // },
-  // activity: {
-  //   type: String,
-  //   required: true,
-  // },
-  // description: {
-  //   type: String,
-  //   default: "暫無描述",
-  // },
-  // date: {
-  //   type: String,
-  //   required: true,
-  // },
-  // startTime: {
-  //   //backend: event_time_start
-  //   type: String,
-  //   required: true,
-  // },
-  // endTime: {
-  //   //backend: event_time_end
-  //   type: String,
-  //   required: true,
-  // },
-  // host: {
-  //   //backend: event_host
-  //   type: String,
-  //   default: "暫無講者",
-  // },
-  // location: {
-  //   //backend: event_location
-  //   type: String,
-  //   required: true,
-  // },
-  // link: {
-  //   type: String,
-  //   required: false,
-  // },
-  // saved: {
-  //   type: Boolean,
-  //   default: false,
-  // },
+  }
 });
 
-// const { id, link, host, location, date, startTime, endTime, saved } = props;
 const { events } = props;
+defineEmits(["close"]);
 </script>

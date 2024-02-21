@@ -44,14 +44,19 @@
           <img src="/schedule/location.svg" alt="" class="flex w-4 h-4"/>
           <p class="text-black text-xs font-[350] truncate">{{ location }}</p>
         </div>
-        <button
-          class="w-[24px] h-[24px] flex justify-center items-center ml-4"
-          @click="handleSave"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">
-            <path d="M12 15L7 12.82L2 15V2H12M12 0H2C1.46957 0 0.960859 0.210714 0.585786 0.585786C0.210714 0.960859 0 1.46957 0 2V18L7 15L14 18V2C14 0.89 13.1 0 12 0Z" fill="#FF7B1A" />
-          </svg>
-        </button>
+        <SaveScheduleButton
+        :id="id"
+        :activity="activity"
+        :name="name"
+        :date="date"
+        :startTime="startTime"
+        :endTime="endTime"
+        :host="host"
+        :location="location"
+        :link="link"
+        :saved="saved"
+        :size="'sm'"
+      ></SaveScheduleButton>
       </div>
       <button class="px-2 rounded-[14px] border-[1px] border-primary-900 box-border lg:hidden">
         <div class="flex justify-center items-center">
@@ -87,6 +92,7 @@
 <script setup>
 import { defineProps, ref} from "vue";
 import ScheduleCardModal from "./ScheduleCardModal.vue";
+import SaveScheduleButton from "./SaveScheduleButton.vue";
 
 const props = defineProps({
   id: {
