@@ -1,28 +1,28 @@
 <template>
+  <!-- <div class="h-28"></div>
+  <WorkInProgress /> -->
   <div class="h-28"></div>
-  <WorkInProgress />
-  <div class="h-36"></div>
-  <!-- 
+  
   <div class="pt-20 pb-10 sm:px-[8.26rem] px-10 flex flex-col gap-5">
     <h1 class="text-[#3A3A3A] font-bold text-center sm:text-5xl text-[2rem]">單車節限定紀念品</h1>
-    <div class="w-full flex flex-wrap justify-between gap-[3.12rem]">
+    <div class="w-full flex flex-wrap justify-start gap-[3.12rem]">
       <div v-for="(d, di) in data" class="sm:w-[calc(33%_-_2.08rem)] w-[21.375rem] h-[17.625rem]">
         <div class="text-center text-xl text-bold mb-3">{{ d.name }}</div>
         <div class="w-full text-nowrap overflow-x-hidden scroll-smooth" :ref="elements[di]">
           <img class="mx-[0.87rem] rounded-[0.3125rem] bg-[#D9D9D9] h-36 w-[11.75rem] inline cursor-pointer" v-for="(l, li) in d.img" :src="l" @click="change(di, li)()">
         </div>
-        <div class="flex w-32 gap-2 mx-auto my-3">
+        <!-- <div class="flex w-32 gap-2 mx-auto my-3">
           <div class="p flex-1 h-[0.3125rem] rounded-[0.15625rem] cursor-pointer" v-for="i of 3" :data-select="select[di] === i - 1" @click="change(di, i - 1)()"></div>
 
           <div class="p flex-1 h-[0.3125rem] rounded-[0.15625rem] cursor-pointer" :data-select="select[di] === 0" @click="change(di, 0)()"></div>
           <div class="p flex-1 h-[0.3125rem] rounded-[0.15625rem] cursor-pointer" :data-select="select[di] === 1" @click="change(di, 1)()"></div>
           <div class="p flex-1 h-[0.3125rem] rounded-[0.15625rem] cursor-pointer" :data-select="select[di] === 2" @click="change(di, 2)()"></div>
-        </div>
-        <div class="text-primary-900 text-xs text-center my-2">{{ d.designConcept }}</div>
-        <div class="text-xs text-center">{{ d.context }}</div>
+        </div> -->
+        <!-- <div class="text-primary-900 text-xs text-center my-2">{{ d.designConcept }}</div>
+        <div class="text-xs text-center">{{ d.context }}</div> -->
       </div>
     </div>
-  </div> -->
+  </div>
 </template>
 
 <script setup>
@@ -33,9 +33,8 @@ const data = [
   {
     name: "徽章",
     img: [
-      "/BikeFestival17th-Frontend/souvenir/Bike17_pin.png",
-      "/BikeFestival17th-Frontend/souvenir/Bike17_pin_2.png",
-      "/BikeFestival17th-Frontend/souvenir/Bike17_pin_3.png",
+      "/BikeFestival17th-Frontend/souvenir/LINE_ALBUM_紀念品_240223_1.jpg",
+      "/BikeFestival17th-Frontend/souvenir/LINE_ALBUM_紀念品_240223_7.jpg"
     ],
     designConcept: "設計理念",
     context: "123456 abcde",
@@ -44,28 +43,39 @@ const data = [
     name: "毛巾",
     img: [
       "/BikeFestival17th-Frontend/souvenir/Bike17_towel.png",
-      "/BikeFestival17th-Frontend/souvenir/Bike17_towel_2.png",
-      "",
+      "/BikeFestival17th-Frontend/souvenir/LINE_ALBUM_紀念品_240223_9.jpg",
+      "/BikeFestival17th-Frontend/souvenir/LINE_ALBUM_紀念品_240223_10.jpg",
+      "/BikeFestival17th-Frontend/souvenir/LINE_ALBUM_紀念品_240223_11.jpg",
     ],
     designConcept: "設計理念",
     context: "123456 abcde",
   },
   {
-    name: "毛巾",
+    name: "御守",
     img: [
-      "",
-      "",
-      "",
+      "/BikeFestival17th-Frontend/souvenir/LINE_ALBUM_紀念品_240223_2.jpg",
+      "/BikeFestival17th-Frontend/souvenir/LINE_ALBUM_紀念品_240223_3.jpg",
+      "/BikeFestival17th-Frontend/souvenir/LINE_ALBUM_紀念品_240223_12.jpg",
     ],
     designConcept: "設計理念",
     context: "123456 abcde",
   },
   {
-    name: "毛巾",
+    name: "飲料提袋",
     img: [
-      "",
-      "",
-      "",
+      "/BikeFestival17th-Frontend/souvenir/LINE_ALBUM_紀念品_240223_4.jpg",
+      "/BikeFestival17th-Frontend/souvenir/LINE_ALBUM_紀念品_240223_5.jpg",
+      "/BikeFestival17th-Frontend/souvenir/LINE_ALBUM_紀念品_240223_6.jpg",
+      "/BikeFestival17th-Frontend/souvenir/LINE_ALBUM_紀念品_240223_8.jpg"
+    ],
+    designConcept: "設計理念",
+    context: "123456 abcde",
+  },
+  {
+    name: "紋身貼紙",
+    img: [
+      "/BikeFestival17th-Frontend/souvenir/LINE_ALBUM_紀念品_240223_13.jpg",
+      "/BikeFestival17th-Frontend/souvenir/LINE_ALBUM_紀念品_240223_14.jpg"
     ],
     designConcept: "設計理念",
     context: "123456 abcde",
