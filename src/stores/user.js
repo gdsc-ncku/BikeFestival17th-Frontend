@@ -30,6 +30,11 @@ export const useEventStore = defineStore('loading', () => {
                 },'warning');
                 return;
             }
+
+            dialogStore.showDialog({
+                'title': 'Error',
+                'firstLine': error.response.data.data.msg,
+            },'error');
         });
     }
 
@@ -50,7 +55,7 @@ export const useEventStore = defineStore('loading', () => {
             if (error.response.status === 401) {
                 dialogStore.showDialog({
                     'title': 'Error',
-                    'firstLine': '請先登入 Line 帳號才能訂閱活動',
+                    'firstLine': '登入 Line 帳號才能訂閱活動!',
                 },'error');
                 return;
             }
@@ -63,6 +68,11 @@ export const useEventStore = defineStore('loading', () => {
                 },'warning');
                 return;
             }
+
+            dialogStore.showDialog({
+                'title': 'Error',
+                'firstLine': error.response.data.data.msg,
+            },'error');
         });
     }
 
@@ -77,7 +87,7 @@ export const useEventStore = defineStore('loading', () => {
             },'success');
         }).catch((error) => {
             dialogStore.showDialog({
-                'title': 'Success',
+                'title': 'Error',
                 'firstLine': error.response.data.data.msg,
             },'success');
         });

@@ -2,20 +2,14 @@
   <!-- center container (on laptop) -->
   <div class="w-fill sm:flex hidden justify-center flex-col">
     <!-- Date tabs -->
-    <div class="date-tabs">
-      <button
-        class="date-tab"
-        :class="{ active: selectedDate === '3/2' }"
-        @click="selectDate('3/2')"
+    <div class="mb-5 flex justify-center gap-7">
+      <button v-for="(date,idx) in dateList"
+        class="w-[360px]  rounded-lg font-semibold text-xl py-[11px]"
+        :class="{ ' bg-primary-900 text-white': dateStore.selectedDate == date ,
+      'bg-white text-primary-900 border-primary-900 border-2': dateStore.selectedDate != date }"
+        @click="dateStore.selectDate(date)"
       >
-        DAY 1 | 03/02
-      </button>
-      <button
-        class="date-tab"
-        :class="{ active: selectedDate === '3/3' }"
-        @click="selectDate('3/3')"
-      >
-        DAY 2 | 03/03
+        {{ `DAY ${idx+1} | 03/0${idx+2}` }}
       </button>
     </div>
 
@@ -24,7 +18,7 @@
       <!-- left time list -->
       <div class="w-fill flex justify-start mt-11">
         <!-- time line -->
-        <div class="flex flex-col gap-[150px] max-w-full">
+        <div class="flex flex-col gap-[150px] max-w-full border-r-2">
           <div
             class="w-fill flex justify-center gap-[40px]"
             v-for="index in 10"
@@ -43,65 +37,69 @@
         style="overflow-x: scroll; direction: ltr"
       >
         <!-- events display aligned to timeline and activity -->
-        <div class="flex justify-start gap-[40px] p-200 w-[3000px]">
-          <!-- <div class="relative" v-for="(activity, activityIndex) in activityList" :key="activity" > -->
+        <template v-for="(date, i) in dateList">
           <div
-            class="relative"
-            v-for="(project, projectIndex) in projectList"
-            :key="project"
+            class="flex justify-start gap-[40px] p-200 w-[3000px]"
+            v-if="dateStore.selectedDate == date"
           >
             <div
-              class="text-black font-medium text-center text-xl min-w-[160px] px-4 py-2"
-              :style="{ backgroundColor: projectColorList[project] }"
-              :id="project"
-              ref="projectElementList"
+              class="relative"
+              v-for="(project, projectIndex) in projectList"
+              :key="project"
             >
-              {{ project }}
-            </div>
-            <div class="flex flex-col gap-4">
-              <template
-                v-for="(eventGroup, index) in groupEventsByTime(
-                  eventDict[selectedDate][project]
-                )"
+              <div
+                class="text-black font-medium text-center text-xl min-w-[160px] px-4 py-2"
+                :style="{ backgroundColor: projectColorList[project] }"
+                :id="project"
+                ref="projectElementList"
               >
-                <div
-                  :style="{
-                    top: calculateEventTopOffset(eventGroup.events[0]),
-                    height: calculateEventHeight(eventGroup.events[0]),
-                    transform: `translateX(${calculateLeftOffset(
-                      projectIndex
-                    )}px)`,
-                  }"
-                  class="absolute"
+                {{ project }}
+              </div>
+              <div class="flex flex-col gap-4">
+                <template
+                  v-for="(eventGroup, index) in groupEventsByTime(
+                    eventDict[dateStore.selectedDate][project]
+                  )"
                 >
-                  <template v-if="eventGroup.events.length > 1">
-                    <ScheduleCardMulti
-                      :activity="project"
-                      :events="eventGroup.events"
-                      :showModal="showModal"
-                      @close="showModal = false"
-                    />
-                  </template>
-                  <div v-else class="flex justify-between">
-                    <ScheduleCardSingle
-                      :id="eventGroup.events[0].id"
-                      :name="eventGroup.events[0].name"
-                      :date="eventGroup.events[0].date"
-                      :startTime="eventGroup.events[0].startTime"
-                      :endTime="eventGroup.events[0].endTime"
-                      :host="eventGroup.events[0].host"
-                      :location="eventGroup.events[0].location"
-                      :activity="eventGroup.events[0].activity"
-                      :link="eventGroup.events[0].link"
-                      :showModal="showModal"
-                      @close="showModal = false"
-                    />
+                  <div
+                    :style="{
+                      top: calculateEventTopOffset(eventGroup.events[0]),
+                      height: calculateEventHeight(eventGroup.events[0]),
+                      transform: `translateX(${calculateLeftOffset(
+                        projectIndex
+                      )}px)`,
+                    }"
+                    class="absolute"
+                  >
+                    <template v-if="eventGroup.events.length > 1">
+                      <ScheduleCardMulti
+                        :activity="project"
+                        :events="eventGroup.events"
+                        :showModal="showModal"
+                        @close="showModal = false"
+                      />
+                    </template>
+                    <div v-else class="flex justify-between">
+                      <ScheduleCardSingle
+                        :id="eventGroup.events[0].id"
+                        :name="eventGroup.events[0].name"
+                        :date="eventGroup.events[0].date"
+                        :startTime="eventGroup.events[0].startTime"
+                        :endTime="eventGroup.events[0].endTime"
+                        :host="eventGroup.events[0].host"
+                        :location="eventGroup.events[0].location"
+                        :activity="eventGroup.events[0].activity"
+                        :link="eventGroup.events[0].link"
+                        :showModal="showModal"
+                        @close="showModal = false"
+                      />
+                    </div>
                   </div>
-                </div>
-              </template>
+                </template>
+              </div>
             </div>
           </div>
-        </div>
+        </template>
 
         <!-- center container -->
         <div class="w-fill flex justify-start">
@@ -129,43 +127,46 @@
   </div>
 
   <!-- mobile container -->
-  <div class="sm:hidden">
-    <div v-for="index in 10" :key="`mobile-${index}`" class=" mt-4">
-      <div class="w-full font-bold text-2xl text-primary-900">
-        {{ `${index == 1 ? "0" : ""}${index + 8}` }}:00
-      </div>
-      <div v-for="(event, idx) in filterEventsByStartTime(index)">
-        <div class="mt-4">
-          <ScheduleCardSingle
-            :id="event.id"
-            :name="event.name"
-            :date="event.date"
-            :startTime="event.startTime"
-            :endTime="event.endTime"
-            :host="event.host"
-            :location="event.location"
-            :activity="event.activity"
-            :link="event.link"
-            :showModal="showModal"
-            @close="showModal = false"
-          />
+  <template v-for="(date, i) in dateList">
+    <div class="sm:hidden" v-if="dateStore.selectedDate == date">
+      <div v-for="index in 10" :key="`mobile-${index}`" class="mt-4">
+        <div class="w-full font-bold text-2xl text-primary-900">
+          {{ `${index == 1 ? "0" : ""}${index + 8}` }}:00
+        </div>
+        <div v-for="(event, idx) in filterEventsByStartTime(index)">
+          <div class="mt-4">
+            <ScheduleCardSingle
+              :id="event.id"
+              :name="event.name"
+              :date="event.date"
+              :startTime="event.startTime"
+              :endTime="event.endTime"
+              :host="event.host"
+              :location="event.location"
+              :activity="event.activity"
+              :link="event.link"
+              :showModal="showModal"
+              @close="showModal = false"
+            />
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </template>
 
+  <!-- Date tabs for mobile -->
   <div class="fixed w-[100vw] h-[3.3125rem] flex bottom-0 left-0 sm:hidden">
     <button
-      v-for="(key, i) in ['3/2', '3/3']"
+      v-for="(date, idx) in dateList"
       class="flex-1 border-solid border-2 border-primary-900 font-bold"
       :class="`${
-        selectedDate === key
+        dateStore.selectedDate != date
           ? 'bg-[#FFF] text-primary-900'
           : 'bg-primary-900 text-white'
       }`"
-      @click="selectedDate = key"
+      @click="dateStore.selectDate(date)"
     >
-      {{ `DAY ${i + 1} ${key}` }}
+      {{ `DAY ${idx + 1} | ${date}` }}
     </button>
   </div>
 </template>
@@ -176,8 +177,10 @@ import ScheduleCardSingle from "../../components/ScheduleCardSingle.vue";
 import ScheduleCardMulti from "../../components/ScheduleCardMulti.vue";
 import { ref, onBeforeMount, onMounted } from "vue";
 import { useEventStore } from "../../stores/user";
+import { useDateStore } from '../../stores/date';
 import Cookies from "js-cookie";
 
+const dateStore = useDateStore();
 const eventStore = useEventStore();
 const { fetchUserEvents } = eventStore;
 
@@ -185,6 +188,8 @@ const { fetchUserEvents } = eventStore;
 const pixelsPerHour = 185; // Height of one hour in pixels on the timeline
 const timelineStartHour = 9; // timeline starts at 9:00 AM
 const cardWidth = 155; // Width of each card
+
+const dateList = ref(["3/2", "3/3"]);
 
 const projectList = ref([
   "舞台活動",
@@ -221,13 +226,12 @@ const projectColorList = ref({
   人生岔路口: null,
 });
 
-const selectedDate = ref("3/2");
 const eventDict = ref({});
 const showModal = ref(false);
 const showTutorial = ref(true);
 // process event data before mount
 /*
-  schema : 
+  schema :
   {
     "2024/3/2" : {
       "舞台活動" : [event1, event2, ...],
@@ -244,7 +248,6 @@ const showTutorial = ref(true);
 
 onBeforeMount(() => {
   // init eventDict in the order above
-  selectedDate.value = "3/2";
   eventDict.value = {
     "3/2": {},
     "3/3": {},
@@ -256,17 +259,23 @@ onBeforeMount(() => {
     eventDict.value["3/3"][project] = [];
   }
 
-  console.log(eventDict);
-  console.log(eventDict.value);
+  // console.log(eventDict);
+  // console.log(eventDict.value);
 
   // add event to eventDict 將event.json 中所有活動加入到 eventDict 活動字典
   event.map((item) => {
-    console.log(item);
-    console.log(item.date);
-    console.log(item.project);
-    console.log(eventDict.value[item.date]);
-    console.log(eventDict.value[item.date][item.project]);
-    eventDict.value[item.date][item.project].push(item);
+    // console.log(item);
+    // console.log(item.date);
+    // console.log(item.project);
+    // console.log(eventDict.value[item.date]);
+    // console.log(eventDict.value[item.date][item.project]);
+
+    if (eventDict.value[item.date][item.project] == undefined){
+      // console.log(`eventDict.value[${item.date}][${item.project}] is undefined`);
+    }
+    else{
+      eventDict.value[item.date][item.project].push(item);
+    }
   });
 
   // sort event by date & start time
@@ -280,7 +289,7 @@ onBeforeMount(() => {
   });
 
   // finish processing event data
-  console.log(eventDict.value);
+  // console.log(eventDict.value);
 
   //set cookie
   let isVisited = Cookies.get("isVisited");
@@ -288,9 +297,6 @@ onBeforeMount(() => {
   else showTutorial.value = false;
 });
 
-function selectDate(date) {
-  selectedDate.value = date;
-}
 
 // set all events with the same start and end time in a group
 // [{startTime: '9:00', events: [event1, event2, ...], {startTime: '10:00', events: [event1, event2, ...], ...]}
@@ -320,15 +326,15 @@ function filterEventsByStartTime(start) {
 
   const startTime = `${start == 1 ? "0" : ""}${start + 8}:00`;
   const endTime = `${start + 9}:00`;
-  console.log("filterEventsByStartTime:condition");
-  console.log(startTime);
-  console.log(endTime);
+  // console.log("filterEventsByStartTime:condition");
+  // console.log(startTime);
+  // console.log(endTime);
 
   let groups = [];
   for (let project of projectList.value) {
-    const events = eventDict.value[selectedDate.value][project];
-    console.log("filterEventsByStartTime:project");
-    console.log(events);
+    const events = eventDict.value[dateStore.selectedDate][project];
+    // console.log("filterEventsByStartTime:project");
+    // console.log(events);
     const filteredEvents = events.filter(
       (event) => event.startTime >= startTime && event.startTime < endTime
     );
@@ -342,8 +348,8 @@ function filterEventsByStartTime(start) {
     groups = groups.concat(filteredEvents);
   }
 
-  console.log("filterEventsByStartTime");
-  console.log(groups);
+  // console.log("filterEventsByStartTime");
+  // console.log(groups);
 
   return groups;
 }
@@ -379,38 +385,3 @@ onMounted(() => {
   }
 });
 </script>
-
-<style scoped>
-.date-tabs {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  /* Adjust as necessary */
-}
-
-.date-tab {
-  background-color: #ffa500;
-  /* Orange color */
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin: 0 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-weight: bold;
-  border-radius: 20px;
-  /* Gives the rounded edges */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  /* Adds a subtle shadow */
-}
-
-.date-tab:not(.active):hover {
-  background-color: #e69500;
-  /* Slightly darker orange on hover for non-active buttons */
-}
-
-.active {
-  background-color: #ff4500;
-  /* Darker orange for the active button */
-}
-</style>
