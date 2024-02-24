@@ -149,7 +149,7 @@
     <div class="text-white xl:text-2xl lg:text-base text-sm">
       <h2 class="font-bold text-white xl:text-4xl lg:text-3xl text-2xl lg:mb-12 sm:mb-10 mb-7">紀念品小舖</h2>
       <div class="*:w-max w-max sm:m-0 mx-auto mb-6">
-        <p>敬請期待！</p>
+        <p>歡迎到現場攤位進行購買！</p>
       </div>
       <RouterLink
         class="lg:flex h-16 justify-center bg-white rounded-lg mt-7 "
