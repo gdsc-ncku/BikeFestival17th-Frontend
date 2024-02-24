@@ -45,9 +45,12 @@
           <p class="text-black sm:text-xl text-base font-[400]">{{ description }}</p>
         </div>
         <div class="grow text-right flex justify-end items-end">
-          <a :href="link" target="_blank" class="font-bold text-xl max-sm:text-base text-white bg-primary-900 h-[50px] rounded-md p-3">
+          <a v-if="link" :href="link" target="_blank" class="font-bold text-xl max-sm:text-base text-white bg-primary-900 h-[50px] rounded-md p-3">
             即刻報名
           </a>
+          <div v-else class="font-bold text-xl max-sm:text-base text-white bg-primary-900 h-[50px] rounded-md p-3">
+            不需事前報名
+          </div>
         </div>
       </div>
     </div>
