@@ -192,12 +192,12 @@ const cardWidth = 155; // Width of each card
 const dateList = ref(["3/2", "3/3"]);
 
 const projectList = ref([
-  "舞台活動",
+  "主舞台〈曦瓣〉",
   "傑出校友生涯講座",
   "What Matters Most 工作坊",
   "校園論壇",
   "教授面試技巧演講",
-  "學習歷程講座",
+  "學習歷程特邀講座",
   "申請入學經驗談",
   "科系體驗坊",
   "系館導覽",
@@ -212,12 +212,12 @@ const projectElementList = ref(null);
 const cardTransformList = ref([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
 const projectColorList = ref({
-  舞台活動: null,
+  "主舞台〈曦瓣〉": null,
   傑出校友生涯講座: "#FF5C0045",
   "What Matters Most 工作坊": "#FF5C0045",
   校園論壇: "#FF5C0045",
   教授面試技巧演講: "#9CDAF7",
-  學習歷程講座: "#9CDAF7",
+  學習歷程特邀講座: "#9CDAF7",
   申請入學經驗談: "#9CDAF7",
   科系體驗坊: "#FFEAA0",
   系館導覽: "#FFEAA0",
@@ -234,7 +234,7 @@ const showTutorial = ref(true);
   schema :
   {
     "2024/3/2" : {
-      "舞台活動" : [event1, event2, ...],
+      "主舞台〈曦瓣〉" : [event1, event2, ...],
       "傑出校友生涯講座" : [event1, event2, ...],
       ...
     },
