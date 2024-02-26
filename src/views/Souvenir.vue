@@ -18,8 +18,8 @@
           <div class="p flex-1 h-[0.3125rem] rounded-[0.15625rem] cursor-pointer" :data-select="select[di] === 1" @click="change(di, 1)()"></div>
           <div class="p flex-1 h-[0.3125rem] rounded-[0.15625rem] cursor-pointer" :data-select="select[di] === 2" @click="change(di, 2)()"></div>
         </div> -->
-        <!-- <div class="text-primary-900 text-xs text-center my-2">{{ d.designConcept }}</div>
-        <div class="text-xs text-center">{{ d.context }}</div> -->
+        <div class="text-primary-900 text-xs text-center my-2">{{ d.designConcept }}</div>
+        <div class="text-xs text-center">{{ d.context }}</div>
       </div>
     </div>
   </div>
@@ -37,7 +37,7 @@ const data = [
       "/BikeFestival17th-Frontend/souvenir/LINE_ALBUM_紀念品_240223_7.jpg"
     ],
     designConcept: "設計理念",
-    context: "123456 abcde",
+    context: "徽章可以放在背包上，代表你是一個單車迷。",
   },
   {
     name: "毛巾",
@@ -48,7 +48,7 @@ const data = [
       "/BikeFestival17th-Frontend/souvenir/LINE_ALBUM_紀念品_240223_11.jpg",
     ],
     designConcept: "設計理念",
-    context: "123456 abcde",
+    context: "單車節迄今已舉辦十七屆，對我們來說，屬於成大的特別祭典，在炎熱的台南城市，拿著毛巾，擦拭青春的汗水吧！",
   },
   {
     name: "御守",
@@ -58,7 +58,7 @@ const data = [
       "/BikeFestival17th-Frontend/souvenir/LINE_ALBUM_紀念品_240223_12.jpg",
     ],
     designConcept: "設計理念",
-    context: "123456 abcde",
+    context: "成大單車節學業順利御守，帶著滿滿的祝福，祝福你能夠順利考上理想校系！",
   },
   {
     name: "飲料提袋",
@@ -69,7 +69,7 @@ const data = [
       "/BikeFestival17th-Frontend/souvenir/LINE_ALBUM_紀念品_240223_8.jpg"
     ],
     designConcept: "設計理念",
-    context: "123456 abcde",
+    context: "台南常被戲稱為全糖城市，在全糖城市，就該喝上一杯手搖飲料，拿著單車節去買飲料沒有打折，但很時尚。",
   },
   {
     name: "紋身貼紙",
@@ -78,7 +78,7 @@ const data = [
       "/BikeFestival17th-Frontend/souvenir/LINE_ALBUM_紀念品_240223_14.jpg"
     ],
     designConcept: "設計理念",
-    context: "123456 abcde",
+    context: "以街頭塗鴉為發想元素，體現出單車節的詼諧感。",
   },
 ]
 const select = ref(data.map(() => 0));
