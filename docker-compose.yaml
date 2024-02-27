@@ -1,0 +1,11 @@
+version: '1.0'
+
+services:
+  frontend:
+    build: .
+    restart: always
+    command: ["yarn", "dev"]
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
