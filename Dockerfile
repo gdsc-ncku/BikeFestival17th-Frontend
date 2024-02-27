@@ -7,4 +7,4 @@ COPY . /app
 RUN npm install
 RUN npm run build
 
-# CMD [ "yarn","preview","--port","5173" ]
+# CMD [ "yarn","preview","--port","5173" ,"--host","0.0.0.0"]
