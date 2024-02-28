@@ -3,13 +3,17 @@
   <div class="w-fill sm:flex hidden justify-center flex-col">
     <!-- Date tabs -->
     <div class="mb-5 flex justify-center gap-7">
-      <button v-for="(date,idx) in dateList"
-        class="w-[360px]  rounded-lg font-semibold text-xl py-[11px]"
-        :class="{ ' bg-primary-900 text-white': dateStore.selectedDate == date ,
-      'bg-white text-primary-900 border-primary-900 border-2': dateStore.selectedDate != date }"
+      <button
+        v-for="(date, idx) in dateList"
+        class="w-[360px] rounded-lg font-semibold text-xl py-[11px]"
+        :class="{
+          ' bg-primary-900 text-white': dateStore.selectedDate == date,
+          'bg-white text-primary-900 border-primary-900 border-2':
+            dateStore.selectedDate != date,
+        }"
         @click="dateStore.selectDate(date)"
       >
-        {{ `DAY ${idx+1} | 03/0${idx+2}` }}
+        {{ `DAY ${idx + 1} | 03/0${idx + 2}` }}
       </button>
     </div>
 
@@ -71,7 +75,23 @@
                     }"
                     class="absolute"
                   >
-                    <template v-if="eventGroup.events.length > 1">
+                    <div
+                      v-if="
+                        eventGroup.events.length > 1 &&
+                        eventGroup.events[0].project == '主舞台〈曦瓣〉'
+                      "
+                      class="flex justify-between"
+                    >
+                      <ScheduleCardMulti
+                        :activity="project"
+                        :events="eventGroup.events"
+                        :showModal="showModal"
+                        :high-school-card="true"
+                        :limit="highSchoolClubLimit(eventGroup.events)"
+                        @close="showModal = false"
+                      />
+                    </div>
+                    <template v-else-if="eventGroup.events.length > 1">
                       <ScheduleCardMulti
                         :activity="project"
                         :events="eventGroup.events"
@@ -175,9 +195,9 @@
 import event from "../../data/event.json";
 import ScheduleCardSingle from "../../components/ScheduleCardSingle.vue";
 import ScheduleCardMulti from "../../components/ScheduleCardMulti.vue";
-import { ref, onBeforeMount, onMounted } from "vue";
+import { ref, onBeforeMount, onMounted, computed } from "vue";
 import { useEventStore } from "../../stores/user";
-import { useDateStore } from '../../stores/date';
+import { useDateStore } from "../../stores/date";
 import Cookies from "js-cookie";
 
 const dateStore = useDateStore();
@@ -270,10 +290,9 @@ onBeforeMount(() => {
     // console.log(eventDict.value[item.date]);
     // console.log(eventDict.value[item.date][item.project]);
 
-    if (eventDict.value[item.date][item.project] == undefined){
+    if (eventDict.value[item.date][item.project] == undefined) {
       // console.log(`eventDict.value[${item.date}][${item.project}] is undefined`);
-    }
-    else{
+    } else {
       eventDict.value[item.date][item.project].push(item);
     }
   });
@@ -298,10 +317,65 @@ onBeforeMount(() => {
 });
 
 
+const highSchoolClubLimit = (events) => {
+  if( dateStore.selectedDate == "3/2" && events[0].startTime == "11:00" ) {
+    return 3;
+  } 
+  else if( dateStore.selectedDate == "3/2" && events[0].startTime == "13:55" ) {
+    return 3;
+  }
+  else if( dateStore.selectedDate == "3/3" && events[0].startTime == "10:20") {
+    return 8;
+  } 
+  else if( dateStore.selectedDate == "3/3" && events[0].startTime == "14:20") {
+    return 7;
+  } 
+  else {
+    return events.length;
+  }
+};
+
+  // in mins
+const timeDiff = (st, ed) => {
+  const [stH, stM] = st.split(":").map(Number);
+  const [edH, edM] = ed.split(":").map(Number);
+  return (edH - stH) * 60 + (edM - stM);
+};
+
+const highSchoolTimeDiff = 15;
+
 // set all events with the same start and end time in a group
 // [{startTime: '9:00', events: [event1, event2, ...], {startTime: '10:00', events: [event1, event2, ...], ...]}
 function groupEventsByTime(events) {
   const groups = [];
+  if (events.length == 0) return groups;
+
+  // 特判：把高中社團活動都放在同一個 ScheduleCardMulti
+  // project = "主舞台〈曦瓣〉" && timeDiff <= 15 分鐘
+  // 都會被放在同一個 ScheduleCardMulti
+  if (events[0]["project"] == "主舞台〈曦瓣〉") {
+    events.forEach((event) => {
+      const group = groups.find(
+        (group) =>
+          timeDiff(
+            group.events[group.events.length - 1].startTime,
+            event.startTime
+          ) <= highSchoolTimeDiff && event.name != "休息"
+      );
+      if (group) {
+        group.events.push(event);
+      } else {
+        groups.push({
+          startTime: event.startTime,
+          endTime: event.endTime,
+          events: [event],
+        });
+      }
+    });
+    return groups;
+  }
+
+  // 其他正常活動
   events.forEach((event) => {
     const group = groups.find(
       (group) =>
