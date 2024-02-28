@@ -118,16 +118,16 @@ const handleSave = () => {
   const end = `2024/03/0${day} ${endTime}`;
   const detail = JSON.stringify({
     id: id,
-    name: name,
-    activity: activity,
-    project:project,
-    description: description,
-    date: date,
-    startTime: startTime,
-    endTime: endTime,
-    host: host,
-    location: location,
-    link: link,
+    name: name || "default_name",
+    activity: activity || "default_activity",
+    project:project || "default_project",
+    description: description || "default_description",
+    date: date || "default_date",
+    startTime: startTime || "default_startTime",
+    endTime: endTime || "default_endTime",
+    host: host || "default_host",
+    location: location || "default_location",
+    link: link || "default_link",
   });
   eventStore.subscribeEvent(id, start, end, detail, name);
 };
