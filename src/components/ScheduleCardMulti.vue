@@ -1,6 +1,9 @@
 <template>
   <div
-    class="w-[155px] h-[190px] p-3 rounded-lg bg-[#FFF3EA] hover:bg-[#FFD7AF] opacity-99 absolute"
+    class="w-[155px] p-3 rounded-lg bg-[#FFF3EA] hover:bg-[#FFD7AF] opacity-99 absolute"
+    :style="{
+      height: highSchoolCard ? realHeightValue() : '185px',
+    }"
     @click="showModal = true"
     @close="showModal = false"
   >
@@ -65,7 +68,11 @@
           alt=""
           class="flex w-4 h-4"
         />
-        <p class="text-black text-xs font-[350] truncate">
+
+        <p v-if="highSchoolCard" class="text-black text-xs font-[350] truncate">
+          {{ events[0].date }} {{ events[0].startTime }}-{{ events[events.length-1].endTime }}
+        </p>
+        <p v-else class="text-black text-xs font-[350] truncate">
           {{ events[0].date }} {{ events[0].startTime }}-{{ events[0].endTime }}
         </p>
       </div>
@@ -85,80 +92,35 @@
 </template>
 
 <script setup>
-import { defineProps, ref, watch } from "vue";
+import { defineProps, ref } from "vue";
 import ScheduleCardMultiModal from "./ScheduleCardMultiModal.vue"
-
-// let props = defineProps({
-//   id: {
-//     // backend: event_id
-//     type: String,
-//     required: true,
-//   },
-//   activity: {
-//     type: String,
-//     required: true,
-//   },
-//   description: {
-//     type: String,
-//     default: "暫無描述",
-//   },
-//   name: {
-//     type: String,
-//     required: true,
-//   },
-//   date: {
-//     type: String,
-//     required: true,
-//   },
-//   startTime: {
-//     //backend: event_time_start
-//     type: String,
-//     required: true,
-//   },
-//   endTime: {
-//     //backend: event_time_end
-//     type: String,
-//     required: true,
-//   },
-//   host: {
-//     type: String,
-//     required: true,
-//   },
-//   location: {
-//     type: String,
-//     required: true,
-//   },
-//   link: {
-//     type: String,
-//     required: false,
-//   },
-//   saved: {
-//     type: Boolean,
-//     default: false,
-//   },
-// });
-
-// let {
-//   id,
-//   activity,
-//   name,
-//   date,
-//   startTime,
-//   endTime,
-//   host,
-//   location,
-//   link,
-//   saved,
-// } = props;
 
 const props = defineProps({
   events :{
     type: Array,
     required: true,
+  },
+  limit : {
+    type: Number,
+    default: 3,
+  },
+  highSchoolCard:{
+    type: Boolean,
+    default: false,
   }
 })
 
-const { events } = props;
+const realHeightValue = () => {
+  const startTime = events[0].startTime;
+  const endTime = events[events.length-1].endTime;
+  const start = parseInt(startTime.split(":")[0]) * 60 + parseInt(startTime.split(":")[1]);
+  const end = parseInt(endTime.split(":")[0]) * 60 + parseInt(endTime.split(":")[1]);
+  const unitHeight = 185;
+  const diff = (end - start)/60;
+  return `${unitHeight * diff}px`;
+};
+
+const { events ,limit} = props;
 
 const handleClick = () => {
   console.log("saved");
@@ -169,8 +131,8 @@ const showModal = ref(false);
 function groupEventsName(){
   const group = [];
   for (let i = 0; i < events.length; i++) {
-    if( i == 2) {
-      if(events.length > 3) {
+    if( i == limit-1) {
+      if(events.length > limit) {
         group.push("更多活動 ...");
       } else {
         group.push(events[i].name);
