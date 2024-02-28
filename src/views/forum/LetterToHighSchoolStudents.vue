@@ -10,16 +10,14 @@
     </div>
     <div v-else>
       <div
-        class="w-full py-12 px-8 bg-white shadow-md mb-16 rounded bg-contain bg-repeat-y"
+        class="w-full py-12 sm:px-16 px-8 bg-white shadow-md mb-16 rounded bg-contain bg-repeat-y sm:text-lg text-sm"
         style="background-image: url('/BikeFestival17th-Frontend/forum_page/letter-note-texture.png');"
       >
         <!-- <div class="font-bold text-3xl text-content mb-8">{{ data.title }}</div> -->
         <!-- <img class="w-[500px] mx-auto my-8" src="/forum_page/LetterToHighSchoolStudents.webp"> -->
-        <p class="text-sm">To 各位高中生們,</p>
-        <br>
-        <div v-html="data.content" class="sm:px-16 text-sm"></div>
-        <br>
-        <p class="text-sm text-right">From {{ data.author }}</p>
+        <p>To 各位高中生們,</p><br>
+        <div v-html="data.content"></div><br>
+        <p class="text-right">From {{ data.author }}</p>
       </div>
     </div>
   </div>
@@ -35,9 +33,8 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute();
 
-const data = ref({}); // 使用 ref 來保持響應式數據
+const data = ref({});
 
-// 使用 watchEffect 來監聽路由參數的變化
 watchEffect(() => {
   const letterId = route.params.letter;
   if (letterId) {
