@@ -197,8 +197,8 @@
       <span class="text-primary">成大醫院急診部</span>：06-2353535 #2237、06-2359562<br>
       地址：70146 臺南市北區勝利路138號<br>
       如病情或受傷狀況宜由專業人員照護者，應打119專線申請專業單位救護。<br>
+      <button class="text-white bg-primary text-xl rounded-lg p-4 mt-8"><a href="https://linktr.ee/nckubikefestival2024" target="_blank">成大單車節資訊傳送門</a></button>
   </div>
-
   <!-- key visual bottom -->
   <div class="w-full">
     <div
