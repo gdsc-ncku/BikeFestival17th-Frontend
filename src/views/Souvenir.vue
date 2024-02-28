@@ -1,6 +1,5 @@
 <template>
   <div class="h-20"></div>
-
   <div class="pt-20 pb-10 sm:px-[8.26rem] px-10 flex flex-col gap-5">
     <h1 class="mb-4 text-content font-bold text-center sm:text-5xl text-[2rem]">單車節限定紀念品</h1>
     <div class="w-full flex flex-col justify-center gap-12">
@@ -10,6 +9,7 @@
           <span class="text-lg text-primary">{{ item.price }}</span>
         </div>
         <div class="text-center text-md text-bold mb-3 text-content">{{ item.designConcept }}</div>
+        <div class="text-xs text-center my-2">{{ item.context }}</div>
         <div class="w-full flex flex-wrap justify-center gap-4" :ref="elements[item_id]">
           <img class="rounded-md bg-[#D9D9D9] h-36 w-[11.75rem]" v-for="(link, link_id) in item.img" :src="link">
         </div>
@@ -74,11 +74,12 @@ const data = [
   {
     name: "紋身貼紙",
     price: "小張 $5，大張 $60",
-    designConcept: "以街頭塗鴉為發想元素，體現出單車節的詼諧感。",
     img: [
       "/BikeFestival17th-Frontend/souvenir/LINE_ALBUM_紀念品_240223_13.jpg",
       "/BikeFestival17th-Frontend/souvenir/LINE_ALBUM_紀念品_240223_14.jpg"
-    ]
+    ],
+    designConcept: "設計理念",
+    context: "以街頭塗鴉為發想元素，體現出單車節的詼諧感。",
   },
 ]
 const select = ref(data.map(() => 0));
