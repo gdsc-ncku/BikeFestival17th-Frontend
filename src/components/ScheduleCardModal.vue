@@ -4,6 +4,7 @@
     <div
       v-if="show"
       class="z-[9999] fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 max-sm:flex-col max-sm:justify-end"
+      @click.self="$emit('close')"
     >
       <div class="flex flex-col sm:w-[720px] w-[100vw] h-[600px] bg-white px-9 py-10 sm:rounded max-sm:rounded-tl-[1.25rem] max-sm:rounded-tr-[1.25rem]">
         <!-- top title: 主題活動、收藏按鈕、關閉按鈕 -->
@@ -12,6 +13,8 @@
           <SaveScheduleButton
             :id="id"
             :activity="activity"
+            :project="project"
+            :description="description"
             :name="name"
             :date="date"
             :startTime="startTime"
@@ -58,7 +61,6 @@
 </template>
 
 <script setup>
-import { defineProps,defineEmits } from "vue";
 import SaveScheduleButton from "./SaveScheduleButton.vue";
 const props = defineProps({
   id: {
@@ -74,6 +76,10 @@ const props = defineProps({
     required: true,
   },
   activity: {
+    type: String,
+    required: true,
+  },
+  project: {
     type: String,
     required: true,
   },
@@ -115,7 +121,8 @@ const props = defineProps({
   },
 });
 
-const { id, link, host, location, date, startTime, endTime, saved } = props;
+// const { id, link, host, location, date, startTime, endTime, saved } = props;
+const { id, name,activity, project, description, date, startTime, endTime, host, location, link, saved } = props;
 
 defineEmits(["close"]);
 </script>

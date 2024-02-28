@@ -49,7 +49,7 @@ const data = [
   {
     name: "御守",
     price: "$120/個",
-    designConcept: "設計理念",
+    designConcept: "成大單車節學業順利御守，帶著滿滿的祝福，祝福你能夠順利考上理想校系！",
     img: [
       "/BikeFestival17th-Frontend/souvenir/LINE_ALBUM_紀念品_240223_2.jpg",
       "/BikeFestival17th-Frontend/souvenir/LINE_ALBUM_紀念品_240223_3.jpg",

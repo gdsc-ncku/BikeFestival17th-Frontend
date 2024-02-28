@@ -4,6 +4,7 @@
     <div
       v-if="show"
       class="z-[9999] fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 max-sm:flex-col max-sm:justify-end max-h-screen overflow-scroll"
+      @click.self="$emit('close')"
     >
       <div
       class="max-h-screen">
@@ -43,6 +44,8 @@
                   <SaveScheduleButton
                     :id="event.id"
                     :activity="event.activity"
+                    :project="event.project"
+                    :description="event.description"
                     :name="event.name"
                     :date="event.date"
                     :startTime="event.startTime"
@@ -88,7 +91,6 @@
 </template>
 
 <script setup>
-import { defineProps,defineEmits } from "vue";
 import SaveScheduleButton from "./SaveScheduleButton.vue";
 
 const props = defineProps({

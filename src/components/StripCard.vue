@@ -1,6 +1,6 @@
 <template>
   <div
-    class="lg:h-auto h-[190px] p-3 bg-[#FFF3EA] hover:bg-[#FFD7AF] flex lg:items-center justify-between cursor-pointer mb-2 border border-primary rounded-lg"
+    class="lg:h-auto h-[185px] p-3 bg-[#FFF3EA] hover:bg-[#FFD7AF] flex lg:items-center justify-between cursor-pointer mb-2 border border-primary rounded-lg"
     @click="showModal = true"
     @close="showModal = false"
   >
@@ -47,6 +47,8 @@
         <SaveScheduleButton
         :id="id"
         :activity="activity"
+        :project="project"
+        :description="description"
         :name="name"
         :date="date"
         :startTime="startTime"
@@ -75,6 +77,7 @@
       @close="showModal = false"
       :id="id"
       :activity="activity"
+      :project="project"
       :description="description"
       :name="name"
       :date="date"
@@ -90,7 +93,7 @@
 </template>
 
 <script setup>
-import { defineProps, ref} from "vue";
+import { ref} from "vue";
 import ScheduleCardModal from "./ScheduleCardModal.vue";
 import SaveScheduleButton from "./SaveScheduleButton.vue";
 
@@ -160,6 +163,7 @@ const {
   id,
   activity,
   project,
+  description,
   name,
   date,
   startTime,

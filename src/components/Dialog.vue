@@ -16,7 +16,7 @@
       }"
     >
       <div
-        class="p-4 border-l-4 min-w-[400px]"
+        class="p-4 border-l-4 sm:min-w-[400px] w-full"
         :class="{
           'bg-orange-100  border-orange-500 text-orange-700':
             store.dialogType === 'warning',

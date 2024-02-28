@@ -27,6 +27,10 @@ let props = defineProps({
     type: String,
     required: true,
   },
+  project: {
+    type: String,
+    required: true,
+  },
   description: {
     type: String,
     default: "暫無描述",
@@ -74,6 +78,8 @@ let props = defineProps({
 const {
   id,
   activity,
+  project,
+  description,
   name,
   date,
   startTime,
@@ -111,16 +117,17 @@ const handleSave = () => {
   const start = `2024/03/0${day} ${startTime}`;
   const end = `2024/03/0${day} ${endTime}`;
   const detail = JSON.stringify({
-    id,
-    activity,
-    name,
-    date,
-    start,
-    end,
-    host,
-    location,
-    link,
-    saved,
+    id: id,
+    name: name || "default_name",
+    activity: activity || "default_activity",
+    project:project || "default_project",
+    description: description || "default_description",
+    date: date || "default_date",
+    startTime: startTime || "default_startTime",
+    endTime: endTime || "default_endTime",
+    host: host || "default_host",
+    location: location || "default_location",
+    link: link || "default_link",
   });
   eventStore.subscribeEvent(id, start, end, detail, name);
 };
