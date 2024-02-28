@@ -10,12 +10,12 @@
     </div>
     <div v-else>
       <div
-        class="w-full py-7 sm:px-16 px-8 bg-white shadow-md mb-16 rounded bg-repeat-y text-md"
-        style="background-image: url('/BikeFestival17th-Frontend/forum_page/letter-note-texture.png');"
+        class="w-full py-6 sm:px-16 px-8 bg-white shadow-md mb-16 rounded bg-repeat-y text-md"
+        style="background-image: url('/BikeFestival17th-Frontend/forum_page/letter-note-texture.png'); background-position: center top;"
       >
         <!-- <div class="font-bold text-3xl text-content mb-8">{{ data.title }}</div> -->
         <!-- <img class="w-[500px] mx-auto my-8" src="/forum_page/LetterToHighSchoolStudents.webp"> -->
-        <div v-html="data.content" class="leading-[36px]"></div><br>
+        <div v-html="data.content" class="leading-[26px]"></div><br>
         <p class="text-right">From {{ data.author }}</p>
       </div>
     </div>
