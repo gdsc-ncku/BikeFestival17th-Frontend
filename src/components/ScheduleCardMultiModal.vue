@@ -4,6 +4,7 @@
     <div
       v-if="show"
       class="z-[9999] fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 max-sm:flex-col max-sm:justify-end max-h-screen overflow-scroll"
+      @click.self="$emit('close')"
     >
       <div
       class="max-h-screen">
