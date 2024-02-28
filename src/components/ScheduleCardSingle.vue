@@ -14,6 +14,8 @@
       <SaveScheduleButton
         :id="id"
         :activity="activity"
+        :project="project"
+        :description="description"
         :name="name"
         :date="date"
         :startTime="startTime"
@@ -81,6 +83,7 @@
       @close="showModal = false"
       :id="id"
       :activity="activity"
+      :project="project"
       :description="description"
       :name="name"
       :date="date"
@@ -96,7 +99,7 @@
 </template>
 
 <script setup>
-import { defineProps, ref, watch } from "vue";
+import { ref } from "vue";
 import ScheduleCardModal from "./ScheduleCardModal.vue";
 import SaveScheduleButton from "./SaveScheduleButton.vue";
 import { useEventStore } from "../stores/user";
@@ -111,6 +114,10 @@ let props = defineProps({
     required: true,
   },
   activity: {
+    type: String,
+    required: true,
+  },
+  project: {
     type: String,
     required: true,
   },
@@ -157,6 +164,8 @@ let props = defineProps({
 const {
   id,
   activity,
+  project,
+  description,
   name,
   date,
   startTime,
@@ -166,20 +175,6 @@ const {
   link,
   saved,
 } = props;
-
-const handleSave = () => {
-  // YYYY-MM-DD HH:MM:SS
-  if (eventStore.isEventSubscribed(id)) {
-    console.log("unsubscribed");
-    eventStore.unSubscribeEvent(id, name);
-    return;
-  }
-  const day = date.split("/")[1];
-  const start = `2024/03/0${day} ${startTime}`;
-  const end= `2024/03/0${day} ${endTime}`;
-  const detail = JSON.stringify({ id, activity, name, date, start, end, host, location, link, saved });
-  eventStore.subscribeEvent(id,start,end, detail,name);
-};
 
 const handleCardClick = (e) => {
   e.stopPropagation();

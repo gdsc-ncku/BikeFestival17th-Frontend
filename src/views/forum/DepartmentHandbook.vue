@@ -48,6 +48,7 @@
         <StripCard
           v-for="d in selectedData.related_event_id.map(id => event.find(e => e.id == id))"
           :id="d.id"
+          :activity="d.activity"
           :project="d.project"
           :description="d.description"
           :name="d.name"

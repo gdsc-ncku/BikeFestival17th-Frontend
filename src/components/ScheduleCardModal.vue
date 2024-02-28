@@ -13,6 +13,8 @@
           <SaveScheduleButton
             :id="id"
             :activity="activity"
+            :project="project"
+            :description="description"
             :name="name"
             :date="date"
             :startTime="startTime"
@@ -59,7 +61,6 @@
 </template>
 
 <script setup>
-import { defineProps,defineEmits } from "vue";
 import SaveScheduleButton from "./SaveScheduleButton.vue";
 const props = defineProps({
   id: {
@@ -75,6 +76,10 @@ const props = defineProps({
     required: true,
   },
   activity: {
+    type: String,
+    required: true,
+  },
+  project: {
     type: String,
     required: true,
   },
@@ -116,7 +121,8 @@ const props = defineProps({
   },
 });
 
-const { id, link, host, location, date, startTime, endTime, saved } = props;
+// const { id, link, host, location, date, startTime, endTime, saved } = props;
+const { id, name,activity, project, description, date, startTime, endTime, host, location, link, saved } = props;
 
 defineEmits(["close"]);
 </script>
