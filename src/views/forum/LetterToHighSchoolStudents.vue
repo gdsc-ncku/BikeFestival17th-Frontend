@@ -29,13 +29,22 @@
 import Breadcrumb from '@/components/Breadcrumb.vue';
 import Letter from '@/components/Letter.vue';
 import letterToHighSchoolStudents from '@/data/letterToHighSchoolStudents.json';
+import { ref, watchEffect } from 'vue';
 
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
 
-const data = letterToHighSchoolStudents.find(
-  v => v.id == route.params.letter
-);
+const data = ref({}); // 使用 ref 來保持響應式數據
 
+// 使用 watchEffect 來監聽路由參數的變化
+watchEffect(() => {
+  const letterId = route.params.letter;
+  if (letterId) {
+    const foundData = letterToHighSchoolStudents.find(v => v.id == letterId);
+    if (foundData) {
+      data.value = foundData;
+    }
+  }
+});
 </script>
