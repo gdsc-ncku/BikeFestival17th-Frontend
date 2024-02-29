@@ -14,7 +14,7 @@
 <script>
 import departmentHandbookData from '../data/departmentHandbook.json';
 import featuredArticlesData from '../data/featuredArticles.json';
-import LetterToHighSchoolStudents from '../data/LetterToHighSchoolStudents.json';
+import LetterToHighSchoolStudents from '../data/letterToHighSchoolStudents.json';
 
 export default {
   data() {
