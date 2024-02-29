@@ -1,10 +1,10 @@
 <template>
   <RouterLink
     :to="link"
-    class="h-[18rem] w-[20rem] block rounded-lg pt-[6rem] group overflow-hidden last:mr-auto"
+    class="h-[18rem] w-[20rem] block rounded-lg pt-[6rem] group overflow-hidden"
   >
     <div class="w-full h-[12rem] relative isolate bg-primary-900">
-      <div class="absolute bottom-4 right-3 text-xl font-bold text-white">FROM {{ name }}</div>
+      <div class="absolute bottom-4 right-3 text-xl font-bold text-white">From {{ name }}</div>
 
       <!-- letter closed -->
       <div class="group-hover:hidden w-full h-[2rem] absolute top-0 bg-primary-700"></div>

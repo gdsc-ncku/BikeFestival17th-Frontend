@@ -14,6 +14,7 @@
 <script>
 import departmentHandbookData from '../data/departmentHandbook.json';
 import featuredArticlesData from '../data/featuredArticles.json';
+import LetterToHighSchoolStudents from '../data/LetterToHighSchoolStudents.json';
 
 export default {
   data() {
@@ -37,19 +38,21 @@ export default {
 
       if (this.$route.params) {
         const dynamicParam = Object.values(this.$route.params)[0];
-        console.log(dynamicParam);
+
         if (dynamicParam) {
           const targetDepartment = departmentHandbookData.map((college) => {
             return college.departments.find((department) => {
               return department.id === dynamicParam;
             });
           }).filter(Boolean)[0]
-          // console.log(targetDepartment);
 
           const targetArticle = featuredArticlesData.find((article) => {
             return article.id === dynamicParam;
           })
-          // console.log(targetArticle);
+
+          const targetLetter = LetterToHighSchoolStudents.find((letter) => {
+            return letter.id === dynamicParam;
+          })
 
           if (targetDepartment) {
             this.breadcrumbs.push({
@@ -61,11 +64,14 @@ export default {
               to: this.$route.path,
               label: targetArticle.title,
             });
-          } else {
-            // error handling
+          } else if (targetLetter) {
+            this.breadcrumbs.push({
+              to: this.$route.path,
+              label: targetLetter.author,
+            });
           }
         }
-        // console.log(this.breadcrumbs);
+
       }
     },
   },

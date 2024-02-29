@@ -1,7 +1,7 @@
 <template>
   <Breadcrumb />
   <div class="layout_content">
-    <div v-if="$route.params.letter === undefined" class="my-8 flex flex-wrap justify-between gap-12 items-center sm:flex-row flex-col">
+    <div v-if="$route.params.letter === undefined" class="my-8 flex flex-wrap gap-12 items-center sm:flex-row flex-col">
       <Letter
         v-for="data in letterToHighSchoolStudents"
         :name="data.author"
@@ -15,8 +15,9 @@
       >
         <!-- <div class="font-bold text-3xl text-content mb-8">{{ data.title }}</div> -->
         <!-- <img class="w-[500px] mx-auto my-8" src="/forum_page/LetterToHighSchoolStudents.webp"> -->
-        <div v-html="data.content" class="leading-[26px]"></div><br>
-        <p class="text-right">From {{ data.author }}</p>
+        <div v-html="data.content" class="leading-[26px]"></div>
+        <p class="text-right">Sincerely,</p>
+        <p class="text-right">{{ data.author }}</p>
       </div>
     </div>
   </div>
@@ -44,3 +45,8 @@ watchEffect(() => {
   }
 });
 </script>
+<style>
+h3 {
+  font-weight: 600;
+}
+</style>
