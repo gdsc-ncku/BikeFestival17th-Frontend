@@ -49,7 +49,7 @@
         src="/home/psychological-test-preview.png"
       />
       <RouterLink
-        to="https://nckubikefestival.ncku.edu.tw/BikeFestival17th-Psychological/"
+        to="/BikeFestival17th-Psychological/"
         target="_blank"
         class="mt-4 hidden sm:flex justify-center items-center lg:w-40 lg:h-16 px-6 py-3 bg-white rounded-lg text-primary-900 font-bold cursor-pointer"
       >
@@ -78,7 +78,7 @@
     </div>
 
     <RouterLink
-      to="https://nckubikefestival.ncku.edu.tw/BikeFestival17th-Psychological/"
+      to="/BikeFestival17th-Psychological/"
       target="_blank"
       class="mt-4 mx-auto w-80 h-12 sm:hidden flex justify-center items-center px-6 py-3 bg-white rounded-lg text-primary-900 font-bold cursor-pointer"
     >
