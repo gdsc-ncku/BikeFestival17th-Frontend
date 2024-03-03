@@ -41,29 +41,29 @@
   </div>
 
   <!-- psychological test -->
-  <!-- <div class="flex md:flex-row flex-col sm:justify-evenly xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pb-10 bg-primary-900">
+  <div class="flex md:flex-row flex-col sm:justify-evenly xl:px-36 xl:py-24 lg:px-20 lg:py-20 md:px-14 md:py-16 sm:py-10 sm:px-10 pb-10 bg-primary-900">
     <div class="flex-1 flex flex-col items-center lg:pt-0 pt-5">
       <img
-        class="lg:w-96 w-80"
+        class="mt-3 lg:w-96 w-80 rounded-lg"
         alt="psychological-test"
-        src="https://fakeimg.pl/300x200"
+        src="/home/psychological-test-preview.png"
       />
-      <div class="sm:mt-4 w-full sm:flex sm:justify-center hidden">
-        <RouterLink to="#" class="flex lg:w-40 lg:h-16 lg:p-0 px-6 py-3 justify-center bg-white rounded-lg">
-          <div class="flex flex-col justify-center">
-            <span class="block text-primary-900 font-bold"> 即刻遊玩 </span>
-          </div>
-        </RouterLink>
-      </div>
+      <a
+        to="https://nckubikefestival.ncku.edu.tw/BikeFestival17th-Psychological/"
+        target="_blank"
+        class="mt-4 hidden sm:flex justify-center items-center lg:w-40 lg:h-16 px-6 py-3 bg-white rounded-lg text-primary-900 font-bold cursor-pointer"
+      >
+        即刻遊玩
+      </a>
     </div>
 
     <div class="flex-1 relative px-[2rem] sm:p-0 py-10 sm:overflow-visible overflow-hidden">
       <h2 class="mb-10 font-bold text-white xl:text-4xl lg:text-3xl text-2xl">
-        測驗 - 你是哪一種車車？
+        心理測驗 - 你是哪一種車車？
       </h2>
-      <div class="absolute ellipse xl:-translate-x-[50px] xl:translate-y-[60px] -translate-x-[20px] translate-y-[-20px] xl:left-0 left-[1/5]"></div>
-      <div class="absolute ellipse xl:translate-x-[510px] xl:-translate-y-[30px] translate-x-[300px] -translate-y-[0px]"></div>
-      <div class="absolute ellipse xl:translate-x-[280px] xl:translate-y-[170px] translate-x-[80px] translate-y-[90px] xl:left-0 left-[1/5]"></div>
+      <!-- <div class="absolute ellipse xl:-translate-x-[50px] xl:translate-y-[60px] -translate-x-[20px] translate-y-[-20px] xl:left-0 left-[1/5]"></div> -->
+      <!-- <div class="absolute ellipse xl:translate-x-[510px] xl:-translate-y-[30px] translate-x-[300px] -translate-y-[0px]"></div> -->
+      <!-- <div class="absolute ellipse xl:translate-x-[280px] xl:translate-y-[170px] translate-x-[80px] translate-y-[90px] xl:left-0 left-[1/5]"></div> -->
       <div class="opacity-95 text-white xl:text-2xl lg:text-base text-sm">
         <p>
           在尋找方向之前，要先知道自己是誰，才能知道自己適合什麼、想要什麼。<br>
@@ -77,14 +77,14 @@
       </div>
     </div>
 
-    <div class="sm:hidden w-full flex justify-center opacity-[99%]">
-      <RouterLink class="flex justify-center bg-white rounded-lg w-80 h-12" to="#">
-        <div class="flex flex-col justify-center">
-          <span class="block text-primary-900 font-bold"> 即刻遊玩 </span>
-        </div>
-      </RouterLink>
-    </div>
-  </div> -->
+    <a
+      to="https://nckubikefestival.ncku.edu.tw/BikeFestival17th-Psychological/"
+      target="_blank"
+      class="mt-4 mx-auto w-80 h-12 sm:hidden flex justify-center items-center px-6 py-3 bg-white rounded-lg text-primary-900 font-bold cursor-pointer"
+    >
+      即刻遊玩
+    </a>
+  </div>
 
   <!-- 8 theme activities -->
   <div class="layout_content md:my-20 my-10 flex flex-col items-center">
