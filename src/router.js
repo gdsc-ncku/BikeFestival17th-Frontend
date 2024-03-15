@@ -17,6 +17,15 @@ import FeaturedArticles from './views/forum/FeaturedArticles.vue';
 import LetterToHighSchoolStudents from './views/forum/LetterToHighSchoolStudents.vue';
 import Souvenir from './views/Souvenir.vue';
 import Partners from './views/Partners.vue';
+import TreeTop from './views/sponsors/TreeTop.vue';
+import HDPS from './views/sponsors/HDPS.vue';
+import Splus from './views/sponsors/Splus.vue';
+import Kagome from './views/sponsors/Kagome.vue';
+import ADHIL from './views/sponsors/ADHIL.vue';
+import HappyLearn from './views/sponsors/HappyLearn.vue';
+import Deya from './views/sponsors/Deya.vue';
+import HotelTainan from './views/sponsors/HotelTainan.vue';
+import Get from './views/sponsors/Get.vue';
 import NotFound from './views/NotFound.vue';
 
 const routes = [
@@ -113,6 +122,15 @@ const routes = [
     ]
   },
   { path: '/partners', name: '合作夥伴', component: Partners },
+  { path: '/partners/treeTop', name: 'Tree Top', component: TreeTop},
+  { path: '/partners/hdps', name: '宏達升學教育機構', component: HDPS },
+  { path: '/partners/splus', name: 'S+ Sunshing', component: Splus },
+  { path: '/partners/kagome', name: '可果美', component: Kagome },
+  { path: '/partners/adhil', name: 'ADHIL', component: ADHIL },
+  { path: '/partners/347', name: '樂學網', component: HappyLearn },
+  { path: '/partners/deya', name: 'deya', component: Deya },
+  { path: '/partners/hotelTainan', name: '台南大飯店', component: HotelTainan },
+  { path: '/partners/get', name: '高點', component: Get },
   { path: '/souvenir', name: '紀念品小舖', component: Souvenir },
   { path: '/:pathMatch(.*)*', name: '404', component: NotFound},
 ];
